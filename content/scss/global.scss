@@ -1,0 +1,40 @@
+// Buttons
+.btnTrans{
+	background-color: transparent;
+	border: 1px solid #efefef;
+	height: 1.975rem !important;
+	&:hover{
+		background-color: #13487C;
+	}
+}
+
+
+.top-section{
+	background: url("../images/toronto.png") repeat scroll 0 0 / cover   #258CED;
+	display: block;
+	height: 100%;
+	.contain-to-grid{
+		background-color: transparent;
+		nav[role="top-navigation"]{
+			background-color: transparent;
+		}
+	}
+}
+
+
+.navigation{
+	background-color: $bgDark;
+		.top-bar{
+			background-color: transparent;
+		}
+}
+
+
+.questions{
+	h1{
+		color: $txtWhite
+	}
+	background-color: $bgLight;
+	color: $txtWhite;
+}
+
