@@ -4,7 +4,7 @@ require('../model/database.php');
 require('../model/Userdb.php');
 $dbCon = Database::connectDB();
 
-Userdb::addUser();
+//Userdb::addUser();
 
 
 	
@@ -18,3 +18,4 @@ Userdb::addUser();
     <title>Reachfox - Right ( People - Time - Job )</title>
     <link rel="stylesheet" href="../content/stylesheets/app.css" />
     <script src="../bower_components/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">

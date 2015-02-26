@@ -1,0 +1,65 @@
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+
+
+.top-section{
+    background: url("../images/toronto-night.jpg") repeat scroll 0 0 / cover   #111;
+    display: block;
+    height: 100%;
+    position: relative;
+    padding-top:2rem;
+
+    .top-buttons{
+        margin-top: 8rem;
+    }
+
+    .tagline {
+        margin-top: 2rem;
+        span{
+            font-family: "Lato";
+            color: #fefefe;
+            font-size: 6rem;
+        }
+    }
+
+    .abc{
+        bottom: 10px;
+        position: absolute;
+        max-width: 100%;
+        width: 100%;
+         .scroll-button{
+           
+            font-size: 1.9rem;
+            border:1px solid #fefefe;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: block;
+            color: #fefefe;
+            line-height: 60px;
+            vertical-align: middle;
+            text-align: center;
+            font-family: 'Lato'
+        }
+    }
+}

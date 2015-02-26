@@ -1,26 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
+$bgDark : #04121E;
+$bgLight: #13487C;
+$foxRed : #f7931d;
+$txtWhite : #ddd; 
+
+h2{
+	color: #252525;
+}
+
+ul{
+	float: left;
+}
+
+ul li { float: left;list-style: none;}
+
 // Buttons
 .btnTrans{
 	background-color: transparent;
 	border: 1px solid #efefef;
-	height: 1.975rem !important;
+	text-transform: uppercase;
 	&:hover{
 		background-color: #13487C;
 	}
 }
-
-
-.top-section{
-	background: url("../images/toronto.png") repeat scroll 0 0 / cover   #258CED;
-	display: block;
-	height: 100%;
-	.contain-to-grid{
-		background-color: transparent;
-		nav[role="top-navigation"]{
-			background-color: transparent;
-		}
-	}
-}
-
 
 .navigation{
 	background-color: $bgDark;
@@ -29,6 +31,13 @@
 		}
 }
 
+.navigation{
+	.top-bar{
+		a{
+			color: #fefefe;
+		}
+	}
+}
 
 .questions{
 	h1{
@@ -38,3 +47,6 @@
 	color: $txtWhite;
 }
 
+section[role="footer"]{
+	background-color: $bgDark;
+}

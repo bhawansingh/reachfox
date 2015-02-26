@@ -5,21 +5,27 @@
 <body>
 <!-- Top Big Header -->
 <div class="top-section">
-  <div class="row">
-    <div class="contain-to-grid">
-      <nav class="top-bar" data-topbar role="top-navigation">
-      	<section class="right">
-      		<a href="#" class="button radius btnTrans">Login</a>
-        	<a href="#" class="button radius btnTrans">Sign Up</a>
-      	</section> 
-      </nav>
-      <div class="small-8 small-centered medium-8 large-12 tagline">
-      	<h1>Right People.</h1>
-      	<h1>Right Time.</h1> 
-      	<h1>Right Job.</h1>
-      </div>
-    </div>
+	<div class="row">
+		<div class="small-3 small-centered columns">
+			<img src="../content/images/reachfox-large.png"/>
+		</div>
+	</div>
+    <div class="row">
+      <div class="small-8 small-centered medium-8 large-8 large-centered tagline text-center columns">
+      	<span>Right </span><span id="tagline"></span>
+   	  </div>
    </div>
+    <div class="row top-buttons">
+    	<div class="small-6 small-centered columns">
+    		<div class="small-6 columns"><a href="#" class="button radius expand btnTrans">Login</a></div>
+    		<div class="small-6 columns"><a href="#" class="button radius expand btnTrans">Sign Up</a></div>
+    	</div>        	
+ 	</div>
+ 	<div class="row abc">
+ 		<div class="small-1 small-centered columns ">
+ 			<span class ="scroll-button">v</span>
+ 		</div>
+ 	</div>
 </div>
 
 <?php include("includes/navigation.php") ?>
@@ -27,7 +33,7 @@
 <div class="row forms">
 	<!-- User form -->
 	<div class="small-12 medium-12 large-12 columns">
-		<h2 class="subheader text-center">Finding Jobs just got easy.</h2>
+		<h2 class="text-center">Finding Jobs just got easy.</h2>
 	</div>
 
 	<div class="small-12 medium-4 large-4 columns">
@@ -113,7 +119,7 @@
 
 <div class="row">
 	<div class="small-12 medium-12 large-12 columns">
-		<h2 class="subheader text-center">Get your Job done with Us !.</h2>
+		<h2 class="text-center">Get your Job done with us.</h2>
 	</div>
 	<!-- Company form -->
 	<div class="small-12 medium-8 large-8 columns">
@@ -171,7 +177,20 @@
 	</div>
 </div>
 
-
-
 <!-- Drum Rolls......Curtain comes down-->
 <?php include("includes/footer.php") ?>
+<script src="../content/js/typed.js"> </script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		  $(function(){
+		      $("#tagline").typed({
+		        strings: ["people.^700", "time.^700","job.^700"],
+		        typeSpeed: 0,
+		        loop:true
+		      });
+		  });
+
+	});
+</script>
+  </body>
+</html>
