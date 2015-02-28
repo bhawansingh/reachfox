@@ -63,3 +63,54 @@
         }
     }
 }
+
+.forms{
+    label{
+        border:none;
+        // border-bottom: 1px solid #aaa;
+        padding:0.47rem 0.2rem;
+        color: #777;
+        span.cross{
+            background-color: #ff6e51;
+            border-radius: 50%;
+            color: #fff;
+            display: none;
+            font-size: 0.6rem;
+            font-weight: bold;
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            right: 7px;
+            text-align: center;
+            top: 40px;
+            vertical-align: middle;
+            width: 20px;
+        }
+    }
+
+    div.error{
+        span.cross{
+            display: block;
+        }
+
+    }
+
+    input{
+        border: none;
+        border-bottom: 1px solid #aaa;
+
+    }
+    #province{
+            color:#999;
+            background-color: #eee;
+    }
+}
+
+
+.company_block{
+    //background-color: #f9f9f9;
+}
+
+
+
+

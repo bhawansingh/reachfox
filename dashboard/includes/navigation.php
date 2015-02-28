@@ -1,4 +1,4 @@
-<div class="navigation contain-to-grid sticky">
+<div class="navigation sticky">
 	<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
 			<section class="right">
 				<a href="#">Home</a>
