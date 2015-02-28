@@ -2,11 +2,6 @@
 //Connect to DB in header
 require('../model/database.php');
 require('../model/Userdb.php');
-$dbCon = Database::connectDB();
-
-Userdb::addUser();
-
-
 	
 ?>
 

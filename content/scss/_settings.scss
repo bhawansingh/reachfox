@@ -49,12 +49,12 @@
 // 36. Visibility Classes
 //0
 // - - - - - - - - - - - - - - - - - - - - - - - - - 
-
 $bgDark : #04121E;
 $bgLight: #13487C;
 $foxRed : #f7931d;
 
 $txtWhite : #ddd; 
+
 
 // a. Base
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -127,6 +127,7 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
+   $primary-color:#FCB040;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -206,13 +207,13 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+ $header-font-family: "Lato";
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
 // $header-font-color: $jet;
 // $header-line-height: 1.4;
-// $header-top-margin: .2rem;
-// $header-bottom-margin: .5rem;
+ $header-top-margin: 2rem;
+ $header-bottom-margin: 2.5rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
@@ -653,6 +654,7 @@ $include-html-global-classes: $include-html-classes;
 // $input-disabled-bg: $gainsboro;
 // $input-disabled-cursor: $cursor-default-value;
 // $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	$input-box-shadow:none;
 // $input-include-glowing-effect: true;
 
 // We use these to style the fieldset border and spacing.
