@@ -3,17 +3,14 @@
 	include_once("model/UserDB.php");  
 	include_once("model/companyDB.php");
 	include_once("model/mail.php"); 
-	include_once("model/feedbackDB.php"); 
-	include_once("model/faqDB.php"); 
 
 
 	class Home{
 
 		public $model;
-		public $resultSet;
 
 		public function __construct(){
-			
+			$this->model = new Userdb;
 		}
 
 		public function invoke(){
@@ -22,7 +19,6 @@
 			}else{
 				switch($_GET['action']){
 					case 'userAdd':
-						$this->model = new Userdb;
 						$this->model->setFname($_POST['fname']);
 						$this->model->setLname($_POST['lname']);
 						$this->model->setSin($_POST['sin']);
@@ -34,7 +30,7 @@
 							$this->model->getUserID();
 							$_SESSION["userID"] = $this->model->getID();
 							$message = "Click here to activate your Reachfox account <a href='http://www.reachfox.com/indesx.php?action=activation&code=".$this->model->getActCode()."''>Active Account</a>";
-							//mail::sendMail($this->model->getEmail,"Reachfox Activation Mail");
+							mail::sendMail($this->model->getEmail,"Reachfox Activation Mail");
 							//Don't redirect user to activation page in production version
 							header('Location: dashboard/index.php?action=activation&code='.$this->model->getActCode());
 						}
@@ -43,9 +39,7 @@
 						break;
 
 					case 'login': $this->loginCheck(); break;
-					case 'feedbackAdd': $this->feedbackAdd(); break;
-					case 'feedback':include 'views/feedback.php'; break;
-					case 'faq':$this->faq(); break;
+					//case 'profile': $this->loginCheck(); break;
 
 				}
 			}
@@ -76,15 +70,14 @@
 			        if ($dateDiff->format('%a') < 60 ){
 			            //set the session
 			            $_SESSION["userID"] = $userData['id'];
-			            $this->model->setId($userData['id']);
 			            //Check for user activation
 
 			            if($this->model->getUserActivation())
 			            	header("location: dashboard/index.php?action=profile");
 
 			            else
-			            	header("location: dashboard/index.php?action=activation");
-
+			            	//header("location: dashboard/index.php?action=activation");
+			            $this->model->getUserActivation();
 			        }
 			        else{
 			            include 'views/index.php';
@@ -97,24 +90,13 @@
 			 }
 		}
 
-		public function feedbackAdd(){
-			$this->model = new feedbackDB();
-			$this->model->setFirstName($_POST['firstName']);
- 			$this->model->setLastName($_POST['lastName']);
- 			$this->model->setEmail($_POST['email']);
- 			$this->model->setMessage($_POST['message']);
- 			
-	 		if($this->model->addFeedback()){
-	 			//To DO Make an better response page
-            	echo "Thank You for the feedback ".$_POST['firstName']." ".$_POST['lastName'];
-			}
-		}
+	}
 
-		public function faq(){
-			$this->model = new faqDB();	
-			include 'views/faq.php';
-		}
+	
 
+	//company Information Get Set
+	class Company{
+		
 	}
 
 
