@@ -21,32 +21,24 @@
 				include 'views/index.php';
 			}else{
 				switch($_GET['action']){
-					case 'userAdd':
-						$this->model = new Userdb;
-						$this->model->setFname($_POST['fname']);
-						$this->model->setLname($_POST['lname']);
-						$this->model->setSin($_POST['sin']);
-						$this->model->setContact($_POST['contact']);
-						$this->model->setEmail($_POST['email']);
-						$this->model->setActCode($this->generateActCode());
-						if ($this->model->addUser() == 1)
-						{
-							$this->model->getUserID();
-							$_SESSION["userID"] = $this->model->getID();
-							$message = "Click here to activate your Reachfox account <a href='http://www.reachfox.com/indesx.php?action=activation&code=".$this->model->getActCode()."''>Active Account</a>";
-							//mail::sendMail($this->model->getEmail,"Reachfox Activation Mail");
-							//Don't redirect user to activation page in production version
-							header('Location: dashboard/index.php?action=activation&code='.$this->model->getActCode());
-						}
-						else
-							include 'views/index.php';
+					case 'userAdd': 
+						$this->userAdd(); 
 						break;
-
-					case 'login': $this->loginCheck(); break;
-					case 'feedbackAdd': $this->feedbackAdd(); break;
-					case 'feedback':include 'views/feedback.php'; break;
-					case 'faq':$this->faq(); break;
-
+					case 'login': 
+						$this->model = new Userdb; $this->loginCheck(); 
+						break;
+					case 'feedbackAdd':
+						$this->feedbackAdd(); 
+						break;
+					case 'feedback': 
+						include 'views/feedback.php'; 
+						break;
+					case 'faq':
+						$this->faq(); 
+						break;
+					case 'companyAdd': 
+						$this->companyAdd(); 
+						break;
 				}
 			}
 			
@@ -58,6 +50,26 @@
 			return $this->actCode;
 		}
 
+		public function userAdd(){
+			$this->model = new Userdb;
+			$this->model->setFname($_POST['fname']);
+			$this->model->setLname($_POST['lname']);
+			$this->model->setSin($_POST['sin']);
+			$this->model->setContact($_POST['contact']);
+			$this->model->setEmail($_POST['email']);
+			$this->model->setActCode($this->generateActCode());
+			if ($this->model->addUser() == 1)
+			{
+				$this->model->getUserID();
+				$_SESSION["userID"] = $this->model->getID();
+				$message = "Click here to activate your Reachfox account <a href='http://www.reachfox.com/indesx.php?action=activation&code=".$this->model->getActCode()."''>Active Account</a>";
+				//mail::sendMail($this->model->getEmail,"Reachfox Activation Mail");
+				//Don't redirect user to activation page in production version
+				header('Location: dashboard/index.php?action=activation&code='.$this->model->getActCode());
+			}
+			else
+				include 'views/index.php';
+		}
 
 		public function loginCheck(){
 			$this->model->setEmail($_POST['emailLogin']);
@@ -115,7 +127,22 @@
 			include 'views/faq.php';
 		}
 
+		public function companyAdd(){
+			$this->model = new companyDB();
+			$this->model->setName($_POST['name']);
+			$this->model->setEmail($_POST['email']);
+			$this->model->setUnit($_POST['unit']);
+			$this->model->setStreet($_POST['street']);
+			$this->model->setCity($_POST['city']);
+			//Hard code Province to ON for now.
+			//Hopefully someday this won't be the case. 
+			//$this->model->setProvince($_POST['province']);
+			$this->model->setProvince('ON');
+
+			$this->model->setPostalCode($_POST['postalcode']);
+			$this->model->addCompany();
+			//Redirect to company Rep. Add form
+			header("location: company/index.php?action=home");
+		}
 	}
-
-
 ?>

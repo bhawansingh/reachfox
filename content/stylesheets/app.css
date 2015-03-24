@@ -9365,3 +9365,8 @@ h4 {
 .userPref .companyName a, .userPref .prefLocation a {
   margin-left: 5px;
 }
+
+/* line 232, ../scss/global.scss */
+.jobPosting div i {
+  margin-right: 10px;
+}

@@ -1,10 +1,10 @@
 <?php
-	include 'model/Database.php';
-	include_once("model/UserDB.php");  
-	include_once("model/companyDB.php");
-	include_once("model/mail.php"); 
-	include_once("model/feedbackDB.php"); 
-	include_once("model/faqDB.php"); 
+	include '../model/Database.php';
+	include_once("../model/UserDB.php");  
+	include_once("../model/companyDB.php");
+	include_once("../model/mail.php"); 
+	include_once("../model/feedbackDB.php"); 
+	include_once("../model/faqDB.php"); 
 
 
 	class Admin{
@@ -18,10 +18,14 @@
 
 		public function invoke(){
 			if(!isset($_GET['action'])){
-				include 'views/index.php';
+				include 'home.php';
 			}else{
 				switch($_GET['action']){
-					case 'faq': $this->faq(); break;
+					case 'home':
+						include 'home.php';
+					case 'faq': 
+						$this->faq(); 
+						break;
 				}
 			}
 			

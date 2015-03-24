@@ -126,7 +126,7 @@
 
 
 <div class="company_block forms">
-<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="homeCo" method="post" data-abide>
+<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>index.php?action=companyAdd" id="homeCo" method="post" data-abide>
 	<div class="row">
 		<div class="small-12 medium-12 large-12 columns">
 			<h2 class="text-center">Get your Job done with us.</h2>

@@ -211,7 +211,7 @@ h4{
 	margin-top: 2.5rem;
 	.companyName{
 		@extend .panel;
-		@extend .callout;
+		@extend .callout !optional;
 		padding: 0.2rem 0.9rem;
 		margin: 0.7rem;
 		a{
@@ -221,5 +221,16 @@ h4{
 
 	.prefLocation{
 		@extend .companyName;
+	}
+}
+
+
+//-----------------------JOB LISTING--------------------------------
+
+.jobPosting{
+	div{
+		i{
+			margin-right: 10px;
+		}
 	}
 }

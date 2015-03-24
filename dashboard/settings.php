@@ -27,151 +27,146 @@
 		</div>
 		<div class="row forms">
 			<div class="small-12 medium-12 large-12 small-centered columns">
-				
-					<ul class="tabs" data-tab>
-					  <li class="tab-title active"><a href="#panel1">Password</a></li>
-					  <li id="2a" class="tab-title"><a href="#panel2">Personel Info</a></li>
-					  <li class="tab-title"><a href="#panel3">Bank Details</a></li>
-					  <li class="tab-title"><a href="#panel4">Time Slots</a></li>
-					  <li class="tab-title"><a href="#panel5">Misc</a></li>
-					</ul>
-					<div class="tabs-content">
-					  	<div class="content active" id="panel1">
-						  	<!-- New password -->
-						  	<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="passwordForm" method="post" data-abide="ajax">
-							  	<div class="row">
-							  		<div class="small-8 small-centered columns">
-							  			<label for="right-label" class="right inline text-left error">Set Password
-							  				<input id="setPassword" name="setPassword" type="password"  required >
-							  				<span class="cross">x</span>
-							  			</label>
-							  		</div>
-							  	</div>
-							  	<div class="row">
-							  		<div class="small-8 small-centered columns">
-							  			<label for="right-label" class="right inline text-left error">Confirm Password
-							  				<input id="confirmPassword" name="confirmPassword" type="password"  required  data-equalto="setPassword">
-							  				<span class="cross">x</span>
-							  			</label>
-							  		</div>
-							  	</div>
-	  							<div class="row">
-	  								<div class="small-4 small-centered columns">
-	  									<button type="submit" class="button small radius" id="coPassword">Next</button>
-	  								</div>
-	  							</div>
-	  						</form>
-						</div>
-					 	<div class="content" id="panel2">
-					 		<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="detailsForm" method="post" data-abide="ajax">
-								  <!-- New Section -->
-								  <div class="row">
-								  	<div class="small-8 columns">
-								  		<label for="right-label" class="right inline text-left error">Date of birth
-								  			<input id="dob" name="dob" type="text"  required  pattern="month_day_year">
-								  			<span class="cross">x</span>
-								  		</label>
-								  	</div>
-								  </div>
-
-								  <div class="row">
-								  	<div class="small-8 columns">
-								  		<label for="right-label" class="right inline text-left error">Gender 
-								  			<input type="radio" name="gender" value="m" id="male"><label for="male">Male</label>
-								  			<input type="radio" name="gender" value="f" id="female"><label for="female">Female</label>
-								  			<span class="cross">x</span>
-								  		</label>
-								  	</div>
-								  </div>
-								  <div class="row">
-								    <div class="small-4 columns">
-								    	<label for="right-label" class="right inline text-left">Unit #
-								      		<input id="unit" name="unit" type="text" placeholder="">
-								      	</label>
-								    </div>
-								    <div class="small-8 columns">
-								    	<label for="right-label" class="right inline text-left">Street
-								      		<input id="street" name="street" type="text" placeholder="">
-								      	</label>
-								    </div>
-								  </div>
-								  
-								  <div class="row">
-								    <div class="small-5 columns">
-								    	<label for="right-label" class="right inline text-left">City
-								      		<input id="city" name="city" type="text" placeholder="">
-								      	</label>
-								    </div>
-								    <div class="small-2 columns">
-								    	<label for="right-label" class="right inline text-left">Province
-								      		<input disabled="disabled" id="province" name="province" type="text" placeholder="ON" value="ON">
-								      	</label>
-								    </div>
-								    <div class="small-5 columns">
-								    	<label for="right-label" class="right inline text-left">Postal Code
-								      		<input id="postalcode" name="postalcode" type="text" placeholder="">
-								      	</label>
-								    </div>
-								  </div>
-								  <div class="row">
-								  	<div class="small-4 small-centered columns">
-								  		<button type="submit" class="button small radius" id="coDetails">Next</button>
-								  	</div>
-								  </div>
-								</form>
-					  </div>
-					  <div class="content" id="panel3">
-					  	<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="bankForm" method="post" data-abide="ajax">
-					  		<div class="row">
-					  			<div class="small-8 columns">
-					  				<label for="right-label" class="right inline text-left error">Paypal ID
-					  					<input id="paypal" name="paypal" type="text"  required >
-					  					<span class="cross">x</span>
-					  				</label>
-					  			</div>
-					  		</div>
-					  		<div class="row">
-							  	<div class="small-4 small-centered columns">
-							  		<button type="submit" class="button small radius" id="coPaypal">Next</button>
-							  	</div>
-							</div>
-					  	</form>	
-					  </div>
-					  <div class="content" id="panel4">
-					  <div class="row">
-						  <div class="small-12 columns">
-						   	<div class="row">
-							  	<div class="small-3 columns"> Day </div>
-							  	<div class="small-3 columns"> Start Time </div>
-							  	<div class="small-3 columns"> End Time </div>
-							  	<div class="small-3 columns"></div>
-							 </div>
-						  </div>
-						   <div class="row">
-					 	<?php 
-					   			$timeSlots = $this->getPrefTime();
-					   			
-					   			//Implement a better solution for this
-					   			for ($i = 0; $i<count($timeSlots);$i++)
-					   			{	echo "<div class='small-12 columns'>";
-
-					   				foreach($timeSlots[$i] as $x=> $tl)
-						   			{
-						   				echo "<div class='small-3 columns'>".$tl."</div>";
-						   			}
-						   			echo '<div class="small-3 columns"><button class="button tiny">Remove</button></div>';
-						   			echo "</div>";
-					   			}
-					?>
-						</div>
+				<ul class="tabs" data-tab>
+				  <li class="tab-title active"><a href="#panel1">Password</a></li>
+				  <li id="2a" class="tab-title"><a href="#panel2">Personel Info</a></li>
+				  <li class="tab-title"><a href="#panel3">Bank Details</a></li>
+				  <li class="tab-title"><a href="#panel4">Time Slots</a></li>
+				  <li class="tab-title"><a href="#panel5">Misc</a></li>
+				</ul>
+				<div class="tabs-content">
+				  	<div class="content active" id="panel1">
+					  	<!-- New password -->
+					  	<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="passwordForm" method="post" data-abide="ajax">
+						  	<div class="row">
+						  		<div class="small-8 small-centered columns">
+						  			<label for="right-label" class="right inline text-left error">Set Password
+						  				<input id="setPassword" name="setPassword" type="password"  required >
+						  				<span class="cross">x</span>
+						  			</label>
+						  		</div>
+						  	</div>
+						  	<div class="row">
+						  		<div class="small-8 small-centered columns">
+						  			<label for="right-label" class="right inline text-left error">Confirm Password
+						  				<input id="confirmPassword" name="confirmPassword" type="password"  required  data-equalto="setPassword">
+						  				<span class="cross">x</span>
+						  			</label>
+						  		</div>
+						  	</div>
+  							<div class="row">
+  								<div class="small-4 small-centered columns">
+  									<button type="submit" class="button small radius" id="coPassword">Next</button>
+  								</div>
+  							</div>
+  						</form>
 					</div>
+				 	<div class="content" id="panel2">
+				 		<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="detailsForm" method="post" data-abide="ajax">
+							  <!-- New Section -->
+							  <div class="row">
+							  	<div class="small-8 columns">
+							  		<label for="right-label" class="right inline text-left error">Date of birth
+							  			<input id="dob" name="dob" type="text"  required  pattern="month_day_year">
+							  			<span class="cross">x</span>
+							  		</label>
+							  	</div>
+							  </div>
+
+							  <div class="row">
+							  	<div class="small-8 columns">
+							  		<label for="right-label" class="right inline text-left error">Gender 
+							  			<input type="radio" name="gender" value="m" id="male"><label for="male">Male</label>
+							  			<input type="radio" name="gender" value="f" id="female"><label for="female">Female</label>
+							  			<span class="cross">x</span>
+							  		</label>
+							  	</div>
+							  </div>
+							  <div class="row">
+							    <div class="small-4 columns">
+							    	<label for="right-label" class="right inline text-left">Unit #
+							      		<input id="unit" name="unit" type="text" placeholder="">
+							      	</label>
+							    </div>
+							    <div class="small-8 columns">
+							    	<label for="right-label" class="right inline text-left">Street
+							      		<input id="street" name="street" type="text" placeholder="">
+							      	</label>
+							    </div>
+							  </div>
+							  
+							  <div class="row">
+							    <div class="small-5 columns">
+							    	<label for="right-label" class="right inline text-left">City
+							      		<input id="city" name="city" type="text" placeholder="">
+							      	</label>
+							    </div>
+							    <div class="small-2 columns">
+							    	<label for="right-label" class="right inline text-left">Province
+							      		<input disabled="disabled" id="province" name="province" type="text" placeholder="ON" value="ON">
+							      	</label>
+							    </div>
+							    <div class="small-5 columns">
+							    	<label for="right-label" class="right inline text-left">Postal Code
+							      		<input id="postalcode" name="postalcode" type="text" placeholder="">
+							      	</label>
+							    </div>
+							  </div>
+							  <div class="row">
+							  	<div class="small-4 small-centered columns">
+							  		<button type="submit" class="button small radius" id="coDetails">Next</button>
+							  	</div>
+							  </div>
+							</form>
+				 	</div>
+					<div class="content" id="panel3">
+						<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="bankForm" method="post" data-abide="ajax">
+							<div class="row">
+								<div class="small-8 columns">
+									<label for="right-label" class="right inline text-left error">Paypal ID
+										<input id="paypal" name="paypal" type="text"  required >
+										<span class="cross">x</span>
+									</label>
+								</div>
+							</div>
+							<div class="row">
+						  	<div class="small-4 small-centered columns">
+						  		<button type="submit" class="button small radius" id="coPaypal">Next</button>
+						  	</div>
+						</div>
+						</form>	
+					</div>
+					<div class="content" id="panel4">
+					 	<div class="row">
+					 		<div class="small-12 columns">
+					 			<div class="row">
+					 				<div class="small-3 columns"> Day </div>
+					 				<div class="small-3 columns"> Start Time </div>
+					 				<div class="small-3 columns"> End Time </div>
+					 				<div class="small-3 columns"></div>
+					 			</div>
+					 			<div class="row">
+					 				<?php 
+						 				$timeSlots = $this->getPrefTime();
+
+												//Implement a better solution for this
+						 				for ($i = 0; $i<count($timeSlots);$i++)
+						 					{	echo "<div class='small-12 columns'>";
+
+						 				foreach($timeSlots[$i] as $x=> $tl)
+						 				{
+						 					echo "<div class='small-3 columns'>".$tl."</div>";
+						 				}
+						 				echo '<div class="small-3 columns"><button class="button tiny">Remove</button></div>';
+						 				echo "</div>";
+						 				}
+					 				?>
+					 			</div>
+					 		</div>
 					 		<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="prefForm" method="post" data-abide="ajax">
-						   		
 						   		<div class="row ">
 						   			<div class="small-12 columns">
-						   				<label for="right-label" class="right inline text-left">Availability Preferences
-						   		    		
-						   		    	</label>
+						   				<label for="right-label" class="right inline text-left">Availability Preferences</label>
 						   			</div>
 						   			<div class="small-4 columns">
 						   				<select id="weekDay" name="weekDay" >
@@ -217,9 +212,7 @@
 						   					<option value="20">08:00p</option>
 						   					<option value="22">10:00p</option>
 						   				</select>
-						   				
 						   			</div>
-
 						   			<div class="small-2 columns">
 						   				<button class="tiny" id="addTime">ADD</button>
 						   			</div>
@@ -230,30 +223,30 @@
 								  	</div>
 								</div>
 							</form>
-					   </div>
-					   <div class="content active" id="panel5">
-					     	<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="LocationForm" method="post" data-abide="ajax">
-					     		<div class="row">
-					     		<h4>Prefered location</h4>
-					     			<div class="small-8 columns">
-					     				<label for="location-label" class="right inline text-left error">Location
-					     					<input id="location" name="location" type="text"  required >
-					     					<span class="cross">x</span>
-					     				</label>
-					     			</div>
-					     			<div class="small-4 columns">
-					     				<button class="tiny" id="addLocation">Add</button>
-					     			</div>
-					     		</div>
-					     		<div class="row">
-					   		  	<div class="small-4 small-centered columns">
-					   		  		<button type="submit" class="button small radius" id="coPaypal">Next</button>
-					   		  	</div>
-					   		</div>
-					     	</form>	
-					   </div>
-					</div>
-				</form>
+				   		</div>
+				    </div>
+				   <div class="content" id="panel5">
+				     	<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="LocationForm" method="post" data-abide="ajax">
+				     		<div class="row">
+				     		<h4>Prefered location</h4>
+				     			<div class="small-8 columns">
+				     				<label for="location-label" class="right inline text-left error">Location
+				     					<input id="location" name="location" type="text"  required >
+				     					<span class="cross">x</span>
+				     				</label>
+				     			</div>
+				     			<div class="small-4 columns">
+				     				<button class="tiny" id="addLocation">Add</button>
+				     			</div>
+				     		</div>
+				     		<div class="row">
+				   		  	<div class="small-4 small-centered columns">
+				   		  		<button type="submit" class="button small radius" id="coPaypal">Next</button>
+				   		  	</div>
+				   		</div>
+				     	</form>	
+				   </div>
+				</div>
 			</div>
 		</div>
 		<?php } if($this->moduleNo ==3) { ?>
