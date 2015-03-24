@@ -35,22 +35,179 @@ ul li {
   background-color: transparent;
 }
 
-/* line 36, ../scss/global.scss */
+/* line 37, ../scss/global.scss */
+.navigation .top-bar .right a {
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  display: block;
+  float: left;
+  padding: 0 25px;
+}
+/* line 42, ../scss/global.scss */
+.navigation .top-bar .right a:last-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+/* line 45, ../scss/global.scss */
+.navigation .top-bar .right a:hover {
+  background-color: #F7941E;
+}
+/* line 53, ../scss/global.scss */
 .navigation .top-bar a {
   color: #fefefe;
 }
 
-/* line 42, ../scss/global.scss */
+/* line 60, ../scss/global.scss */
+.sideNavigation .panel, .sideNavigation .userPref .companyName, .userPref .sideNavigation .companyName, .sideNavigation .userPref .prefLocation, .userPref .sideNavigation .prefLocation {
+  display: table;
+}
+/* line 64, ../scss/global.scss */
+.sideNavigation .panel .side-nav li, .sideNavigation .userPref .companyName .side-nav li, .userPref .sideNavigation .companyName .side-nav li, .sideNavigation .userPref .prefLocation .side-nav li, .userPref .sideNavigation .prefLocation .side-nav li {
+  width: 100%;
+}
+/* line 66, ../scss/global.scss */
+.sideNavigation .panel .side-nav li a, .sideNavigation .userPref .companyName .side-nav li a, .userPref .sideNavigation .companyName .side-nav li a, .sideNavigation .userPref .prefLocation .side-nav li a, .userPref .sideNavigation .prefLocation .side-nav li a {
+  color: #333;
+}
+/* line 69, ../scss/global.scss */
+.sideNavigation .panel .side-nav li i, .sideNavigation .userPref .companyName .side-nav li i, .userPref .sideNavigation .companyName .side-nav li i, .sideNavigation .userPref .prefLocation .side-nav li i, .userPref .sideNavigation .prefLocation .side-nav li i {
+  margin-right: 10px;
+}
+
+/* line 78, ../scss/global.scss */
 .questions {
   background-color: #13487C;
   color: #ddd;
 }
-/* line 43, ../scss/global.scss */
+/* line 79, ../scss/global.scss */
 .questions h1 {
   color: #ddd;
 }
 
-/* line 50, ../scss/global.scss */
+/* line 86, ../scss/global.scss */
 section[role="footer"] {
   background-color: #04121E;
+}
+
+/* line 90, ../scss/global.scss */
+#mainContent {
+  margin-top: 35px;
+}
+
+/* line 95, ../scss/global.scss */
+.forms label {
+  border: none;
+  padding: 0.47rem 0.2rem;
+  color: #777;
+  position: relative;
+}
+/* line 101, ../scss/global.scss */
+.forms label span.cross {
+  background-color: #ff6e51;
+  border-radius: 50%;
+  color: #fff;
+  display: none;
+  font-size: 0.6rem;
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  top: 40px;
+  vertical-align: middle;
+  width: 20px;
+}
+/* line 120, ../scss/global.scss */
+.forms div.error span.cross {
+  display: block;
+}
+/* line 126, ../scss/global.scss */
+.forms input {
+  border: none;
+  border-bottom: 1px solid #aaa;
+}
+/* line 131, ../scss/global.scss */
+.forms #province {
+  color: #999;
+  background-color: #eee;
+}
+
+/* line 142, ../scss/global.scss */
+.tabs-content > .content {
+  margin-top: 4rem;
+}
+
+/* line 147, ../scss/global.scss */
+h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* line 153, ../scss/global.scss */
+.userBasic #userName {
+  font-size: 18px;
+  text-transform: capitalize;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 5px;
+  display: block;
+  margin-bottom: 10px;
+}
+/* line 162, ../scss/global.scss */
+.userBasic .userSubInfo {
+  display: block;
+}
+/* line 165, ../scss/global.scss */
+.userBasic .userSubInfo div {
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+/* line 168, ../scss/global.scss */
+.userBasic .userSubInfo div i {
+  margin-right: 10px;
+}
+/* line 178, ../scss/global.scss */
+.userBasic #userImage {
+  border: 1px solid #f0f0f0;
+  display: block;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  line-height: 250px;
+  vertical-align: middle;
+}
+/* line 186, ../scss/global.scss */
+.userBasic #userImage img {
+  display: table;
+  margin: 0 auto;
+}
+
+/* line 196, ../scss/global.scss */
+.userPayment div span:first-child {
+  text-align: right;
+  width: 160px;
+  display: inline-block;
+  color: #666;
+}
+/* line 201, ../scss/global.scss */
+.userPayment div span:first-child:after {
+  content: ":";
+  padding: 0 10px;
+}
+
+/* line 210, ../scss/global.scss */
+.userPref {
+  margin-top: 2.5rem;
+}
+/* line 212, ../scss/global.scss */
+.userPref .companyName, .userPref .prefLocation {
+  padding: 0.2rem 0.9rem;
+  margin: 0.7rem;
+}
+/* line 217, ../scss/global.scss */
+.userPref .companyName a, .userPref .prefLocation a {
+  margin-left: 5px;
+}
+
+/* line 232, ../scss/global.scss */
+.jobPosting div i {
+  margin-right: 10px;
 }

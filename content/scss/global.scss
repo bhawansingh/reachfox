@@ -33,9 +33,45 @@ ul li { float: left;list-style: none;}
 
 .navigation{
 	.top-bar{
+		.right{
+			a{
+				border-left:1px solid rgba(255,255,255,0.25);
+				display: block;
+				float: left;
+				padding: 0 25px;
+				&:last-child{
+					border-right:1px solid rgba(255,255,255,0.25); 
+				}
+				&:hover{
+					background-color: #F7941E;
+
+				}
+
+			}
+		}
+
 		a{
 			color: #fefefe;
 		}
+	}
+}
+
+.sideNavigation{
+	.panel{
+		display: table;
+		.side-nav{
+			
+			li{
+				width: 100%;
+				a{
+					color: #333;
+				}
+				i{
+					margin-right: 10px;
+				}
+			}
+		}
+		
 	}
 }
 
@@ -49,4 +85,152 @@ ul li { float: left;list-style: none;}
 
 section[role="footer"]{
 	background-color: $bgDark;
+}
+
+#mainContent{
+	margin-top: 35px;
+}
+
+.forms{ 
+    label{
+        border:none;
+        // border-bottom: 1px solid #aaa;
+        padding:0.47rem 0.2rem;
+        color: #777;
+        position: relative;
+        span.cross{
+            background-color: #ff6e51;
+            border-radius: 50%;
+            color: #fff;
+            display: none;
+            font-size: 0.6rem;
+            font-weight: bold;
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            right: 20px;
+            text-align: center;
+            top: 40px;
+            vertical-align: middle;
+            width: 20px;
+        }
+    }
+
+    div.error{
+        span.cross{
+            display: block;
+        }
+
+    }
+
+    input{
+        border: none;
+        border-bottom: 1px solid #aaa;
+
+    }
+    #province{
+            color:#999;
+            background-color: #eee;
+    }
+}
+
+
+.company_block{
+    //background-color: #f9f9f9;
+}
+
+.tabs-content > .content{
+	margin-top: 4rem;
+}
+
+// ------------------------------------Profile Page -------------------------------------------------------------
+h4{
+	margin-top: 0;
+	margin-bottom:1rem;
+}
+.userBasic{
+
+	#userName{
+			font-size: 18px;
+			text-transform: capitalize;
+			border-bottom: 1px solid rgba(0,0,0,0.2);
+			padding-bottom: 5px;
+			display: block;
+			margin-bottom: 10px;
+		}
+
+	.userSubInfo{
+		display: block;
+		
+		div{
+			padding-left: 10px;
+			margin-bottom: 10px;
+			i{
+				margin-right: 10px;
+			}
+		}
+		#userAddress{
+			span{
+			}
+		}
+	}
+
+	#userImage{
+		border:1px solid #f0f0f0;
+		display: block;
+		width: 250px;
+		height: 250px;
+		text-align: center;
+		line-height: 250px;
+		vertical-align: middle;
+		img{
+			display: table;
+			margin: 0 auto;
+		}
+	}
+}
+
+.userPayment{
+	div{
+		span{
+			&:first-child{
+				text-align: right;
+				width: 160px;
+				display: inline-block;
+				color: #666;
+				&:after{
+					content: ":";
+					padding: 0 10px;
+				}
+			}
+		}
+	}
+}
+
+.userPref{
+	margin-top: 2.5rem;
+	.companyName{
+		@extend .panel;
+		@extend .callout !optional;
+		padding: 0.2rem 0.9rem;
+		margin: 0.7rem;
+		a{
+			margin-left: 5px;
+		}
+	}
+
+	.prefLocation{
+		@extend .companyName;
+	}
+}
+
+
+//-----------------------JOB LISTING--------------------------------
+
+.jobPosting{
+	div{
+		i{
+			margin-right: 10px;
+		}
+	}
 }
