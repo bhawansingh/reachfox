@@ -33,12 +33,18 @@
 					case 'feedback': 
 						include 'views/feedback.php'; 
 						break;
-					case 'faq':
-						$this->faq(); 
-						break;
 					case 'companyAdd': 
 						$this->companyAdd(); 
 						break;
+					// @Gulnar FAQ Features 
+					//Added by Bhawan
+					case 'feedback':
+						include 'views/feedback.php'; 
+						break;
+					case 'faq':
+						$this->faq(); 
+						break;
+
 				}
 			}
 			
@@ -109,24 +115,6 @@
 			 }
 		}
 
-		public function feedbackAdd(){
-			$this->model = new feedbackDB();
-			$this->model->setFirstName($_POST['firstName']);
- 			$this->model->setLastName($_POST['lastName']);
- 			$this->model->setEmail($_POST['email']);
- 			$this->model->setMessage($_POST['message']);
- 			
-	 		if($this->model->addFeedback()){
-	 			//To DO Make an better response page
-            	echo "Thank You for the feedback ".$_POST['firstName']." ".$_POST['lastName'];
-			}
-		}
-
-		public function faq(){
-			$this->model = new faqDB();	
-			include 'views/faq.php';
-		}
-
 		public function companyAdd(){
 			$this->model = new companyDB();
 			$this->model->setName($_POST['name']);
@@ -134,15 +122,43 @@
 			$this->model->setUnit($_POST['unit']);
 			$this->model->setStreet($_POST['street']);
 			$this->model->setCity($_POST['city']);
+			$this->model->setActCode($this->generateActCode());
 			//Hard code Province to ON for now.
 			//Hopefully someday this won't be the case. 
 			//$this->model->setProvince($_POST['province']);
 			$this->model->setProvince('ON');
-
 			$this->model->setPostalCode($_POST['postalcode']);
-			$this->model->addCompany();
 			//Redirect to company Rep. Add form
-			header("location: company/index.php?action=home");
+			if ($this->model->addCompany() == 1)
+			{
+				$this->model->getCompanyID();
+				$_SESSION["companyID"] = $this->model->getCompanyID();
+				$message = "Click here to activate your Reachfox account <a href='http://www.reachfox.com/index.php?action=activation&code=".$this->model->getActCode()."''>Active Account</a>";
+				//mail::sendMail($this->model->getEmail,"Reachfox Activation Mail");
+				//Don't redirect user to activation page in production version
+				header("location: company/index.php?action=activation&code={$this->model->getActCode()}&cid={$this->model->getCompanyID()}&rid={$this->model->getRepresentiveID()}");	
+			}
+			else
+				include 'views/index.php';
+			
+		}
+        
+        public function faqSubmit(){
+			$this->model = new faqDB();
+			$this->model->setquestion($_POST['question']);
+ 			$this->model->setanswer($_POST['answer']);
+            
+	 		if($this->model->addFaq()){
+
+            	echo "FAQ added! ";
+
+                 
+			}
+		}
+
+		public function faq(){
+			$this->model = new faqDB;	
+			include 'views/faq.php';
 		}
 	}
 ?>

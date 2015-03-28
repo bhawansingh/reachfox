@@ -25,11 +25,11 @@
 	private $weekDay;
 	private $credibility;	
 	private $location;
+	private $shiftID;
 
 	public function __construct(){
 
 	}
-
 
 	public function getID(){ return $this->id; }
 
@@ -129,6 +129,11 @@
 	public function getLocation(){ return $this->location;}
 
 	public function setLocation($value){ $this->location = $value; }
+	
+	public function getShiftID(){ return $this->shiftID; }
+
+	public function setShiftID($value){ $this->shiftID= $value; }
+
 
 	//Add new user to database
 	public function addUser(){
@@ -223,7 +228,6 @@
 		return $userStatus;
 	}
 
-
 	public function getUserActivationCode(){
 		$dbCon = Database::connectDB();
 		$query = "SELECT code FROM us_activation where userID ='".$this->getID()."'";
@@ -281,7 +285,6 @@
 		return $bankUpdated;
 	}
 
-
 	public  function getPrefTime(){
 		$dbCon = Database::connectDB();
 		$query = "SELECT start,end,weekDay FROM us_PrefTime WHERE userID = '".$this->getID()."';";
@@ -318,7 +321,6 @@
 		$dbCon = Database::connectDB();
 		$query = "SELECT name,userID,companyID FROM cp_company INNER JOIN us_PrefCompany ON companyID =  id WHERE userID ='".$this->getID()."';";
 		return $dbCon->query($query);
-
 	}
 
 	public function getPrefLocation(){
@@ -336,7 +338,53 @@
 					  '".$this->getLocation()."'
 					);";
 		return $dbCon->exec($query);
+	}
 
+	public function requestShift(){
+		$dbCon = Database::ConnectDB();
+		// Get the time difference first 
+		$queryShift = "SELECT TIMEDIFF(endTime,startTime) 'tf' FROM cp_shifts WHERE id = {$this->getShiftID()}";
+		$timeDiff = $dbCon->query($queryShift);
+		$shiftDuration = "";
+
+		foreach($timeDiff as $tf){
+			$shiftDuration = $tf['tf'];
+		}
+
+		$query = "INSERT INTO jb_logs 
+					(userID, shiftID,hours)
+				VALUES
+					('{$this->getID()}',
+					 '{$this->getShiftID()}',
+					 '$shiftDuration'
+					 )";
+
+		return $dbCon->query($query);
+	}
+
+	public function getShifts(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM  jb_logs 
+					INNER JOIN cp_shifts 
+						ON jb_logs.shiftID = cp_shifts.id
+					INNER JOIN cp_jobs
+						ON cp_shifts.jobID = cp_jobs.id    
+					WHERE   userID ={$this->getID()} ";
+
+		return $dbCon->query($query);
+	}
+
+	public function getUnpaidShifts(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM  us_payment
+					INNER JOIN cp_shifts 
+						ON us_payment.shiftID = cp_shifts.id
+					INNER JOIN cp_jobs
+						ON cp_shifts.jobID = cp_jobs.id    
+					WHERE   userID ={$this->getID()} and
+							paid = 0 ";
+
+		return $dbCon->query($query);
 	}
 
 	// Classes Ends

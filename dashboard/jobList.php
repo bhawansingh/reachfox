@@ -16,9 +16,6 @@
 						<div class="small-8 columns">
 							<h2>Job Listing</h2>
 						</div>
-						<div class="small-4 columns">
-							<a href="index.php?action=jobAdd" class="button">Add Job</a>
-						</div>
 					</div>
 					
 					
@@ -30,15 +27,18 @@
 						$jobSet = $this->model->getJobs();
 						echo '<div class="row jobPosting">';
 						foreach ($jobSet as $js) {
-							echo '<div class="small-12 medium-4 columns panel">';
-							echo '<h4>'.$js['title'].'</h4>';
-							echo '<p>'.$js['description'].'</p>';
-							echo '<div><i class="fa fa-map-marker"></i>'.$js['location'].'</div>';
 							$this->model->setJobID($js['id']);
-							echo '<div>'.'<a class="button tiny" href="index.php?action=addShift&jid='.$this->model->getJobID().'">Add Shift</a></div>';
-							echo '<div>'.'<a class="button tiny" href="index.php?action=shifts&jid='.$this->model->getJobID().'">View Shifts</a></div>';
-							
-							echo '</div>';
+							$shiftSet = $this->model->getShifts();
+							foreach ($shiftSet as $ss) {
+								echo '<div class="small-12 medium-4 columns panel">';
+								echo '<h4>'.$js['title'].'</h4>';
+								echo '<p>'.$js['description'].'</p>';
+								echo '<div><i class="fa fa-usd"></i>'.$js['pay'].'</div>';
+								echo '<div><i class="fa fa-map-marker"></i>'.$js['location'].'</div>';
+								echo '<div>'.'<span>'.$ss['startTime'].' - '.$ss['endTime'].' : '.$ss['requirement'].'</div>';
+								echo '<div>'.'<a class="button tiny" href="index.php?action=requestShift&sid='.$ss['id'].'">Request Shift</a></div>';
+								echo '</div>';
+							}
 						}
 					?>
 					</div>
