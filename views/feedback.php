@@ -6,9 +6,7 @@
  	if(isset($_POST['feedSubmit'])){
  		$this->invoke();
  	}
-	
- 
-	
+ 		
 ?>
 
 <link rel="stylesheet" type="text/css" href="../content/stylesheets/home.css">

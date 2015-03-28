@@ -15,6 +15,27 @@ ul{
 ul li { float: left;list-style: none;}
 
 // Buttons
+table .button{
+	margin: 0;
+}
+
+.cross{
+    background-color: #ff6e51;
+    border-radius: 50%;
+    color: #fff;
+    display: none;
+    font-size: 0.6rem;
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 40px;
+    vertical-align: middle;
+    width: 20px;
+ }
+
 .btnTrans{
 	background-color: transparent;
 	border: 1px solid #efefef;
@@ -35,12 +56,12 @@ ul li { float: left;list-style: none;}
 	.top-bar{
 		.right{
 			a{
-				border-left:1px solid rgba(255,255,255,0.25);
+				//border-left:1px solid rgba(255,255,255,0.25);
 				display: block;
 				float: left;
 				padding: 0 25px;
 				&:last-child{
-					border-right:1px solid rgba(255,255,255,0.25); 
+					//border-right:1px solid rgba(255,255,255,0.25); 
 				}
 				&:hover{
 					background-color: #F7941E;
@@ -94,25 +115,12 @@ section[role="footer"]{
 .forms{ 
     label{
         border:none;
-        // border-bottom: 1px solid #aaa;
+        //border-bottom: 1px solid #aaa;
         padding:0.47rem 0.2rem;
         color: #777;
         position: relative;
-        span.cross{
-            background-color: #ff6e51;
-            border-radius: 50%;
-            color: #fff;
-            display: none;
-            font-size: 0.6rem;
-            font-weight: bold;
-            height: 20px;
-            line-height: 20px;
-            position: absolute;
-            right: 20px;
-            text-align: center;
-            top: 40px;
-            vertical-align: middle;
-            width: 20px;
+        span{
+        	@extend .cross;
         }
     }
 
@@ -233,4 +241,14 @@ h4{
 			margin-right: 10px;
 		}
 	}
+}
+
+.form-block{
+	.panel{
+		padding: 10px;
+	}
+	.cross{
+		top:12px;
+	}
+
 }

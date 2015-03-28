@@ -16,91 +16,12 @@ ul li {
 }
 
 /* line 18, ../scss/global.scss */
-.btnTrans {
-  background-color: transparent;
-  border: 1px solid #efefef;
-  text-transform: uppercase;
+table .button {
+  margin: 0;
 }
+
 /* line 22, ../scss/global.scss */
-.btnTrans:hover {
-  background-color: #13487C;
-}
-
-/* line 27, ../scss/global.scss */
-.navigation {
-  background-color: #04121E;
-}
-/* line 29, ../scss/global.scss */
-.navigation .top-bar {
-  background-color: transparent;
-}
-
-/* line 37, ../scss/global.scss */
-.navigation .top-bar .right a {
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
-  display: block;
-  float: left;
-  padding: 0 25px;
-}
-/* line 42, ../scss/global.scss */
-.navigation .top-bar .right a:last-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.25);
-}
-/* line 45, ../scss/global.scss */
-.navigation .top-bar .right a:hover {
-  background-color: #F7941E;
-}
-/* line 53, ../scss/global.scss */
-.navigation .top-bar a {
-  color: #fefefe;
-}
-
-/* line 60, ../scss/global.scss */
-.sideNavigation .panel, .sideNavigation .userPref .companyName, .userPref .sideNavigation .companyName, .sideNavigation .userPref .prefLocation, .userPref .sideNavigation .prefLocation {
-  display: table;
-}
-/* line 64, ../scss/global.scss */
-.sideNavigation .panel .side-nav li, .sideNavigation .userPref .companyName .side-nav li, .userPref .sideNavigation .companyName .side-nav li, .sideNavigation .userPref .prefLocation .side-nav li, .userPref .sideNavigation .prefLocation .side-nav li {
-  width: 100%;
-}
-/* line 66, ../scss/global.scss */
-.sideNavigation .panel .side-nav li a, .sideNavigation .userPref .companyName .side-nav li a, .userPref .sideNavigation .companyName .side-nav li a, .sideNavigation .userPref .prefLocation .side-nav li a, .userPref .sideNavigation .prefLocation .side-nav li a {
-  color: #333;
-}
-/* line 69, ../scss/global.scss */
-.sideNavigation .panel .side-nav li i, .sideNavigation .userPref .companyName .side-nav li i, .userPref .sideNavigation .companyName .side-nav li i, .sideNavigation .userPref .prefLocation .side-nav li i, .userPref .sideNavigation .prefLocation .side-nav li i {
-  margin-right: 10px;
-}
-
-/* line 78, ../scss/global.scss */
-.questions {
-  background-color: #13487C;
-  color: #ddd;
-}
-/* line 79, ../scss/global.scss */
-.questions h1 {
-  color: #ddd;
-}
-
-/* line 86, ../scss/global.scss */
-section[role="footer"] {
-  background-color: #04121E;
-}
-
-/* line 90, ../scss/global.scss */
-#mainContent {
-  margin-top: 35px;
-}
-
-/* line 95, ../scss/global.scss */
-.forms label {
-  border: none;
-  padding: 0.47rem 0.2rem;
-  color: #777;
-  position: relative;
-}
-/* line 101, ../scss/global.scss */
-.forms label span.cross {
+.cross, .forms label span {
   background-color: #ff6e51;
   border-radius: 50%;
   color: #fff;
@@ -116,33 +37,113 @@ section[role="footer"] {
   vertical-align: middle;
   width: 20px;
 }
-/* line 120, ../scss/global.scss */
-.forms div.error span.cross {
+
+/* line 39, ../scss/global.scss */
+.btnTrans {
+  background-color: transparent;
+  border: 1px solid #efefef;
+  text-transform: uppercase;
+}
+/* line 43, ../scss/global.scss */
+.btnTrans:hover {
+  background-color: #13487C;
+}
+
+/* line 48, ../scss/global.scss */
+.navigation {
+  background-color: #04121E;
+}
+/* line 50, ../scss/global.scss */
+.navigation .top-bar {
+  background-color: transparent;
+}
+
+/* line 58, ../scss/global.scss */
+.navigation .top-bar .right a {
+  display: block;
+  float: left;
+  padding: 0 25px;
+}
+/* line 66, ../scss/global.scss */
+.navigation .top-bar .right a:hover {
+  background-color: #F7941E;
+}
+/* line 74, ../scss/global.scss */
+.navigation .top-bar a {
+  color: #fefefe;
+}
+
+/* line 81, ../scss/global.scss */
+.sideNavigation .panel, .sideNavigation .userPref .companyName, .userPref .sideNavigation .companyName, .sideNavigation .userPref .prefLocation, .userPref .sideNavigation .prefLocation {
+  display: table;
+}
+/* line 85, ../scss/global.scss */
+.sideNavigation .panel .side-nav li, .sideNavigation .userPref .companyName .side-nav li, .userPref .sideNavigation .companyName .side-nav li, .sideNavigation .userPref .prefLocation .side-nav li, .userPref .sideNavigation .prefLocation .side-nav li {
+  width: 100%;
+}
+/* line 87, ../scss/global.scss */
+.sideNavigation .panel .side-nav li a, .sideNavigation .userPref .companyName .side-nav li a, .userPref .sideNavigation .companyName .side-nav li a, .sideNavigation .userPref .prefLocation .side-nav li a, .userPref .sideNavigation .prefLocation .side-nav li a {
+  color: #333;
+}
+/* line 90, ../scss/global.scss */
+.sideNavigation .panel .side-nav li i, .sideNavigation .userPref .companyName .side-nav li i, .userPref .sideNavigation .companyName .side-nav li i, .sideNavigation .userPref .prefLocation .side-nav li i, .userPref .sideNavigation .prefLocation .side-nav li i {
+  margin-right: 10px;
+}
+
+/* line 99, ../scss/global.scss */
+.questions {
+  background-color: #13487C;
+  color: #ddd;
+}
+/* line 100, ../scss/global.scss */
+.questions h1 {
+  color: #ddd;
+}
+
+/* line 107, ../scss/global.scss */
+section[role="footer"] {
+  background-color: #04121E;
+}
+
+/* line 111, ../scss/global.scss */
+#mainContent {
+  margin-top: 35px;
+}
+
+/* line 116, ../scss/global.scss */
+.forms label {
+  border: none;
+  padding: 0.47rem 0.2rem;
+  color: #777;
+  position: relative;
+}
+/* line 128, ../scss/global.scss */
+.forms div.error span.cross, .forms div.error label span, .forms label div.error span {
   display: block;
 }
-/* line 126, ../scss/global.scss */
+/* line 134, ../scss/global.scss */
 .forms input {
   border: none;
   border-bottom: 1px solid #aaa;
 }
-/* line 131, ../scss/global.scss */
+/* line 139, ../scss/global.scss */
 .forms #province {
   color: #999;
   background-color: #eee;
 }
 
-/* line 142, ../scss/global.scss */
+/* line 150, ../scss/global.scss */
 .tabs-content > .content {
   margin-top: 4rem;
 }
 
-/* line 147, ../scss/global.scss */
+/* line 155, ../scss/global.scss */
 h4 {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-/* line 153, ../scss/global.scss */
+/* line 161, ../scss/global.scss */
 .userBasic #userName {
   font-size: 18px;
   text-transform: capitalize;
@@ -151,20 +152,20 @@ h4 {
   display: block;
   margin-bottom: 10px;
 }
-/* line 162, ../scss/global.scss */
+/* line 170, ../scss/global.scss */
 .userBasic .userSubInfo {
   display: block;
 }
-/* line 165, ../scss/global.scss */
+/* line 173, ../scss/global.scss */
 .userBasic .userSubInfo div {
   padding-left: 10px;
   margin-bottom: 10px;
 }
-/* line 168, ../scss/global.scss */
+/* line 176, ../scss/global.scss */
 .userBasic .userSubInfo div i {
   margin-right: 10px;
 }
-/* line 178, ../scss/global.scss */
+/* line 186, ../scss/global.scss */
 .userBasic #userImage {
   border: 1px solid #f0f0f0;
   display: block;
@@ -174,40 +175,49 @@ h4 {
   line-height: 250px;
   vertical-align: middle;
 }
-/* line 186, ../scss/global.scss */
+/* line 194, ../scss/global.scss */
 .userBasic #userImage img {
   display: table;
   margin: 0 auto;
 }
 
-/* line 196, ../scss/global.scss */
+/* line 204, ../scss/global.scss */
 .userPayment div span:first-child {
   text-align: right;
   width: 160px;
   display: inline-block;
   color: #666;
 }
-/* line 201, ../scss/global.scss */
+/* line 209, ../scss/global.scss */
 .userPayment div span:first-child:after {
   content: ":";
   padding: 0 10px;
 }
 
-/* line 210, ../scss/global.scss */
+/* line 218, ../scss/global.scss */
 .userPref {
   margin-top: 2.5rem;
 }
-/* line 212, ../scss/global.scss */
+/* line 220, ../scss/global.scss */
 .userPref .companyName, .userPref .prefLocation {
   padding: 0.2rem 0.9rem;
   margin: 0.7rem;
 }
-/* line 217, ../scss/global.scss */
+/* line 225, ../scss/global.scss */
 .userPref .companyName a, .userPref .prefLocation a {
   margin-left: 5px;
 }
 
-/* line 232, ../scss/global.scss */
+/* line 240, ../scss/global.scss */
 .jobPosting div i {
   margin-right: 10px;
+}
+
+/* line 247, ../scss/global.scss */
+.form-block .panel, .form-block .userPref .companyName, .userPref .form-block .companyName, .form-block .userPref .prefLocation, .userPref .form-block .prefLocation {
+  padding: 10px;
+}
+/* line 250, ../scss/global.scss */
+.form-block .cross, .form-block .forms label span, .forms label .form-block span {
+  top: 12px;
 }
