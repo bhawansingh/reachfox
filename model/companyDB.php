@@ -20,9 +20,15 @@
 		private $location;
 
 		//Shift
+		private $shiftID;
 		private $shiftRequirement;
 		private $shiftEndTime;
 		private $shiftStartTime;
+		private $shiftDate;
+
+		//Representive
+		private $representiveID;
+		private $actCode;
 
 		public function __construct(){
 			
@@ -96,6 +102,24 @@
 
 		public function setShiftEndTime($value){ $this->shiftEndTime = $value; }
 
+		public function getShiftID(){return $this->shiftID;}
+
+		public function setShiftID($value){ $this->shiftID = $value;}
+
+		public function getRepresentiveID(){return $this->representativeID;}
+
+		public function setRepresentiveID($value){ $this->representativeID = $value;}
+
+		public function getActCode(){return $this->actCode;}
+
+		public function setActCode($value){ $this->actCode = $value;}
+
+		public function getShiftDate(){return date('m-d-Y',strtotime($this->shiftDate));}
+
+		public function setShiftDate($value){ $this->shiftDate = date('Y-m-d',strtotime($value));}
+
+
+
 		//Add new Comany to database
 		public function addCompany(){
 			//create DB Object
@@ -103,7 +127,7 @@
 			$queryCoAdd = "INSERT INTO cp_company
 							(name,email,unit,street,city,province,postalcode)
 							VALUES
-							('{$this->getName()}',
+							(	'{$this->getName()}',
 								'{$this->getEmail()}',
 								'{$this->getUnit()}',
 								'{$this->getStreet()}',
@@ -111,26 +135,114 @@
 								'{$this->getProvince()}',
 								'{$this->getPostalcode()}')";
 			$countCoAdd = $dbCon->exec($queryCoAdd);
+			
+				
+			// Add default representive
+			if($countCoAdd == 1){
+				$this->getCompanyIDbyEmail();
+				$queryReAdd = "INSERT INTO cp_representive
+							(firstName,lastName,companyID,department,email)
+							VALUES
+							( 'admin',
+							  'admin',
+							  '{$this->getCompanyID()}',
+							  'admin',
+							  '{$this->getEmail()}'
+							)";
+				
+				$countReAdd = $dbCon->exec($queryReAdd);
+				$this->getRepresentiveIDbyEmail();
+				//Do the Activation thing now
+				if($countReAdd == 1){
+					$queryUserActivation="INSERT INTO cp_activation
+											(companyID,representiveID,activation)
+								  			VALUES
+											  ('{$this->getCompanyID()}',
+											  	'{$this->getRepresentiveID()}',
+											  	'{$this->getActCode()}');";
+					$countCompanyActivation = $dbCon->exec($queryUserActivation);
+					
+					return $countCompanyActivation;
+				}
+			}
+
 			return $countCoAdd;
 		}
 
-		//Changed coID to companyID => Don't be lazy to type :P
 		public function getCompanyIDbyEmail(){
-			//create DB Object
+			//Create DB object
 			$dbCon = Database::connectDB();
-			$query = "SELECT id FROM cp_company where email='".$this->getEmail()."'";
-			$id = $dbCon->query($query);
+			$query = "SELECT id FROM  cp_company where email ='".$this->getEmail()."'";
+			$ids = $dbCon->query($query);
+			foreach($ids as $id){
+				$this->setCompanyID($id['id']);
+			}
 		}
+
+		public function getRepresentiveIDbyEmail(){
+			//Create DB object
+			$dbCon = Database::connectDB();
+			$query = "SELECT id FROM  cp_representive where email ='".$this->getEmail()."'";
+			$ids = $dbCon->query($query);
+			foreach($ids as $id){
+				$this->setRepresentiveID($id['id']);
+			}
+		}
+
+		public function getCompanyActivation(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT status 
+					FROM cp_activation 
+					WHERE companyID = {$this->getCompanyID()}
+						AND representiveID = {$this->getRepresentiveID()}";
+
+		$status = $dbCon->query($query);
+		$representiveStatus = 0;		
+			foreach($status as $statu){
+				$userStatus =  $statu['status'];
+			}
+		return $representiveStatus;
+	}
+
+	public function getCompanyActivationCode(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT activation 
+					FROM cp_activation 
+					WHERE companyID = {$this->getCompanyID()}
+						AND representiveID = {$this->getRepresentiveID()}";
+						
+		$status = $dbCon->query($query);
+		$dbCode = 0;		
+			foreach($status as $status){
+				$dbCode =  $status['activation'];
+			}
+		return $dbCode;
+	}
+
+	public function changeCompanyActivation(){
+		$dbcode = $this->getCompanyActivationCode();
+		if($dbcode == $this->getActCode()){
+			$dbCon = Database::connectDB();
+			$query = "UPDATE cp_activation  
+						SET status = 1 
+						WHERE companyID = {$this->getCompanyID()}
+						AND representiveID = {$this->getRepresentiveID()}";
+
+			$statusUpdated = $dbCon->exec($query);
+			return $statusUpdated;
+		}
+
+	}
+
 
 		public function addJob(){
 			$dbCon = Database::connectDB();
 			$query ="INSERT  INTO cp_jobs 
-						(title,description,companyID,pay,location)
+						(title,description,companyID,location)
 						VALUES
 						('{$this->getTitle()}',
 						 '{$this->getDescription()}',
 						 '{$this->getCompanyID()}',
-						 '{$this->getPay()}',
 						 '{$this->getLocation()}');";
 			$dbCon->exec($query);
 			return $dbCon->lastInsertId();
@@ -139,12 +251,14 @@
 		public function addShift(){
 			$dbCon = Database::connectDB();
 			$query = "INSERT into cp_shifts
-						(jobID,requirement,startTime,endTime)
+						(jobID,pay,requirement,startTime,endTime,shiftDate)
 						VALUES
 						('{$this->getJobID()}',
+						 '{$this->getPay()}',
 						 '{$this->getShiftRequirement()}',
 						 '{$this->getShiftStartTime()}',
-						 '{$this->getShiftEndTime()}'
+						 '{$this->getShiftEndTime()}',
+						 '{$this->getShiftDate()}'
 						)";
 			return $dbCon->exec($query);
 		}
@@ -160,6 +274,14 @@
 			// 	$query = "SELECT * FROM cp_jobs LEFT JOIN cp_shifts ON cp_jobs.id = jobID";
 			$query = "SELECT * FROM cp_jobs";
 			return $dbCon->query($query);
+		}
+
+		public function getJobByID(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT * FROM cp_jobs 
+						WHERE id = {$this->getJobID()}";
+			return $dbCon->query($query);
+
 		}
 
 		public function getShifts(){
@@ -179,7 +301,24 @@
 				$this->setPay($rs['pay']);
 				$this->setLocation($rs['location']);
 			}
+			return $resultSet;
+		}
 
+		public function listUsersOfShiftByID(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT * FROM jb_logs
+						INNER JOIN us_userInfo  ON jb_logs.userID = us_userInfo.id
+						INNER JOIN cp_shifts ON jb_logs.shiftID = cp_shifts.id
+						WHERE shiftID = {$this->getShiftID()}";
+			//TO-DO implement this function in better way. By using SQL buffer maybe.
+			$resultSet = $dbCon->query($query);
+			foreach($resultSet as $rs){
+				$this->setJobID($rs['jobID']);
+				$this->getJobInfoByID();
+
+			}
+			$resultSet = $dbCon->query($query);
+			return $resultSet;
 		}
 
 

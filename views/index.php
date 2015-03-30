@@ -137,31 +137,31 @@
 			<!-- Comapny Name -->
 			    <div class="large-12 columns">
 		        	<label for="right-label" class="right inline text-left">Company Name
-		          		<input id="name" name="name" type="text" placeholder="">
+		          		<input id="name" name="name" type="text" placeholder="" required>
 		          	</label>
 			    </div>
 
 			<!-- Email ID -->
 			    <div class="large-12 columns">
 		        	<label for="right-label" class="right inline text-left">Email
-		          		<input id="email" name="email" type="text" placeholder="">
+		          		<input id="email" name="email" type="text" placeholder="" required>
 		          	</label>
 			    </div>
 
 			     <div class="large-12 columns">
 			        	<label for="right-label" class="right inline text-left">Unit #
-			          		<input id="unit" name="unit" type="text" placeholder="">
+			          		<input id="unit" name="unit" type="text" placeholder="" required>
 			          	</label>
 			        </div>
 			        <div class="small-8 columns">
 			        	<label for="right-label" class="right inline text-left">Street
-			          		<input id="street" name="street" type="text" placeholder="">
+			          		<input id="street" name="street" type="text" placeholder="" required>
 			          	</label>
 			    </div>
 
 			    <div class="large-12 columns">
 			        	<label for="right-label" class="right inline text-left">City
-			          		<input id="city" name="city" type="text" placeholder="">
+			          		<input id="city" name="city" type="text" placeholder="" required>
 			          	</label>
 			        </div>
 			        <div class="small-2 columns">
@@ -171,7 +171,7 @@
 			        </div>
 			        <div class="small-5 columns">
 			        	<label for="right-label" class="right inline text-left">Postal Code
-			          		<input id="postalcode" name="postalcode" type="text" placeholder="">
+			          		<input id="postalcode" name="postalcode" type="text" placeholder="" required>
 			          	</label>
 			    </div>
 

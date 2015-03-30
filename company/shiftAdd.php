@@ -12,7 +12,7 @@
 		<div class="small-12 medium-9 large-9 columns">
 			<div class="row">
 				<div class="small-12 columns">
-					<h2>Add Shift</h2>
+					<h2>Add Shifts</h2>
 				</div>
 			</div>
 
@@ -21,7 +21,6 @@
 					<?php
 						$this->model->getJobInfoByID();
 						echo "<h4>".$this->model->getTitle()."</h4>"; 
-						echo '<span><i class="fa fa-usd"></i>'.$this->model->getPay()."</span>";
 						echo '<span><i class="fa fa-map-marker"></i>'.$this->model->getLocation()."</span>";
 					?>
 				</div>
@@ -37,6 +36,14 @@
 				<div class="small-12 medium-9 columns">
 					<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>?action=jobAdd" method="post" data-abide>
 						<div class="row">
+
+						    <div class="large-12 columns">
+					        	<label for="right-label" class="right inline text-left">Pay
+					          		<input id="shiftPay" name="shiftPay" type="number" placeholder="" required>
+					          		<span class="cross">x</span>
+					          	</label>
+						    </div>
+
 						    <div class="large-12 columns">
 					        	<label for="right-label" class="right inline text-left">People requirement
 					          		<input id="shiftRequirement" name="shiftRequirement" type="number" placeholder="" required>
@@ -61,6 +68,14 @@
 					          		<span class="cross">x</span>
 					          	</label>
 						    </div>
+						</div>
+
+						<div class="row">
+							<div class="small-12 columns">
+								<label for="right-label" class="right inline text-left">Date
+	    				         	<input type="text" id="shiftDate" name="shiftDate">
+		    					</label>
+							</div>
 						</div>		
 
 						<div class="large-12 columns">
@@ -79,9 +94,14 @@
 			
 		</div>
 	</div>
-
-
+	
+	</script>
 	<!-- Drum Rolls......Curtain comes down-->
 	<?php include("includes/footer.php") ?>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+	<script type="text/javascript">
+	$("#shiftDate").datepicker({minDate : 0});
+	</script>
 </body>
 </html>

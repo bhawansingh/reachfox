@@ -26,15 +26,26 @@ class dashboard{
 			}else{
 				switch($_GET['action']){
 					case 'activation':
-						$this->activationProcess();break;
+						$this->activationProcess();
+						break;
 					case 'settings':
-						include 'settings.php';break;
+						include 'settings.php';
+						break;
 					case 'profile';
-						$this->profile(); break;
+						$this->profile();
+						break;
 					case 'jobs';
-						$this->jobs(); break;
+						$this->jobs();
+						break;
+					case 'requestShift':
+						$this->requestShift();
+						break;
+					case 'home':
+						$this->home();
+						break;
 					case 'logout':
-						$this->logout(); break;
+						$this->logout();
+						break;
 				}
 			}
 	}
@@ -46,7 +57,6 @@ class dashboard{
 
 		//we can check if values is set here or else just hope it's set :P
 		if(isset($_SESSION['userID'])){
-
 			$this->model->setID($_SESSION['userID']);
 			$this->model->setActCode($_GET['code']);
 			//Check if ID is already activated
@@ -73,7 +83,7 @@ class dashboard{
 	}
 
 
-//Get User Availiablity time in correct Format
+	//Get User Availiablity time in correct Format
 	public function getPrefTime(){
 		$timeSlots = $this->model->getPrefTime();
 		$timeSlotsFormated = array();
@@ -143,9 +153,28 @@ class dashboard{
 	public function logout(){
 		unset($_SESSION['userID']);
 		header('Location: ../index.php');	
-
 	}
 
+	public function jobs(){
+		$this->model = new companyDB();
+		include 'jobList.php';
+	}
+
+	public function requestShift(){
+		$this->model = new userDB();
+		$this->model->setID($_SESSION['userID']);
+		$this->model->setShiftID($_GET['sid']);
+		$this->model->requestShift();
+		include 'dashboard.php';
+	}
+
+	public function home(){
+		$this->model = new userDB;
+		$this->model->setID($_SESSION['userID']);
+		
+		include 'dashboard.php';
+		
+	}
 
 }
 
