@@ -7,7 +7,7 @@
 				<a href="#">Learn</a>
 				<a href="#">Contact Us</a>
 				<a href="index.php?action=faq">FAQs</a>
-				<a href="#">Careers</a>
+				<a href="index.php?action=careers">Careers</a>
 			</section>	
 	</nav>
 </div>

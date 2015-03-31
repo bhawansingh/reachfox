@@ -221,3 +221,17 @@ h4 {
 .form-block .cross, .form-block .forms label span, .forms label .form-block span {
   top: 12px;
 }
+
+/* line 259, ../scss/global.scss */
+#loginModal h3 {
+  margin-bottom: 1.5rem;
+}
+/* line 262, ../scss/global.scss */
+#loginModal .tabs {
+  border: 1px solid #efefef;
+  width: 100%;
+}
+/* line 265, ../scss/global.scss */
+#loginModal .tabs li {
+  width: 50%;
+}
