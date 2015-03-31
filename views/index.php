@@ -205,33 +205,69 @@
 
 <!-- Login Modal -->
 <div id="loginModal" class="reveal-modal tiny forms" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2>Login</h2>
-  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>index.php?action=login" id="homeLogin" method="post" data-abide>
-	  <div class="row">
-	  	<div class="small-12 cols">
-  			<label for="right-label" class="right inline text-left">Email
-  		  		<input id="emailLogin" name="emailLogin" type="text"  placeholder="" required>
-  		  		<span class="cross">x</span>
-  		  	</label>
-	  	</div>
-	  </div>
+  <h3>Login</h3>
+  <ul class="tabs" data-tab>
+    <li class="tab-title active"><a href="#panel11">User</a></li>
+    <li class="tab-title"><a href="#panel21">Company</a></li>
+  </ul>
+  <div class="tabs-content">
+	  <div class="content active" id="panel11">
+	  	  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>index.php?action=login" id="login" method="post" data-abide>
+	  		  <div class="row">
+	  		  	<div class="small-12 cols">
+	  	  			<label for="right-label" class="right inline text-left">Email
+	  	  		  		<input id="emailLogin" name="emailLogin" type="text"  placeholder="" required>
+	  	  		  		<span class="cross">x</span>
+	  	  		  	</label>
+	  		  	</div>
+	  		  </div>
 
-	  <div class="row">
-	  	<div class="small-12 cols">
-  			<label for="right-label" class="right inline text-left">Password
-  		  		<input id="passwordLogin" name="passwordLogin" type="password" required placeholder="" >
-  		  		<span class="cross">x</span>
-  		  	</label>
-	  	</div>
-	  </div>
+	  		  <div class="row">
+	  		  	<div class="small-12 cols">
+	  	  			<label for="right-label" class="right inline text-left">Password
+	  	  		  		<input id="passwordLogin" name="passwordLogin" type="password" required placeholder="" >
+	  	  		  		<span class="cross">x</span>
+	  	  		  	</label>
+	  		  	</div>
+	  		  </div>
 
-	  <div class="row">
-	  	<div class="small-12 cols"><label for="right-label" class="right inline text-left">
-  		  		<input id="loginSubmit" name="loginSubmit" type="submit" value="Login" class="button small radius">
-	  	</div>
+	  		  <div class="row">
+	  		  	<div class="small-12 cols"><label for="right-label" class="right inline text-left">
+	  	  		  		<input id="loginSubmit" name="loginSubmit" type="submit" value="Login" class="button small radius">
+	  		  	</div>
+	  		  </div>
+	  	  </form>
 	  </div>
+	  <div class="content" id="panel21">
+	  	  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>index.php?action=companyLogin" id="CompanyLogin" method="post" data-abide>
+	  		  <div class="row">
+	  		  	<div class="small-12 cols">
+	  	  			<label for="right-label" class="right inline text-left">Representive email
+	  	  		  		<input id="emailLogin" name="emailLogin" type="text"  placeholder="" required>
+	  	  		  		<span class="cross">x</span>
+	  	  		  	</label>
+	  		  	</div>
+	  		  </div>
 
-  </form>
+	  		  <div class="row">
+	  		  	<div class="small-12 cols">
+	  	  			<label for="right-label" class="right inline text-left">Password
+	  	  		  		<input id="passwordLogin" name="passwordLogin" type="password" required placeholder="" >
+	  	  		  		<span class="cross">x</span>
+	  	  		  	</label>
+	  		  	</div>
+	  		  </div>
+
+	  		  <div class="row">
+	  		  	<div class="small-12 cols"><label for="right-label" class="right inline text-left">
+	  	  		  		<input id="compamnyLoginSubmit" name="companyLoginSubmit" type="submit" value="Login" class="button small radius">
+	  		  	</div>
+	  		  </div>
+	  	  </form>
+	  </div>
+  </div>
+
+
 </div>
 
 <!-- Drum Rolls......Curtain comes down-->
