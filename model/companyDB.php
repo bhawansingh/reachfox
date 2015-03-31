@@ -118,6 +118,44 @@
 
 		public function setShiftDate($value){ $this->shiftDate = date('Y-m-d',strtotime($value));}
 
+    //================== CR add get sets ================================================
+
+		public function getCRID(){ return $this->id; }
+
+		public function setCRID($value){ $this->id = $value; }
+
+		public function getFname(){ return $this->firstName; }
+		
+		public function setFname($value){ $this->firstName = $value; }
+
+		public function getLname(){ return $this->lastName; }
+
+		public  function setLname($value){ $this->lastName = $value; }
+
+		public function getDepartment(){ return $this->department; }
+
+		public function setDepartment($value){ $this->department = $value; }
+
+		public function getPassword(){ return $this->password; }
+
+		public function setPassword($value){ $this->password = $value; }
+
+		public function getCREmail(){ return $this->email; }
+
+		public function setCREmail($value){ $this->email = $value; }
+
+		public function getContact(){ return $this->contact; }
+
+		public function setContact($value){	$this->contact = $value;}
+
+		public function getExt(){ return $this->ext; }
+
+		public function setExt($value){ $this->ext = $value; }
+
+		public function getMobile(){ return $this->mobile; }
+
+		public function setMobile($value){ $this->mobile = $value; }		
+
 
 
 		//Add new Comany to database
@@ -320,6 +358,76 @@
 			$resultSet = $dbCon->query($query);
 			return $resultSet;
 		}
+
+		//Add new Supervisor to database
+		//Make sure you pass controller object
+		public function addSupervisor(){
+					//create object
+			$dbCon = Database::connectDB(); 
+				
+			$querySupAdd = "INSERT INTO cp_representive
+							(firstName,lastName,companyID,department,password,email,contact,contactExt,mobile)
+							VALUES
+							('{$this->getFname()}',
+							 '{$this->getLname()}',
+							 '102',
+							 '{$this->getDepartment()}',
+							 '{$this->getPassword()}',
+							 '{$this->getCREmail()}',
+							 '{$this->getContact()}',
+							 '{$this->getExt()}',
+							 '{$this->getMobile()}');";
+				$countSupAdd = $dbCon->exec($querySupAdd);
+				return $countSupAdd;
+		}
+
+		public function getSupervisor(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT * FROM cp_representive;";
+			return $dbCon->query($query);
+
+		}
+
+		public function updateCompanyRepresentive(){
+			$dbCon = Database::connectDB();
+			$query = "UPDATE cp_representive SET
+							firstName = '{$this->getFname()}',
+							lastName = '{$this->getLname()}',
+							department = '{$this->getDepartment()}',
+							email = '{$this->getCREmail()}',
+							password = '{$this->getPassword()}',
+							contact = '{$this->getContact()}',
+							contactExt = '{$this->getExt()}',
+							mobile = '{$this->getMobile()}'
+							WHERE id = '{$this->getCRID()}';";
+			return $dbCon->exec($query);
+		}
+
+		public function deleteSupervisor(){
+
+			$dbCon = Database::connectDB(); 
+			$query = "DELETE FROM cp_representive WHERE id ={$this->getCRID()}";
+			return $dbCon->exec($query);
+		}
+
+		public function getCRbyID(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT * FROM cp_representive WHERE id={$this->getCRID()};";
+			$super = $dbCon->query($query);
+
+			foreach ($super as $cr) {
+				# code...
+				//$this->setCRID($cr['id']);
+				$this->setFname($cr['firstName']);
+				$this->setLname($cr['lastName']);
+				$this->setDepartment($cr['department']);
+				$this->setCREmail($cr['email']);
+				$this->setPassword($cr['password']);
+				$this->setExt($cr['contactExt']);
+				$this->setContact($cr['contact']);
+				$this->setMobile($cr['mobile']);
+			}
+		}		
 
 
 	}
