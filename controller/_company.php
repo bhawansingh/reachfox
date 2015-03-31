@@ -40,6 +40,22 @@
 					case 'activation':
 						$this->activation();
 						break;
+					case 'crlist':
+						 $this->Crlist();
+						 break;	
+					case 'deleteCR':
+						$this->deleteCR();
+						break;
+					case 'updateCR':
+						 $this->updateCR();
+						 break;
+					case 'getCRbyID':
+						 $this->getCRbyID();
+						 break; 
+					case 'supervisorAdd':
+						$this->supervisorAdd();
+						break;
+
 				}
 			}
 		}
@@ -139,6 +155,77 @@
 			//$this->model->listUsersOfShiftByID();
 			include 'list.php';
 		}
+		public function supervisorAdd(){
+
+			if (isset($_POST['supSubmit'])) {
+				# code...
+				$this->model = new CompanyDB();
+		 		$this->model->setFname($_POST['firstName']);
+		 		$this->model->setLname($_POST['lastName']);
+		 		$this->model->setDepartment($_POST['department']);
+		 		$this->model->setPassword($_POST['password']);
+		 		$this->model->setCREmail($_POST['email']);
+		 		$this->model->setExt($_POST['ext']);
+		 		$this->model->setContact($_POST['contact']);
+				$this->model->setMobile($_POST['mobile']);
+				if ($this->model->addSupervisor()==1) {
+					# code...
+					include 'crList.php';
+				}
+			}
+				else
+				{
+					include 'supervisorAdd.php';
+				}
+		}
+
+		public function CrList()
+		{
+			include 'crList.php';
+		}
+
+		public function deleteCR()
+		{
+			$this->model = new CompanyDB();
+			$this->model->setCRID($_GET['id']);
+	 		if($this->model->deleteSupervisor()){
+            	echo "Supervisor deleted! ";
+                include 'crList.php';
+			}
+		}
+
+		public function getCRbyID(){
+
+			$this->model = new companyDB();
+			$this->model->setCRID($_GET['id']);
+			$this->model->getCRbyID();
+
+			//Implement this feature on single page in future either by PHP OR AJAX
+			include 'updateCR.php';
+
+
+		}
+
+		public function updateCR()
+		{
+			$this->model = new companyDB();
+			if (isset($_POST['upSubmit'])) {
+				$this->model->setCRID($_POST['id']);
+		 		$this->model->setFname($_POST['firstName']);
+		 		$this->model->setLname($_POST['lastName']);
+		 		$this->model->setDepartment($_POST['department']);
+		 		$this->model->setPassword($_POST['password']);
+		 		$this->model->setCREmail($_POST['email']);
+		 		$this->model->setExt($_POST['ext']);
+		 		$this->model->setContact($_POST['contact']);
+				$this->model->setMobile($_POST['mobile']);
+				$this->model->updateCompanyRepresentive();
+            	echo "Supervisor updated! ";
+            	 include 'crList.php';		
+			}
+
+		}
+		
 
 	}//Class Closes
 
