@@ -11,17 +11,17 @@
 	<?php include("includes/subNavigation.php") ?>
 	<div class="small-12 medium-9 large-9 columns">
 <?php 
-
+	
  	$jobname = $this->model->getReachFoxJobs();
 	foreach($jobname as $j)
 	{	
 		echo "<div class='small-4 columns'>";
-			echo "<div class='panel'>";
-		    //check to see if job is open	   
-		    echo $j['name'];
+			echo "<div class='panel'>";   
+		    echo '<a href="index.php?action=applicants&id='.$j['id'].'">' . $j['name'] . '</a>';
 		  	echo " <a class='button tiny' href='index.php?action=updateJob&id=".$j['id']."'>Edit</a>";
 		    echo " <a data-reveal-id='deleteJob-".$j['id']."' class='button tiny' href='index.php?action=deleteJob&id=".$j['id']."'>Delete</a>";
 		?>
+
 		<div id="deleteJob-<?php echo $j['id'] ?>" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 		  <span>Do you really want to delete the job ?</span>
 		  <a class='button tiny' href='index.php?action=deleteJob&id=<?php echo $j["id"] ?>'>Yes</a>

@@ -115,16 +115,12 @@ class careersDB{
         return $app_add;
     }
     
-    public  function getReachFoxApplicants($id) {
+    public  function getReachFoxApplicants() {
         $db = Database::connectDB();
         $query = "SELECT * FROM application
-                  WHERE jobid = '$id'";
+                  WHERE jobid = '{$this->getJobid()}'";
         $result = $db->query($query);
-        $applist = array();
-        foreach ($result as $row) {
-            $applist[] = new ReachFox_App ($row['jobid'], $row['fname'], $row['lname'], $row['email'], $row['pnumber'], $row['resume']);
-        }
-        return $applist;
+        return $result;
     }   
 
     public  function updateReachFoxJob(){

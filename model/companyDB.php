@@ -10,7 +10,7 @@
 		private $city;
 		private $province;
 		private $postalcode;
-		
+
 		// Job add
 		private $jobID;
 		private $title;
@@ -118,14 +118,14 @@
 
 		public function setShiftDate($value){ $this->shiftDate = date('Y-m-d',strtotime($value));}
 
-    //================== CR add get sets ================================================
+		//================== CR add get sets ================================================
 
 		public function getCRID(){ return $this->id; }
 
 		public function setCRID($value){ $this->id = $value; }
 
 		public function getFname(){ return $this->firstName; }
-		
+
 		public function setFname($value){ $this->firstName = $value; }
 
 		public function getLname(){ return $this->lastName; }
@@ -227,19 +227,19 @@
 			}
 		}
 
-		public function getCompanyActivation(){
-		$dbCon = Database::connectDB();
-		$query = "SELECT status 
-					FROM cp_activation 
-					WHERE companyID = {$this->getCompanyID()}
-						AND representiveID = {$this->getRepresentiveID()}";
-
-		$status = $dbCon->query($query);
-		$representiveStatus = 0;		
-			foreach($status as $statu){
-				$userStatus =  $statu['status'];
-			}
-		return $representiveStatus;
+	public function getCompanyActivation(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT status 
+						FROM cp_activation 
+						WHERE companyID = {$this->getCompanyID()}
+							AND representiveID = {$this->getRepresentiveID()}";
+			echo $query;
+			$status = $dbCon->query($query);
+			$representiveStatus = 0;		
+				foreach($status as $statu){
+					$representiveStatus =  $statu['status'];
+				}
+			return $representiveStatus;
 	}
 
 	public function getCompanyActivationCode(){
@@ -272,164 +272,188 @@
 
 	}
 
+	public function getRepresentivePassword(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT cp_representive.id AS 'representiveID',
+							 cp_company.id AS 'companyID', 
+							 password FROM cp_representive 
+						 INNER JOIN cp_company 
+						 	ON companyID = cp_company.id
+						 WHERE cp_representive.email ='".$this->getEmail()."'";
+		$loginInfo = $dbCon->query($query);
+		//echo $query;
+		return $loginInfo;
+	}
 
-		public function addJob(){
-			$dbCon = Database::connectDB();
-			$query ="INSERT  INTO cp_jobs 
-						(title,description,companyID,location)
-						VALUES
-						('{$this->getTitle()}',
-						 '{$this->getDescription()}',
-						 '{$this->getCompanyID()}',
-						 '{$this->getLocation()}');";
-			$dbCon->exec($query);
-			return $dbCon->lastInsertId();
-		}
 
-		public function addShift(){
-			$dbCon = Database::connectDB();
-			$query = "INSERT into cp_shifts
-						(jobID,pay,requirement,startTime,endTime,shiftDate)
-						VALUES
-						('{$this->getJobID()}',
-						 '{$this->getPay()}',
-						 '{$this->getShiftRequirement()}',
-						 '{$this->getShiftStartTime()}',
-						 '{$this->getShiftEndTime()}',
-						 '{$this->getShiftDate()}'
-						)";
-			return $dbCon->exec($query);
-		}
+	public function addJob(){
+		$dbCon = Database::connectDB();
+		$query ="INSERT  INTO cp_jobs 
+					(title,description,companyID,location)
+					VALUES
+					('{$this->getTitle()}',
+					 '{$this->getDescription()}',
+					 '{$this->getCompanyID()}',
+					 '{$this->getLocation()}');";
+		$dbCon->exec($query);
+		return $dbCon->lastInsertId();
+	}
 
-		public function getJobs(){
-			// $var = 1 just for jobs
-			// $var = 2 for jobs and shifts
+	public function addShift(){
+		$dbCon = Database::connectDB();
+		$query = "INSERT into cp_shifts
+					(jobID,pay,requirement,startTime,endTime,shiftDate)
+					VALUES
+					('{$this->getJobID()}',
+					 '{$this->getPay()}',
+					 '{$this->getShiftRequirement()}',
+					 '{$this->getShiftStartTime()}',
+					 '{$this->getShiftEndTime()}',
+					 '{$this->getShiftDate()}'
+					)";
+		return $dbCon->exec($query);
+	}
 
-			$dbCon = Database::connectDB();
-			// if($var == 1)
-			// 	$query = "SELECT * FROM cp_jobs";
-			// else if($var == 2)
-			// 	$query = "SELECT * FROM cp_jobs LEFT JOIN cp_shifts ON cp_jobs.id = jobID";
-			$query = "SELECT * FROM cp_jobs";
-			return $dbCon->query($query);
-		}
+	public function getJobs(){
+		// $var = 1 just for jobs
+		// $var = 2 for jobs and shifts
 
-		public function getJobByID(){
-			$dbCon = Database::connectDB();
-			$query = "SELECT * FROM cp_jobs 
-						WHERE id = {$this->getJobID()}";
-			return $dbCon->query($query);
+		$dbCon = Database::connectDB();
+		// if($var == 1)
+		// 	$query = "SELECT * FROM cp_jobs";
+		// else if($var == 2)
+		// 	$query = "SELECT * FROM cp_jobs LEFT JOIN cp_shifts ON cp_jobs.id = jobID";
+		$query = "SELECT * FROM cp_jobs";
+		return $dbCon->query($query);
+	}
 
-		}
-
-		public function getShifts(){
-			$dbCon = Database::connectDB();
-			$query = "SELECT * FROM cp_shifts where jobID={$this->getJobID()}";
-			return $dbCon->query($query);
-
-		}
-
-		public function getJobInfoByID(){
-			$dbCon = Database::connectDB();
-			$query = "SELECT * FROM cp_jobs WHERE id = {$this->getJobID()}";
-			$resultSet = $dbCon->query($query);
-			foreach($resultSet as $rs){
-				$this->setTitle($rs['title']);
-				$this->setDescription($rs['description']);
-				$this->setPay($rs['pay']);
-				$this->setLocation($rs['location']);
-			}
-			return $resultSet;
-		}
-
-		public function listUsersOfShiftByID(){
-			$dbCon = Database::connectDB();
-			$query = "SELECT * FROM jb_logs
-						INNER JOIN us_userInfo  ON jb_logs.userID = us_userInfo.id
-						INNER JOIN cp_shifts ON jb_logs.shiftID = cp_shifts.id
-						WHERE shiftID = {$this->getShiftID()}";
-			//TO-DO implement this function in better way. By using SQL buffer maybe.
-			$resultSet = $dbCon->query($query);
-			foreach($resultSet as $rs){
-				$this->setJobID($rs['jobID']);
-				$this->getJobInfoByID();
-
-			}
-			$resultSet = $dbCon->query($query);
-			return $resultSet;
-		}
-
-		//Add new Supervisor to database
-		//Make sure you pass controller object
-		public function addSupervisor(){
-					//create object
-			$dbCon = Database::connectDB(); 
-				
-			$querySupAdd = "INSERT INTO cp_representive
-							(firstName,lastName,companyID,department,password,email,contact,contactExt,mobile)
-							VALUES
-							('{$this->getFname()}',
-							 '{$this->getLname()}',
-							 '102',
-							 '{$this->getDepartment()}',
-							 '{$this->getPassword()}',
-							 '{$this->getCREmail()}',
-							 '{$this->getContact()}',
-							 '{$this->getExt()}',
-							 '{$this->getMobile()}');";
-				$countSupAdd = $dbCon->exec($querySupAdd);
-				return $countSupAdd;
-		}
-
-		public function getSupervisor(){
-			$dbCon = Database::connectDB();
-			$query = "SELECT * FROM cp_representive;";
-			return $dbCon->query($query);
-
-		}
-
-		public function updateCompanyRepresentive(){
-			$dbCon = Database::connectDB();
-			$query = "UPDATE cp_representive SET
-							firstName = '{$this->getFname()}',
-							lastName = '{$this->getLname()}',
-							department = '{$this->getDepartment()}',
-							email = '{$this->getCREmail()}',
-							password = '{$this->getPassword()}',
-							contact = '{$this->getContact()}',
-							contactExt = '{$this->getExt()}',
-							mobile = '{$this->getMobile()}'
-							WHERE id = '{$this->getCRID()}';";
-			return $dbCon->exec($query);
-		}
-
-		public function deleteSupervisor(){
-
-			$dbCon = Database::connectDB(); 
-			$query = "DELETE FROM cp_representive WHERE id ={$this->getCRID()}";
-			return $dbCon->exec($query);
-		}
-
-		public function getCRbyID(){
-			$dbCon = Database::connectDB();
-			$query = "SELECT * FROM cp_representive WHERE id={$this->getCRID()};";
-			$super = $dbCon->query($query);
-
-			foreach ($super as $cr) {
-				# code...
-				//$this->setCRID($cr['id']);
-				$this->setFname($cr['firstName']);
-				$this->setLname($cr['lastName']);
-				$this->setDepartment($cr['department']);
-				$this->setCREmail($cr['email']);
-				$this->setPassword($cr['password']);
-				$this->setExt($cr['contactExt']);
-				$this->setContact($cr['contact']);
-				$this->setMobile($cr['mobile']);
-			}
-		}		
-
+	public function getJobByID(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM cp_jobs 
+					WHERE id = {$this->getJobID()}";
+		return $dbCon->query($query);
 
 	}
+
+	public function getShifts(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM cp_shifts where jobID={$this->getJobID()}";
+		return $dbCon->query($query);
+
+	}
+
+	public function getJobInfoByID(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM cp_jobs WHERE id = {$this->getJobID()}";
+		$resultSet = $dbCon->query($query);
+		foreach($resultSet as $rs){
+			$this->setTitle($rs['title']);
+			$this->setDescription($rs['description']);
+			$this->setPay($rs['pay']);
+			$this->setLocation($rs['location']);
+		}
+		return $resultSet;
+	}
+
+	public function listUsersOfShiftByID(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM jb_logs
+					INNER JOIN us_userInfo  ON jb_logs.userID = us_userInfo.id
+					INNER JOIN cp_shifts ON jb_logs.shiftID = cp_shifts.id
+					WHERE shiftID = {$this->getShiftID()}";
+		//TO-DO implement this function in better way. By using SQL buffer maybe.
+		$resultSet = $dbCon->query($query);
+		foreach($resultSet as $rs){
+			$this->setJobID($rs['jobID']);
+			$this->getJobInfoByID();
+
+		}
+		$resultSet = $dbCon->query($query);
+		return $resultSet;
+	}
+
+	//Add new Supervisor to database
+	//Make sure you pass controller object
+	public function addSupervisor(){
+				//create object
+		$dbCon = Database::connectDB(); 
+			
+		$querySupAdd = "INSERT INTO cp_representive
+						(firstName,lastName,companyID,department,password,email,contact,contactExt,mobile)
+						VALUES
+						('{$this->getFname()}',
+						 '{$this->getLname()}',
+						 '102',
+						 '{$this->getDepartment()}',
+						 '{$this->getPassword()}',
+						 '{$this->getCREmail()}',
+						 '{$this->getContact()}',
+						 '{$this->getExt()}',
+						 '{$this->getMobile()}');";
+			$countSupAdd = $dbCon->exec($querySupAdd);
+			return $countSupAdd;
+	}
+
+	public function getSupervisor(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM cp_representive;";
+		return $dbCon->query($query);
+
+	}
+
+	public function updateCompanyRepresentive(){
+		$dbCon = Database::connectDB();
+		$query = "UPDATE cp_representive SET
+						firstName = '{$this->getFname()}',
+						lastName = '{$this->getLname()}',
+						department = '{$this->getDepartment()}',
+						email = '{$this->getCREmail()}',
+						password = '{$this->getPassword()}',
+						contact = '{$this->getContact()}',
+						contactExt = '{$this->getExt()}',
+						mobile = '{$this->getMobile()}'
+						WHERE id = '{$this->getCRID()}';";
+		return $dbCon->exec($query);
+	}
+
+	public function deleteSupervisor(){
+
+		$dbCon = Database::connectDB(); 
+		$query = "DELETE FROM cp_representive WHERE id ={$this->getCRID()}";
+		return $dbCon->exec($query);
+	}
+
+	public function getCRbyID(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM cp_representive WHERE id={$this->getCRID()};";
+		$super = $dbCon->query($query);
+
+		foreach ($super as $cr) {
+			# code...
+			//$this->setCRID($cr['id']);
+			$this->setFname($cr['firstName']);
+			$this->setLname($cr['lastName']);
+			$this->setDepartment($cr['department']);
+			$this->setCREmail($cr['email']);
+			$this->setPassword($cr['password']);
+			$this->setExt($cr['contactExt']);
+			$this->setContact($cr['contact']);
+			$this->setMobile($cr['mobile']);
+		}
+	}		
+
+	public function attendance(){
+		$dbCon = Database::connectDB();
+		$query = "SELECT * FROM jb_logs
+					INNER JOIN us_userInfo
+						ON us_userInfo.id = jb_logs.userID
+					WHERE shiftID = '{$this->getShiftID()}'
+					";
+		$resultSet = $dbCon->query($query);
+		return $resultSet;
+	}
+
+
+}
 
 ?>

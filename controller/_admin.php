@@ -60,6 +60,9 @@
 					case 'insertCareer':
 						$this->insertCareer();
 						break;
+					case 'applicants':
+						$this->getReachFoxApplicants();
+						break;
 					case 'insertCareerSubmit':
 						$this->insertCareerSubmit();
 						break;
@@ -179,6 +182,13 @@
         	$this->model->setStatus($_POST['status']);
         	$this->model->addReachFoxJob();
 			header ('location: index.php?action=careers');
+		}
+
+		public function getReachFoxApplicants(){
+			$this->model = new careersDB;
+			$this->model->setJobid($_GET['id']);
+			$this->model->getReachFoxApplicants();
+			include 'applicants.php';
 		}
 
 

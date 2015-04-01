@@ -21,9 +21,8 @@ $resume = "";
 <div class="row forms">
     <div class="small-12 columns">
     <h2>Application Form</h2>
-        <p>Please fill out the application for the position: <strong><?php echo $this->model->getName(); ?></strong></p>
         
-        <form action="index.php?action=submitJob" method="post" enctype="multipart/form-data" data-abide>
+        <form action="index.php?action=careers" method="post" enctype="multipart/form-data" data-abide>
             
             <span style="color:red"><?php echo $error;?></span>
             <span style="color:red"><?php echo $error2;?></span>

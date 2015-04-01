@@ -18,7 +18,9 @@
 				include 'home.php';
 			}else{
 				switch($_GET['action']){
-					case 'companyAdd': break;
+					case 'dashboard':
+						$this->dashboard();
+						break;
 					case 'jobs': 
 						$this->jobs();
 						break;
@@ -55,9 +57,17 @@
 					case 'supervisorAdd':
 						$this->supervisorAdd();
 						break;
-
+					case 'jobLogs':
+						$this->jobLogs();
+						break;
 				}
 			}
+		}
+
+		public function dashboard(){
+			$this->model = new companyDB();
+			include 'dashboard.php';
+
 		}
 
 		public function activation(){
@@ -155,6 +165,7 @@
 			//$this->model->listUsersOfShiftByID();
 			include 'list.php';
 		}
+
 		public function supervisorAdd(){
 
 			if (isset($_POST['supSubmit'])) {
@@ -179,13 +190,11 @@
 				}
 		}
 
-		public function CrList()
-		{
+		public function CrList(){
 			include 'crList.php';
 		}
 
-		public function deleteCR()
-		{
+		public function deleteCR(){
 			$this->model = new CompanyDB();
 			$this->model->setCRID($_GET['id']);
 	 		if($this->model->deleteSupervisor()){
@@ -202,12 +211,9 @@
 
 			//Implement this feature on single page in future either by PHP OR AJAX
 			include 'updateCR.php';
-
-
 		}
 
-		public function updateCR()
-		{
+		public function updateCR(){
 			$this->model = new companyDB();
 			if (isset($_POST['upSubmit'])) {
 				$this->model->setCRID($_POST['id']);
@@ -224,6 +230,15 @@
             	 include 'crList.php';		
 			}
 
+		}
+
+		public function jobLogs(){
+			$this->model = new companyDB();
+			$this->model->setShiftID($_GET['sid']);
+			//Comment below ASAP
+			$this->model->setShiftID($_GET['2']);
+			$this->model->getShiftList();
+			include 'jobLogs.php';
 		}
 		
 
