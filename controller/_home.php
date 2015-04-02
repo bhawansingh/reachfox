@@ -222,15 +222,22 @@
 		}
 
 		public function applyJob(){	
-			$this->model = new careersDB;
-			$this->model->setId($_POST['jobID']);
+			
+
+			if (isset($_POST['jobID'])){
+				$this->model = new careersDB;
+				$this->model->setId($_POST['jobID']);
+			}else{
+				
+
+			}
 			include 'views/applyJob.php';
 		}
 
 		public function submitJob(){
 			$this->model = new careersDB;
 	
-			$this->model->setJobid($_POST['jobID']);
+			$this->model->setJobid($_POST['jobappID']);
 			$this->model->setFname($_POST['fname']);
 			$this->model->setLname($_POST['lname']);
 			$this->model->setEmail($_POST['email']);
@@ -238,8 +245,6 @@
 			$resume = $_FILES['resumefile']['name'];
 			$file_type = $_FILES['resumefile']['type'];
 			$file_temp = $_FILES['resumefile']['tmp_name'];
-			
-
 
 			//grab file path
 			$target_path = "views/resumes/";
@@ -249,18 +254,20 @@
 			$formats =  array('pdf', 'doc', 'docx', 'rtf');
 			$extension = pathinfo($resume, PATHINFO_EXTENSION);
 			
-			//check if fields are empty
 			if(!in_array($extension,$formats)){
-			    $error2 = "File type must be pdf, doc, docx, or rtf";
+				$this->model->setError("File type must be pdf, doc, docx, or rtf");
+			    header("location: index.php?action=applyJob");
 			    
 			}else{
 			    //add details to database
 			    $this->model->setResume($resume);
-			 	 $this->model->addReachFoxApp();
+			 	$this->model->addReachFoxApp();
+
 			    //upload file
 			    move_uploaded_file($file_temp, $target_path);
+
+			    header("location: index.php?action=careers");
 			    
-			    header('Location: thankyou.php');
 			}    
 		}
 	}

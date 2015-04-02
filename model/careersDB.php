@@ -3,7 +3,11 @@ class careersDB{
 
 	private $id, $name, $location, $vacancies, $description, $status;
 	private $jobid_app, $fname, $lname, $email, $pnumber, $resume;
+    private $error;
 
+    public function getError() { return $this->error;}
+
+    public function setError($value) { $this->error = $value; }
 	
 	public function getId() { return $this->id; }
 
