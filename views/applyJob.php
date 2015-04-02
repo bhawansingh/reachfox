@@ -70,7 +70,7 @@
                 </div>
               </div>
             
-            <input type="hidden" name="jobappID" value="<?php echo $this->model->getId(); ?>" />
+            <input type="hidden" name="jobID" value="<?php echo $this->model->getId(); ?>" />
             <input type="submit" value="Apply" name="submit" />
             <br />
         </form>

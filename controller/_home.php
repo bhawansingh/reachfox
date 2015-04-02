@@ -222,10 +222,10 @@
 		}
 
 		public function applyJob(){	
-			
+			$this->model = new careersDB;
 
 			if (isset($_POST['jobID'])){
-				$this->model = new careersDB;
+				
 				$this->model->setId($_POST['jobID']);
 			}else{
 				
@@ -237,7 +237,7 @@
 		public function submitJob(){
 			$this->model = new careersDB;
 	
-			$this->model->setJobid($_POST['jobappID']);
+			$this->model->setJobid($_POST['jobID']);
 			$this->model->setFname($_POST['fname']);
 			$this->model->setLname($_POST['lname']);
 			$this->model->setEmail($_POST['email']);
