@@ -5,6 +5,7 @@
 	include_once("../model/mail.php"); 
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
+	include_once("../model/msgDB.php"); 
 
 
 	class Admin{
@@ -46,6 +47,12 @@
                     	break;
 					case 'feedback':
 						include 'views/feedback.php'; 
+						break;
+					case 'messages':
+						$this->messages();
+						break;
+					case 'sendMsg':
+						$this->sendMsg();
 						break;
 				}
 			}
@@ -111,6 +118,31 @@
             	echo "FAQ deleted! ";
                 include 'faqAdd.php';
 			}
+		}
+
+		public function messages(){
+			include 'messages.php';
+		}
+
+		public function sendMsg(){
+			$this->model = new msgDB();
+
+				$this->model->setSubject($_POST['subject']);
+				$this->model->setmsg($_POST['msg']);
+
+			if (isset($_POST['sendMsgU'])) {
+				# code...
+
+				$this->model->setGroup('User');
+			}
+
+			elseif(isset($_POST['sendMsgC'])) {
+				# code...
+				$this->model->setGroup('Company');
+			}
+
+			$this->model->sendMsg();
+			include 'messages.php';
 		}
 
 }

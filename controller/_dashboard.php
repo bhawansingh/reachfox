@@ -1,7 +1,8 @@
 <?php 
 	include_once '../model/Database.php';
 	include_once("../model/UserDB.php");  
-	include_once("../model/companyDB.php");  
+	include_once("../model/companyDB.php");
+	include_once("../model/msgDB.php");
 
 class dashboard{
 	
@@ -45,6 +46,12 @@ class dashboard{
 						break;
 					case 'logout':
 						$this->logout();
+						break;
+					case 'messages':
+						$this->messages();
+						break;
+					case 'viewMsg':
+						$this->viewMsg();
 						break;
 				}
 			}
@@ -174,6 +181,14 @@ class dashboard{
 		
 		include 'dashboard.php';
 		
+	}
+
+	public function messages(){
+		include 'msglist.php';
+	}
+
+	public function viewMsg(){
+		include 'viewMsg.php';
 	}
 
 }
