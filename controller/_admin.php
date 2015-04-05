@@ -5,7 +5,8 @@
 	include_once("../model/mail.php"); 
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
-	include_once("../model/careersDB.php"); 
+	include_once("../model/careersDB.php");
+	include_once("../model/reachfoxhomeDB.php"); 
 
 
 	class Admin{
@@ -65,6 +66,9 @@
 						break;
 					case 'insertCareerSubmit':
 						$this->insertCareerSubmit();
+						break;
+					case 'reachfoxInfo':
+						$this->reachfoxInfo();
 						break;
 					case 'feedback':
 						include 'views/feedback.php'; 
@@ -189,6 +193,12 @@
 			$this->model->setJobid($_GET['id']);
 			$this->model->getReachFoxApplicants();
 			include 'applicants.php';
+		}
+
+		public function reachfoxInfo(){
+			$this->model = new reachfoxhomeDB;
+			include 'reachfoxInfo.php';
+
 		}
 
 

@@ -63,10 +63,10 @@
             <br />
               <div class="row">
                 <div class="small-6 cols">
-             <label for="right-label" class="right inline text-left">Resume
-            <input type="file" name="resumefile" required placeholder=""/>
-            <span class="cross">x</span>
-            </label>
+                  <label for="right-label" class="right inline text-left">Resume
+                    <input type="file" name="resumefile" required placeholder=""/>
+                    <span class="cross">x</span>
+                  </label>
                 </div>
               </div>
             

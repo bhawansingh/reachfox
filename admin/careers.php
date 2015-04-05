@@ -2,14 +2,16 @@
 
 <link rel="stylesheet" type="text/css" href="../content/stylesheets/home.css">
 </head>
-<body>
 
+<body>
 
 <?php include("includes/navigation.php") ?>
  
 <div class="row forms" id="mainContent">
 	<?php include("includes/subNavigation.php") ?>
 	<div class="small-12 medium-9 large-9 columns">
+		
+		<a href="index.php?action=insertCareer">Add New Job</a>
 <?php 
 	
  	$jobname = $this->model->getReachFoxJobs();

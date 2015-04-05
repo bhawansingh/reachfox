@@ -6,6 +6,7 @@
 	include_once("model/feedbackDB.php"); 
 	include_once("model/faqDB.php"); 
 	include_once('model/careersDB.php');
+	include_once('model/reachfoxhomeDB.php');
 
 
 	class Home{
@@ -59,6 +60,9 @@
 						break;
 					case 'submitJob':
 						$this->submitJob();
+						break;
+					case 'learn':
+						$this->learnRf();
 						break;
 				}
 			}
@@ -269,6 +273,12 @@
 			    header("location: index.php?action=careers");
 			    
 			}    
+		}
+
+		public function learn(){
+			$this->model = new reachfoxHomeDB;
+
+
 		}
 	}
 ?>
