@@ -70,6 +70,8 @@
 					case 'reachfoxInfo':
 						$this->reachfoxInfo();
 						break;
+					case 'reachfoxInfoSubmit':
+						break;
 					case 'feedback':
 						include 'views/feedback.php'; 
 						break;
@@ -198,7 +200,27 @@
 		public function reachfoxInfo(){
 			$this->model = new reachfoxhomeDB;
 			include 'reachfoxInfo.php';
+		}
 
+		public function reachfoxInfoSubmit(){
+			$this->model = new reachfoxhomeDB;
+
+			//if no file is uploaded
+			if(!file_exists($_FILES['imagefile']['tmp_name']) || !is_uploaded_file($_FILES['imagefile']['tmp_name'])){
+
+				//update with previous image selected
+				$this->model->setId($_POST['featuredimage']);
+
+				$this->model->updateExistingImage();
+				$this->model->updateLearnPage();
+			}else{
+
+				//insert new loaded image and learn page info
+				$this->model->insertNewImage();
+				$this->model->updateLearnPage();
+			}
+
+			header ('location: index.php?action=reachfoxInfo');
 		}
 
 
