@@ -71,6 +71,7 @@
 						$this->reachfoxInfo();
 						break;
 					case 'reachfoxInfoSubmit':
+						$this->reachfoxInfoSubmit();
 						break;
 					case 'feedback':
 						include 'views/feedback.php'; 
@@ -205,23 +206,88 @@
 		public function reachfoxInfoSubmit(){
 			$this->model = new reachfoxhomeDB;
 
-			//if no file is uploaded
-			if(!file_exists($_FILES['imagefile']['tmp_name']) || !is_uploaded_file($_FILES['imagefile']['tmp_name'])){
+			$this->model->setArray($_POST['featuredimage']);
 
-				//update with previous image selected
-				$this->model->setId($_POST['featuredimage']);
+			$dropdown_values = $this->model->getArray();
 
-				$this->model->updateExistingImage();
-				$this->model->updateLearnPage();
+			$values = explode(", ", $dropdown_values);
+
+			$status_selected = $values[0];
+			$id_selected = $values[1];
+
+			$this->model->setStatus($status_selected);
+			$this->model->setId($id_selected);
+
+			$status = $this->model->getStatus();
+
+			if($status == '1'){
+				if(empty($_FILES['imagefile']['name'])){
+					//$this->model->updateLearnPage();	
+					header ('location: index.php?action=reachfoxInfo');
+				}else{	
+
+					$newimage = $_FILES['imagefile']['name'];
+					$file_type = $_FILES['imagefile']['type'];
+					$file_temp = $_FILES['imagefile']['tmp_name'];
+
+					//grab file path
+					$target_path = "images/";
+					$target_path = $target_path . $newimage;
+			
+					//check for file type
+					$formats =  array('jpg', 'png', 'bmp', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						echo ' wrong file format ';
+						//header ('location: index.php?action=reachfoxInfo');
+						
+					}else{
+						move_uploaded_file($file_temp, $target_path);
+						$this->model->setImage($newimage);
+						$this->model->clearActiveImage();
+						$this->model->insertNewImage();
+						//$this->model->updateLearnPage();
+						header ('location: index.php?action=reachfoxInfo');
+					}
+				}
+
 			}else{
+				if(empty($_FILES['imagefile']['name'])){
 
-				//insert new loaded image and learn page info
-				$this->model->insertNewImage();
-				$this->model->updateLearnPage();
-			}
+					$this->model->updateExistingImage();
 
-			header ('location: index.php?action=reachfoxInfo');
+					//$this->model->updateLearnPage();
+					header ('location: index.php?action=reachfoxInfo');
+					
+				}else{
+					$newimage = $_FILES['imagefile']['name'];
+					$file_type = $_FILES['imagefile']['type'];
+					$file_temp = $_FILES['imagefile']['tmp_name'];
+
+					//grab file path
+					$target_path = "images/";
+					$target_path = $target_path . $newimage;
+			
+					//check for file type
+					$formats =  array('jpg', 'png', 'bmp', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					// if(!in_array($extension,$formats)){
+					// 	$this->model->setError("File type must be jpg, png, bmp, or gif");
+					// 	header ('location: index.php?action=reachfoxInfo');
+					// 	echo $this->model->getError();
+					// }
+
+					move_uploaded_file($file_temp, $target_path);
+					$this->model->setImage($newimage);
+					$this->model->clearActiveImage();
+					$this->model->insertNewImage();
+					//$this->model->updateLearnPage();
+					header ('location: index.php?action=reachfoxInfo');
+					//$this->model->updateLearnPage();
+									
+				}
+			}	
 		}
-
-
 }

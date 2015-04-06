@@ -12,26 +12,43 @@
 	<?php include("includes/subNavigation.php") ?>
 	<div class="small-12 medium-9 large-9 columns">
 
-	<form action="index.php?action=updateInfo" method="post">
+	<form action="index.php?action=reachfoxInfoSubmit" method="post" enctype="multipart/form-data" data-abide>
 
-		<h2>Change Home Page Image</h2>
+	<h2>Featured Image on Home Page</h2>
 
-		<div class="row">
+	<p>Choose from previous images:</p>
+
+	<select name="featuredimage">
+
+	<?php
+		$image = $this->model->getImages();
+
+         foreach($image as $i){
+            if($i['status'] == '1'){
+                echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" selected="selected" />' . $i['imagename'] . '</option>';
+            }else{
+                echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" />' . $i['imagename'] . '</option>';
+            }   
+        } 
+        ?>
+
+    </select>
+
+		<p>Upload New Image:</p>
+
             <div class="small-6 cols">
-            	<label for="right-label" class="right inline text-left">Image Upload
-            		<input type="file" name="file" required placeholder=""/>
+            		<input type="file" name="imagefile" id="imagefile"/>
             		<span class="cross">x</span>
             	</label>
             </div>
-        </div>
 
-		<h2>Edit Learn Page Content</h2>
-
+		<h2>Learn Page Content</h2>
+<!--
 		<textarea class="ckeditor" name="editor"></textarea>
 
-		<br />
+		<br /> -->
 
-		<input type="submit" value="Save Changes" name="submit" />
+		<input type="submit" value="Save Changes" name="submit" class="close-reveal-modal button tiny" />
 
 	</form>
 
