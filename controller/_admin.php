@@ -206,12 +206,12 @@
 		public function reachfoxInfoSubmit(){
 			$this->model = new reachfoxhomeDB;
 
+			$this->model->setLearn($_POST['learn_editor']);
+
+			//grab dropdown selected values and explode into array
 			$this->model->setArray($_POST['featuredimage']);
-
 			$dropdown_values = $this->model->getArray();
-
 			$values = explode(", ", $dropdown_values);
-
 			$status_selected = $values[0];
 			$id_selected = $values[1];
 
@@ -220,9 +220,10 @@
 
 			$status = $this->model->getStatus();
 
+			//if image is already chosen to be featured
 			if($status == '1'){
 				if(empty($_FILES['imagefile']['name'])){
-					//$this->model->updateLearnPage();	
+					$this->model->updateLearnPage();	
 					header ('location: index.php?action=reachfoxInfo');
 				}else{	
 
@@ -240,7 +241,7 @@
 			
 					if(!in_array($extension,$formats)){
 						$this->model->setError("File must be jpg, png, bmp, or gif");
-						echo 'wrong file format';
+						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
 						//header ('location: index.php?action=reachfoxInfo');
 						
 					}else{
@@ -248,17 +249,16 @@
 						$this->model->setImage($newimage);
 						$this->model->clearActiveImage();
 						$this->model->insertNewImage();
-						//$this->model->updateLearnPage();
+						$this->model->updateLearnPage();
 						header ('location: index.php?action=reachfoxInfo');
 					}
 				}
-
+			//if image has not been chosen as featured
 			}else{
 				if(empty($_FILES['imagefile']['name'])){
 
 					$this->model->updateExistingImage();
-
-					//$this->model->updateLearnPage();
+					$this->model->updateLearnPage();
 					header ('location: index.php?action=reachfoxInfo');
 					
 				}else{
@@ -276,14 +276,14 @@
 			
 					if(!in_array($extension,$formats)){
 						$this->model->setError("File must be jpg, png, bmp, or gif");
-						echo 'wrong file format';
+						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
 						//header ('location: index.php?action=reachfoxInfo');
 					}else{
 						move_uploaded_file($file_temp, $target_path);
 						$this->model->setImage($newimage);
 						$this->model->clearActiveImage();
 						$this->model->insertNewImage();
-						//$this->model->updateLearnPage();
+						$this->model->updateLearnPage();
 						header ('location: index.php?action=reachfoxInfo');
 					}
 									

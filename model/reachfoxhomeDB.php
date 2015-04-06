@@ -39,6 +39,15 @@ class reachfoxHomeDB{
         return $result;
 	}
 
+	public function getLearnBody(){
+		$db = Database::connectDB();
+
+		$query = 'SELECT learnbody FROM learn WHERE id="1"';
+		$result = $db->query($query);
+		$fetch = $result->fetchColumn();
+        return $fetch;
+	}
+
 	public function updateExistingImage(){
 		$db = Database::connectDB();
 
@@ -81,6 +90,15 @@ class reachfoxHomeDB{
 
 	public function updateLearnPage(){
 
+		$db = Database::connectDB();
+
+        $newLearn = $this->getLearn();
+        
+        $query =
+            "UPDATE learn
+                SET learnbody ='$newLearn'";
+        $learn_update = $db->exec($query);
+        return $learn_update;
 	}
 	
 }
