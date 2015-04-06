@@ -16,7 +16,7 @@
 
 	<h2>Featured Image on Home Page</h2>
 
-	<p>Choose from previous images:</p>
+	<p>Choose From Previous Uploads:</p>
 
 	<select name="featuredimage">
 
@@ -34,7 +34,9 @@
 
     </select>
 
-		<p>Upload New Image:</p>
+		<p>Upload A New Image:</p>
+
+		<span id="error"></span>
 
             <div class="small-6 cols">
             		<input type="file" name="imagefile" id="imagefile"/>
@@ -44,7 +46,7 @@
 
 		<h2>Learn Page Content</h2>
 <!--
-		<textarea class="ckeditor" name="editor"></textarea>
+		<textarea class="ckeditor" name="learn_editor"></textarea>
 
 		<br /> -->
 

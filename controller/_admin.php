@@ -239,7 +239,8 @@
 					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
 			
 					if(!in_array($extension,$formats)){
-						echo ' wrong file format ';
+						$this->model->setError("File must be jpg, png, bmp, or gif");
+						echo 'wrong file format';
 						//header ('location: index.php?action=reachfoxInfo');
 						
 					}else{
@@ -273,19 +274,18 @@
 					$formats =  array('jpg', 'png', 'bmp', 'gif');
 					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
 			
-					// if(!in_array($extension,$formats)){
-					// 	$this->model->setError("File type must be jpg, png, bmp, or gif");
-					// 	header ('location: index.php?action=reachfoxInfo');
-					// 	echo $this->model->getError();
-					// }
-
-					move_uploaded_file($file_temp, $target_path);
-					$this->model->setImage($newimage);
-					$this->model->clearActiveImage();
-					$this->model->insertNewImage();
-					//$this->model->updateLearnPage();
-					header ('location: index.php?action=reachfoxInfo');
-					//$this->model->updateLearnPage();
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png, bmp, or gif");
+						echo 'wrong file format';
+						//header ('location: index.php?action=reachfoxInfo');
+					}else{
+						move_uploaded_file($file_temp, $target_path);
+						$this->model->setImage($newimage);
+						$this->model->clearActiveImage();
+						$this->model->insertNewImage();
+						//$this->model->updateLearnPage();
+						header ('location: index.php?action=reachfoxInfo');
+					}
 									
 				}
 			}	
