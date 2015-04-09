@@ -305,9 +305,19 @@
 			$answersArray = unserialize($answers);
 			var_dump($answersArray);
 
-			$arraysAreEqual = ($selectionsArray === $answersArray);
+			$counter = 0;
+			foreach ($selectionsArray as $key => $value) {
+    			if ($value == $answersArray[$key]){
+    				$counter++;
+    			}
+			}	
+			
+			echo ($counter/count($answersArray))*100;
 
-			var_dump($arraysAreEqual);
+
+			// $arraysAreEqual = ($selectionsArray === $answersArray);
+
+			// var_dump($arraysAreEqual);
 		}
 	}
 ?>
