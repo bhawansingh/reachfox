@@ -2,7 +2,7 @@
 
 class createTestDB{
 
-	private $q, $a, $b, $c, $d, $correctAns, $answers, $arrayCount, $selection;
+	private $q, $a, $b, $c, $d, $correctAns, $answers, $arrayCount, $selection, $grade, $passfail;
 
 	public function __construct(){
 	}
@@ -43,6 +43,14 @@ class createTestDB{
 
 	public function setSelection($value) { $this->selection = $value; }
 
+	public function getGrade() { return $this->grade; }
+
+	public function setGrade($value) { $this->grade = $value; }
+
+	public function getPassFail() { return $this->passfail; }
+
+	public function setPassFail($value) { $this->passfail = $value; }
+
 	public  function insertTest() {
         $db = Database::connectDB();
 
@@ -82,6 +90,23 @@ class createTestDB{
 		$result = $db->query($query);
 		$fetch = $result->fetchColumn();
         return $fetch;
+    }
+
+    public  function insertGrade() {
+        $db = Database::connectDB();
+
+        $grade = $this->getGrade();
+        $passFail = $this->getPassFail();
+        $jobid = 1; //this is to be changed
+        $userid = 1; // this has to be changed
+        $query =
+            "INSERT INTO testperformance
+                 (userid, jobid, grade, passfail)
+             VALUES
+                 ('$userid', '$jobid', '$grade', '$passFail')";
+
+        $gradeAdd = $db->exec($query);
+        return $gradeAdd;
     }
 	
 }

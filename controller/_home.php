@@ -311,13 +311,17 @@
     				$counter++;
     			}
 			}	
-			
-			echo ($counter/count($answersArray))*100;
 
+			$grade = ($counter/count($answersArray))*100;
 
-			// $arraysAreEqual = ($selectionsArray === $answersArray);
+			if($grade >= 75){
+				$this->model->setPassFail('Pass');
+			}else{
+				$this->model->setPassFail('Fail');
+			}
 
-			// var_dump($arraysAreEqual);
+			$this->model->setGrade($grade);
+			$this->model->insertGrade();
 		}
 	}
 ?>
