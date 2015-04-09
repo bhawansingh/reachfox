@@ -40,7 +40,7 @@ class createTestDB{
         $c = serialize($this->getC());
         $d = serialize($this->getD());
         $correctAns = serialize($this->getCorrectAns());
-        $jobid = '1';
+        $jobid = '1'; //this is to be changed
 
         $query =
             "INSERT INTO test
@@ -50,6 +50,17 @@ class createTestDB{
 
         $testAdd = $db->exec($query);
         return $testAdd;
+    }
+
+    public function getTest(){
+    	$db = Database::connectDB();
+
+    	$jobid = '1'; //this is to be changed
+
+		$query = "SELECT * FROM test WHERE jobid = '$jobid'";
+		$result = $db->query($query);
+        return $result;
+
     }
 	
 }
