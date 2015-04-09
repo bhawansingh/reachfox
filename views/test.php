@@ -70,8 +70,6 @@
                  value = "4" />
                  <label>' . $dArray[0][$i] . '</label>';
 
-                 echo 'correct answer is ' . $correctNumArray[0][$i];
-
         	echo '</td>';
         	echo '</tr>';
    		
