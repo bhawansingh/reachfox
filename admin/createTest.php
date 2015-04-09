@@ -110,10 +110,6 @@ function removeQuestion(table) {
 			<br />
 			<input type="submit" value="Submit New Test" name="testSubmit" class="close-reveal-modal button tiny"/>
 
-		
-
-
-
 		</form>
 
 	</div>

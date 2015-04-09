@@ -68,6 +68,9 @@
 					case 'test':
 						$this->test();
 						break;
+					case 'testSubmit':
+						$this->test();
+						break;
 				}
 			}
 			
@@ -288,6 +291,10 @@
 		public function test(){
 			$this->model = new createTestDB;
 			include 'views/test.php';
+		}
+
+		public function testSubmit(){
+			$this->model = new createTestDB;
 		}
 	}
 ?>
