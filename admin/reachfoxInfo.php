@@ -1,6 +1,8 @@
 <?php include("includes/head.php");?>
 
 <link rel="stylesheet" type="text/css" href="../content/stylesheets/home.css">
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
 
@@ -16,23 +18,50 @@
 
 	<h2>Featured Image on Home Page</h2>
 
+	<p>Current Image:</p>
+
+	<img src="" name="current_bg" id="current_bg" style="width: 300px;, height: auto;">
+
+	<script>
+		$(document).ready(function(){
+
+			var dropdown_init = document.getElementById("featuredimage");
+			var selectedText_init = dropdown_init.options[dropdown_init.selectedIndex].text;
+			$("#current_bg").attr('src', 'images/' + selectedText_init);
+
+			$("#featuredimage").change(function(){
+
+ 				var dropdown = document.getElementById("featuredimage");
+ 				var selectedText = dropdown.options[dropdown.selectedIndex].text;
+				$("#current_bg").attr('src', 'images/' + selectedText);
+
+			});
+		});
+	</script>
+
+	<br />
+	<br />
+
 	<p>Choose From Previous Uploads:</p>
 
-	<select name="featuredimage">
+	<select name="featuredimage" id="featuredimage">
 
 	<?php
 		$image = $this->model->getImages();
 
          foreach($image as $i){
             if($i['status'] == '1'){
-                echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" selected="selected" />' . $i['imagename'] . '</option>';
+                echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" selected="selected" text="' . $i['imagename'] . '" />' . $i['imagename'] . '</option>';
             }else{
-                echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" />' . $i['imagename'] . '</option>';
+                echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" text="' . $i['imagename'] . '"/>' . $i['imagename'] . '</option>';
             }   
         } 
         ?>
 
     </select>
+
+    <br />
+	<br />
 
 		<p>Upload A New Image:</p>
 
@@ -45,10 +74,16 @@
             </div>
 
 		<h2>Learn Page Content</h2>
-<!--
-		<textarea class="ckeditor" name="learn_editor"></textarea>
 
-		<br /> -->
+		<textarea class="ckeditor" name="learn_editor">
+			<?php $learnBody = $this->model->getLearnBody(); 
+
+				echo $learnBody;
+
+			?>
+		</textarea>
+
+		<br />
 
 		<input type="submit" value="Save Changes" name="submit" class="close-reveal-modal button tiny" />
 

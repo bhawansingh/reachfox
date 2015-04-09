@@ -7,6 +7,7 @@
 	include_once("model/faqDB.php"); 
 	include_once('model/careersDB.php');
 	include_once('model/reachfoxhomeDB.php');
+	include_once('model/createTestDB.php');
 
 
 	class Home{
@@ -63,6 +64,9 @@
 						break;
 					case 'learn':
 						$this->learnRf();
+						break;
+					case 'test':
+						$this->test();
 						break;
 				}
 			}
@@ -279,6 +283,11 @@
 			$this->model = new reachfoxHomeDB;
 
 
+		}
+
+		public function test(){
+			$this->model = new createTestDB;
+			include 'views/test.php';
 		}
 	}
 ?>

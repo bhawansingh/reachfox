@@ -7,6 +7,7 @@
 	include_once("../model/faqDB.php"); 
 	include_once("../model/careersDB.php");
 	include_once("../model/reachfoxhomeDB.php"); 
+	include_once("../model/createTestDB.php");
 
 
 	class Admin{
@@ -72,6 +73,12 @@
 						break;
 					case 'reachfoxInfoSubmit':
 						$this->reachfoxInfoSubmit();
+						break;
+					case 'createTest':
+						$this->createTest();
+						break;
+					case 'createTestSubmit':
+						$this->createTestSubmit();
 						break;
 					case 'feedback':
 						include 'views/feedback.php'; 
@@ -289,5 +296,36 @@
 									
 				}
 			}	
+		}
+
+		public function createTest(){
+			$this->model = new createTestDB;
+			include 'createTest.php';
+		}
+
+		public function createTestSubmit(){
+			$this->model = new createTestDB;
+			$this->model->setQ($_POST['q']);
+        	$this->model->setA($_POST['a']);
+        	$this->model->setB($_POST['b']);
+        	$this->model->setC($_POST['c']);
+        	$this->model->setD($_POST['d']);
+        	$this->model->setCorrectAns($_POST['correctAns']);
+        	$this->model->insertTest();
+        	// $q = $this->model->getQ();
+        	// $a = $this->model->getA();
+        	// $b = $this->model->getB();
+        	// $c = $this->model->getC();
+        	// $d = $this->model->getD();
+        	// $correctAns = $this->model->getCorrectAns();
+
+        	// echo implode(',', $q);
+        	// echo implode(',', $a);
+        	// echo implode(',', $b);
+        	// echo implode(',', $c);
+        	// echo implode(',', $d);
+        	// echo implode(',', $correctAns);
+
+
 		}
 }
