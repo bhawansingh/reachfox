@@ -2,7 +2,7 @@
 
 class createTestDB{
 
-	private $q, $a, $b, $c, $d, $correctAns;
+	private $q, $a, $b, $c, $d, $correctAns, $answers, $arrayCount, $selection;
 
 	public function __construct(){
 	}
@@ -30,6 +30,18 @@ class createTestDB{
 	public function getCorrectAns() { return $this->correctAns; }
 
 	public function setCorrectAns($value) { $this->correctAns = $value; }
+
+	public function getAnswers() { return $this->answers; }
+
+	public function setAnswers($value) { $this->answers = $value; }
+
+	public function getArrayCount() { return $this->arrayCount; }
+
+	public function setArrayCount($value) { $this->arrayCount = $value; }
+
+	public function getSelection() { return $this->selection; }
+
+	public function setSelection($value) { $this->selection = $value; }
 
 	public  function insertTest() {
         $db = Database::connectDB();
@@ -61,6 +73,15 @@ class createTestDB{
 		$result = $db->query($query);
         return $result;
 
+    }
+
+    public function getArrayAnswers(){
+    	$db = Database::connectDB();
+
+    	$query = 'SELECT correctans FROM test WHERE jobid="1"';
+		$result = $db->query($query);
+		$fetch = $result->fetchColumn();
+        return $fetch;
     }
 	
 }

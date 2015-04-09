@@ -69,7 +69,7 @@
 						$this->test();
 						break;
 					case 'testSubmit':
-						$this->test();
+						$this->testSubmit();
 						break;
 				}
 			}
@@ -295,6 +295,19 @@
 
 		public function testSubmit(){
 			$this->model = new createTestDB;
+
+			$this->model->setSelection($_POST['testAnswers']);
+			$selectionsArray = $this->model->getSelection();
+
+			var_dump($selectionsArray);
+
+			$answers = $this->model->getArrayAnswers();
+			$answersArray = unserialize($answers);
+			var_dump($answersArray);
+
+			$arraysAreEqual = ($selectionsArray === $answersArray);
+
+			var_dump($arraysAreEqual);
 		}
 	}
 ?>

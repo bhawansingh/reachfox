@@ -3,6 +3,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="../content/stylesheets/home.css">
+
 </head>
 <body>
 
@@ -11,7 +12,7 @@
 <!-- Body -->
 <div class="row">
 
-	<form action="index.php?action=testSubmit.php" method="post">
+	<form action="index.php?action=testSubmit" method="post">
 
 	<table>
 
@@ -49,23 +50,23 @@
    			echo '<p>' . $questionArray[0][$i] . '</p>';
 
    			echo '<input type = "radio"
-                 name = "testAnswers"
-                 id = "sizeSmall"
+                 name = "testAnswers[' . $i . ']"
+                 id = "rb"
                  value = "1" />
                  <label>' . $aArray[0][$i] . '</label>';
 			echo '<input type = "radio"
-                 name = "testAnswers"
-                 id = "sizeSmall"
+                 name = "testAnswers[' . $i . ']"
+                 id = "rb"
                  value = "2" />
                  <label>' . $bArray[0][$i] . '</label>';
         	echo '<input type = "radio"
-                 name = "testAnswers"
-                 id = "sizeSmall"
+                 name = "testAnswers[' . $i . ']"
+                 id = "rb"
                  value = "3" />
                  <label>' . $cArray[0][$i] . '</label>';
         	echo '<input type = "radio"
-                 name = "testAnswers"
-                 id = "sizeSmall"
+                 name = "testAnswers[' . $i . ']"
+                 id = "rb"
                  value = "4" />
                  <label>' . $dArray[0][$i] . '</label>';
 
