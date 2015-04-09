@@ -51,23 +51,25 @@
    			echo '<input type = "radio"
                  name = "testAnswers"
                  id = "sizeSmall"
-                 value = "' . $aArray[0][$i] . '" />
+                 value = "1" />
                  <label>' . $aArray[0][$i] . '</label>';
 			echo '<input type = "radio"
                  name = "testAnswers"
                  id = "sizeSmall"
-                 value = "' . $bArray[0][$i] . '" />
+                 value = "2" />
                  <label>' . $bArray[0][$i] . '</label>';
         	echo '<input type = "radio"
                  name = "testAnswers"
                  id = "sizeSmall"
-                 value = "' . $cArray[0][$i] . '" />
+                 value = "3" />
                  <label>' . $cArray[0][$i] . '</label>';
         	echo '<input type = "radio"
                  name = "testAnswers"
                  id = "sizeSmall"
-                 value = "' . $dArray[0][$i] . '" />
+                 value = "4" />
                  <label>' . $dArray[0][$i] . '</label>';
+
+                 echo 'correct answer is ' . $correctNumArray[0][$i];
 
         	echo '</td>';
         	echo '</tr>';
@@ -80,7 +82,7 @@
 
 </table>
 
-<input type="submit" value="Submit Test" name="submit" />
+<input type="submit" value="Submit Test" name="submit" class="close-reveal-modal button tiny"/>
 
 </form>
 
