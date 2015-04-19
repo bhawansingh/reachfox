@@ -131,36 +131,29 @@
 		}
 
 		public function companyLoginCheck(){
+			$this->model = new companyDB();
 			$this->model->setEmail($_POST['emailLogin']);
 			$companyInfo = $this->model->getRepresentivePassword();
 			//$userPasswordCrypted= password_hash($_POST['passwordLogin'],PASSWORD_BCRYPT); 
 
 			foreach($companyInfo as $ci){
-			   
+			  
 			    //Match the user entered password hash with that of stored password
-			    if( password_verify($_POST['passwordLogin'],$userData['password']))
+			    if( password_verify($_POST['passwordLogin'],$ci['password']))
 			    {
-			        $passwordAge = date( 'Y-m-d',  strtotime($userData['passwordUpdated']));
-			        $currentTime = date('Y-m-d',strtotime("now"));
-			        $dateDiff =  date_diff(date_create($currentTime), date_create($passwordAge));
-			        //if password is older then 2 months don't login otherwise set session
-			        if ($dateDiff->format('%a') < 60 ){
-			            //set the session
-			            $_SESSION["userID"] = $ci['companyID'];
-			            $_SESSION["userID"] = $ci['representiveID'];
-			            $this->model->setId($ci['representiveID']);
-			            //Check for user activation
+			            $_SESSION["companyID"] = $ci['companyID'];
+			            $_SESSION["representiveID"] = $ci['representiveID'];
 
-			            if($this->model->getCompanyActivation())
-			            	header("location: company/index.php?action=profile");
+			            $this->model->setcompanyID($ci['companyID']);
+			            $this->model->setRepresentiveID($ci['representiveID']);
 
-			            else
+			            if($this->model->getCompanyActivation()){
+			            	header("location: company/index.php?action=dashboard");
+			            
+			        	}
+			            else{
 			            	header("location: company/index.php?action=activation");
-
-			        }
-			        else{
-			            include 'views/index.php';
-			        }
+			            }
 			    }
 			    else{
 			        include 'views/index.php';

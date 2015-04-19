@@ -1,5 +1,4 @@
 <?php
-	
 	class CompanyDB{
 
 		private $companyID;
@@ -10,7 +9,7 @@
 		private $city;
 		private $province;
 		private $postalcode;
-		
+
 		// Job add
 		private $jobID;
 		private $title;
@@ -30,9 +29,11 @@
 		private $representiveID;
 		private $actCode;
 
-		public function __construct(){
-			
-		}
+		//Attendance 
+		private $attendance;
+		private $jobLogID;
+
+		public function __construct(){ }
 
 		public function getCompanyID(){ return $this->companyID; }
 
@@ -114,18 +115,24 @@
 
 		public function setActCode($value){ $this->actCode = $value;}
 
-		public function getShiftDate(){return date('m-d-Y',strtotime($this->shiftDate));}
+		public function getShiftDate($format = "db"){
+			if($format!="db")
+				return date('m-d-Y',strtotime($this->shiftDate));
+			else
+				return date('Y-m-d',strtotime($this->shiftDate));
+				
+		}
 
 		public function setShiftDate($value){ $this->shiftDate = date('Y-m-d',strtotime($value));}
 
-    //================== CR add get sets ================================================
+		//================== CR add get sets ================================================
 
 		public function getCRID(){ return $this->id; }
 
 		public function setCRID($value){ $this->id = $value; }
 
 		public function getFname(){ return $this->firstName; }
-		
+
 		public function setFname($value){ $this->firstName = $value; }
 
 		public function getLname(){ return $this->lastName; }
@@ -156,7 +163,19 @@
 
 		public function setMobile($value){ $this->mobile = $value; }		
 
+		//Attendance
 
+		public function getAttendance(){ $this->attendance;	}
+
+		public function setAttendance($value){ $this->attendance = $value;	}
+
+		public function getJobLogID(){ $this->jobLogID;	}
+
+		public function setJobLogID($value){ $this->jobLogID = $value;	}
+
+		public function getAttendanceArray(){ $this->attendanceArray; }
+
+		public function setAttendanceArray($value){ $this->attendanceArray; }
 
 		//Add new Comany to database
 		public function addCompany(){
@@ -228,49 +247,61 @@
 		}
 
 		public function getCompanyActivation(){
-		$dbCon = Database::connectDB();
-		$query = "SELECT status 
-					FROM cp_activation 
-					WHERE companyID = {$this->getCompanyID()}
-						AND representiveID = {$this->getRepresentiveID()}";
-
-		$status = $dbCon->query($query);
-		$representiveStatus = 0;		
-			foreach($status as $statu){
-				$userStatus =  $statu['status'];
-			}
-		return $representiveStatus;
-	}
-
-	public function getCompanyActivationCode(){
-		$dbCon = Database::connectDB();
-		$query = "SELECT activation 
-					FROM cp_activation 
-					WHERE companyID = {$this->getCompanyID()}
-						AND representiveID = {$this->getRepresentiveID()}";
-						
-		$status = $dbCon->query($query);
-		$dbCode = 0;		
-			foreach($status as $status){
-				$dbCode =  $status['activation'];
-			}
-		return $dbCode;
-	}
-
-	public function changeCompanyActivation(){
-		$dbcode = $this->getCompanyActivationCode();
-		if($dbcode == $this->getActCode()){
-			$dbCon = Database::connectDB();
-			$query = "UPDATE cp_activation  
-						SET status = 1 
-						WHERE companyID = {$this->getCompanyID()}
-						AND representiveID = {$this->getRepresentiveID()}";
-
-			$statusUpdated = $dbCon->exec($query);
-			return $statusUpdated;
+				$dbCon = Database::connectDB();
+				$query = "SELECT status 
+							FROM cp_activation 
+							WHERE companyID = {$this->getCompanyID()}
+								AND representiveID = {$this->getRepresentiveID()}";
+				//ƒecho $query;
+				$status = $dbCon->query($query);
+				$representiveStatus = 0;		
+					foreach($status as $statu){
+						$representiveStatus =  $statu['status'];
+					}
+				return $representiveStatus;
 		}
 
-	}
+		public function getCompanyActivationCode(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT activation 
+						FROM cp_activation 
+						WHERE companyID = {$this->getCompanyID()}
+							AND representiveID = {$this->getRepresentiveID()}";
+							
+			$status = $dbCon->query($query);
+			$dbCode = 0;		
+				foreach($status as $status){
+					$dbCode =  $status['activation'];
+				}
+			return $dbCode;
+		}
+
+		public function changeCompanyActivation(){
+			$dbcode = $this->getCompanyActivationCode();
+			if($dbcode == $this->getActCode()){
+				$dbCon = Database::connectDB();
+				$query = "UPDATE cp_activation  
+							SET status = 1 
+							WHERE companyID = {$this->getCompanyID()}
+							AND representiveID = {$this->getRepresentiveID()}";
+
+				$statusUpdated = $dbCon->exec($query);
+				return $statusUpdated;
+			}
+		}
+
+		public function getRepresentivePassword(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT cp_representive.id AS 'representiveID',
+								 cp_company.id AS 'companyID', 
+								 password FROM cp_representive 
+							 INNER JOIN cp_company 
+							 	ON companyID = cp_company.id
+							 WHERE cp_representive.email ='".$this->getEmail()."'";
+			$loginInfo = $dbCon->query($query);
+			//echo $query;
+			return $loginInfo;
+		}
 
 
 		public function addJob(){
@@ -298,6 +329,7 @@
 						 '{$this->getShiftEndTime()}',
 						 '{$this->getShiftDate()}'
 						)";
+			//ßecho $query;
 			return $dbCon->exec($query);
 		}
 
@@ -364,7 +396,6 @@
 		public function addSupervisor(){
 					//create object
 			$dbCon = Database::connectDB(); 
-				
 			$querySupAdd = "INSERT INTO cp_representive
 							(firstName,lastName,companyID,department,password,email,contact,contactExt,mobile)
 							VALUES
@@ -377,15 +408,14 @@
 							 '{$this->getContact()}',
 							 '{$this->getExt()}',
 							 '{$this->getMobile()}');";
-				$countSupAdd = $dbCon->exec($querySupAdd);
-				return $countSupAdd;
+			$countSupAdd = $dbCon->exec($querySupAdd);
+			return $countSupAdd;
 		}
 
 		public function getSupervisor(){
 			$dbCon = Database::connectDB();
 			$query = "SELECT * FROM cp_representive;";
 			return $dbCon->query($query);
-
 		}
 
 		public function updateCompanyRepresentive(){
@@ -404,7 +434,6 @@
 		}
 
 		public function deleteSupervisor(){
-
 			$dbCon = Database::connectDB(); 
 			$query = "DELETE FROM cp_representive WHERE id ={$this->getCRID()}";
 			return $dbCon->exec($query);
@@ -429,7 +458,132 @@
 			}
 		}		
 
+		public function getShiftList(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT * FROM jb_logs
+						INNER JOIN us_userInfo
+							ON us_userInfo.id = jb_logs.userID
+						INNER JOIN cp_shifts
+							ON jb_logs.shiftID = cp_shifts.id
+						WHERE shiftID = '{$this->getShiftID()}'
+						";
+			$resultSet = $dbCon->query($query);
+			return $resultSet;
+		}
 
-	}
+		public function markAttendance(){
+			$dbCon = Database::connectDB();
+			$preparedSt = $dbCon->prepare( "UPDATE jb_logs 
+												SET attendance = :att ,
+													hours = :time
+												WHERE userID = :uid AND
+												id = :id"
+											);
+
+			$rowsAffected=0;
+			$i=0;
+			foreach($_POST['userID'] as $value){
+				if(isset($_POST['status'][$i])){
+					if($_POST['status'][$i] == 'on')
+						$status =1;
+					else
+						$status =0;		
+				}
+				else
+					$status =0;	
+
+				$timeDiff = (strtotime($_POST['endTime'][$i]) - strtotime($_POST['startTime'][$i]));
+				$preparedSt->bindParam(":att", $status);
+				$preparedSt->bindParam(":uid", $_POST['userID'][$i]);
+				$preparedSt->bindParam(":id", $_POST['jobLogID'][$i]);
+				$preparedSt->bindParam(":time", $timeDiff);
+				
+				//print_r($timeDiff);
+				$preparedSt->execute();
+
+				$rowsAffected += $preparedSt->rowCount();
+				$i++;
+			}
+
+			 if ( $rowsAffected > 0 )
+			 	return 1;
+			 else
+			 	return 0;	
+		}
+
+		public function payCalculator(){
+			//TO-DO Check if payment entry is already there. Write update fcuntion 
+			// for company payement
+			$dbCon = Database::connectDB();
+			//Get the shift pay 
+			//For future make this seperate function and call from controller
+			$query = "SELECT  id,pay,jobID  from cp_shifts WHERE ID =  (SELECT shiftID from jb_logs
+						WHERE 		id  = {$_POST['jobLogID'][0] } AND
+								userID 	= {$_POST['userID'][0]}) ";
+			$resultSet = $dbCon->query($query);
+
+			foreach ($resultSet as $value) {
+				$this->setPay($value['pay']);
+				$this->setShiftID($value['id']);
+				$this->setJobID($value['jobID']);
+			}
+
+			//Get Company ID
+			$queryCompany = "SELECT companyID FROM cp_jobs WHERE id= {$this->getJobID()}";
+			$resultSet = $dbCon->query($queryCompany);
+
+			foreach ($resultSet as $value) {
+				$this->setCompanyID($value['companyID']);
+			}
+
+			//This can go to UserDB.
+			$preparedSt = $dbCon->prepare( "INSERT INTO us_payment
+													(userID,shiftID,payment)
+												VALUES
+													(:userID,:shiftID,:payment)
+													");
+
+			$preparedSt2 = $dbCon->prepare( "INSERT INTO cp_payment
+													(companyID,shiftID,payment)
+												VALUES
+													(:companyID,:shiftID,:payment)
+													");
+
+			$i=0;
+			$shiftID = $this->getShiftID();
+
+			$totalPayment = 0;
+			foreach($_POST['userID'] as $value){
+				if( (isset($_POST['status'][$i])) && ($_POST['status'][$i] == 'on')){
+					$timeDiff = (strtotime($_POST['endTime'][$i]) - strtotime($_POST['startTime'][$i]));
+					$payment = ($this->getPay()) * ($timeDiff /3600);
+					$preparedSt->bindParam(":userID",$_POST['userID'][$i]);
+					$preparedSt->bindParam(":shiftID",$shiftID);
+					$preparedSt->bindParam(":payment",$payment);
+					$preparedSt->execute();
+					$totalPayment += $payment;
+				}
+				$i++;
+			}
+
+
+			$companyID = $this->getCompanyID();
+
+			$preparedSt2->bindParam(":companyID",$companyID);
+			$preparedSt2->bindParam(":shiftID",$shiftID);
+			$preparedSt2->bindParam(":payment",$totalPayment);
+			$preparedSt2->execute();
+		}
+
+		public function getTotalShiftPay(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT * FROM cp_shifts 
+						INNER JOIN cp_payment on cp_shifts.id = cp_payment.shiftID
+						WHERE jobID={$this->getJobID()}";
+			return $dbCon->query($query);
+
+		}
+//Class
+}
 
 ?>

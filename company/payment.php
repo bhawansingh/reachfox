@@ -56,34 +56,28 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Pay</th>
+									<th>Hourly Pay</th>
+									<th>Total Pay</th>
 									<th>Start Time</th>
 									<th>End Time</th>
 									<th>Date</th>
 									<th>Slots</th>
-									<th>List</th>
-									<th>Edit</th>
-									<th>Status</th>
+									<th>Payment</th>
 								<tr>
 							</thead>
 							<?
-								$shiftSet = $this->model->getShifts();
+								$shiftSet = $this->model->getTotalShiftPay();
+
 								foreach ($shiftSet as $ss) 
 								{
 									echo "<tr>";
 									echo "<td><i class='fa fa-usd'></i>{$ss['pay']}</td>
+										  <td><i class='fa fa-usd'></i>{$ss['payment']}</td>
 										  <td>{$ss['startTime']}</td>
 										  <td>{$ss['endTime']}</td>
 										   <td>{$this->model->setShiftDate($ss['shiftDate'])}{$this->model->getShiftDate('std')}</td>
 										  <td>{$ss['requirement']}</td>
-										  <td><a href='index.php?action=jobLogs&sid={$ss['id']}' class=''><i class='fa fa-th-list'></i> Attendance</a></td>
-										  <td><a href='#' class=''><i class='fa fa-pencil'></i> Edit</a></td>
-										  
-										  <td><div class='switch tiny'>
-  												<input id='status{$ss['id']}' type='checkbox' checked>
-  												<label for='status{$ss['id']}'></label>
-												</div> 
-										  </td>";
+										  <td><a href='index.php?action=sendPayment' class=''><i class='fa fa-pencil'></i> Send Payment</a></td>";
 									echo "</tr>";
 								}
 							?>
