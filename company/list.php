@@ -6,13 +6,26 @@
 <body>
 
 	<?php include("includes/navigation.php") ?>
+	<?php
+		 	if(isset($message)){
+		 		?>
+		 			<div class=" userInfo fixed">
+		 				<div data-alert class="alert-box info  ">
+		 			 	 
+				 			 <?php  echo $message;?>
+				 			  <a href="#" class="close">&times;</a>
+				 		</div>
+		 			</div>
+		 		<?
+		 	}
+		 ?>
 
 	<div class="row profile" id="mainContent">
 		<?php include("includes/subNavigation.php") ?>
-		<div class="small-12 medium-9 large-9 columns">
+		<div class="small-12 medium-10 large-10 columns">
 			<div class="row">
 				<div class="small-12 medium-12 columns">
-					<div class="row">
+					<div class="row pageTitle">
 						<div class="small-8 columns">
 							<h2>Job Details</h2>
 						</div>

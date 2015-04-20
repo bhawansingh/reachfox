@@ -4,6 +4,142 @@
 		"selected_items":
 		[
 			[
+				"cp_",
+				"cp_payment"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"compan",
+				"companyID"
+			],
+			[
+				"pay",
+				"payment"
+			],
+			[
+				"to",
+				"totalPayment"
+			],
+			[
+				"getco",
+				"getCompanyID"
+			],
+			[
+				"getjob",
+				"getJobID"
+			],
+			[
+				"shid",
+				"shiftID"
+			],
+			[
+				"getS",
+				"getShiftID"
+			],
+			[
+				"setsd",
+				"setShiftID"
+			],
+			[
+				"exe",
+				"execute"
+			],
+			[
+				"setP",
+				"setPay"
+			],
+			[
+				"pre",
+				"preparedSt"
+			],
+			[
+				"strTo",
+				"strtotime"
+			],
+			[
+				"time",
+				"timeDiff"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"ma",
+				"marginBottom"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"p",
+				"padding-right"
+			],
+			[
+				"m",
+				"message"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"job",
+				"jobLogID"
+			],
+			[
+				"Job",
+				"JobLogID"
+			],
+			[
+				"re",
+				"resultSet"
+			],
+			[
+				"getShi",
+				"getShiftID"
+			],
+			[
+				"connec",
+				"connectDB"
+			],
+			[
+				"inc",
+				"include_once"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"rep",
+				"representiveID"
+			],
+			[
+				"quer",
+				"queryReAdd"
+			],
+			[
+				"repre",
+				"representativeID"
+			],
+			[
+				"getjo",
+				"getJobID"
+			],
+			[
 				"da",
 				"database"
 			],
@@ -20,10 +156,6 @@
 				"timeDiff"
 			],
 			[
-				"quer",
-				"queryShift"
-			],
-			[
 				"getj",
 				"getJobID"
 			],
@@ -34,10 +166,6 @@
 			[
 				"getJ",
 				"getJobID"
-			],
-			[
-				"mar",
-				"margin-right"
 			],
 			[
 				"for",
@@ -54,10 +182,6 @@
 			[
 				"gets",
 				"getShiftEndTime"
-			],
-			[
-				"getS",
-				"getShiftStartTime"
 			],
 			[
 				"getRE",
@@ -100,20 +224,8 @@
 				"htmlspecialchars"
 			],
 			[
-				"inc",
-				"include"
-			],
-			[
 				"qu",
 				"query"
-			],
-			[
-				"pad",
-				"padding-left"
-			],
-			[
-				"pa",
-				"padding"
 			],
 			[
 				"fo",
@@ -122,10 +234,6 @@
 			[
 				"bord",
 				"border-bottom"
-			],
-			[
-				"m",
-				"margin-bottom"
 			],
 			[
 				"te",
@@ -214,10 +322,6 @@
 			[
 				"fon",
 				"font-size"
-			],
-			[
-				"font",
-				"font-family"
 			],
 			[
 				"bg",
@@ -396,10 +500,6 @@
 				"getElementById"
 			],
 			[
-				"ma",
-				"margin-left"
-			],
-			[
 				"min",
 				"min-width"
 			],
@@ -414,125 +514,74 @@
 			[
 				"prim",
 				"primaryRed"
-			],
-			[
-				"border-r",
-				"border-radius"
-			],
-			[
-				"pri",
-				"primaryRed"
-			],
-			[
-				"wi",
-				"width"
-			],
-			[
-				"marg",
-				"margin-left"
-			],
-			[
-				"isn",
-				"is_null"
-			],
-			[
-				"font-s",
-				"font-style"
-			],
-			[
-				"w",
-				"width"
-			],
-			[
-				"background",
-				"background-position"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 146,
-				"line_ending": "Unix",
-				"name": "index.php"
-			}
-		},
-		{
-			"file": "admin/index.php",
-			"settings":
-			{
-				"buffer_size": 137,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dashboard/index.php",
-			"settings":
-			{
-				"buffer_size": 145,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "views/index.php",
 			"settings":
 			{
-				"buffer_size": 8340,
+				"buffer_size": 10136,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/dashboard.php",
+			"settings":
+			{
+				"buffer_size": 2685,
 				"line_ending": "Unix",
-				"name": "index.php"
+				"name": "dashboard.php"
 			}
 		},
 		{
 			"file": "company/home.php",
 			"settings":
 			{
-				"buffer_size": 490,
+				"buffer_size": 755,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/includes/subNavigation.php",
+			"settings":
+			{
+				"buffer_size": 733,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/jobLogs.php",
+			"settings":
+			{
+				"buffer_size": 2859,
 				"line_ending": "Unix",
-				"name": "home.php"
+				"name": "jobLogs.php"
 			}
 		},
 		{
 			"file": "company/jobsAdd.php",
 			"settings":
 			{
-				"buffer_size": 2353,
-				"line_ending": "Unix",
-				"name": "<?php"
+				"buffer_size": 5664,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/list.php",
+			"settings":
+			{
+				"buffer_size": 2348,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "company/shiftAdd.php",
 			"settings":
 			{
-				"buffer_size": 2752,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dashboard/jobList.php",
-			"settings":
-			{
-				"buffer_size": 1632,
-				"line_ending": "Unix",
-				"name": "jobList.php"
-			}
-		},
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dashboard/dashboard.php",
-			"settings":
-			{
-				"buffer_size": 383,
+				"buffer_size": 3766,
 				"line_ending": "Unix"
 			}
 		},
@@ -545,207 +594,122 @@
 			}
 		},
 		{
-			"file": "admin/home.php",
+			"file": "company/payment.php",
 			"settings":
 			{
-				"buffer_size": 490,
-				"line_ending": "Unix",
-				"name": "home.php"
-			}
-		},
-		{
-			"file": "admin/includes/subNavigation.php",
-			"settings":
-			{
-				"buffer_size": 732,
+				"buffer_size": 2645,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "dashboard/profile.php",
+			"file": "company/jobs.php",
 			"settings":
 			{
-				"buffer_size": 3402,
+				"buffer_size": 2664,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "model/mail.php",
+			"file": "company/shifts.php",
 			"settings":
 			{
-				"buffer_size": 246,
+				"buffer_size": 2891,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "views/includes/navigation.php",
+			"file": "company/supervisorAdd.php",
 			"settings":
 			{
-				"buffer_size": 399,
+				"buffer_size": 4382,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "dashboard/includes/navigation.php",
+			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 401,
+				"buffer_size": 208,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dashboard/includes/subNavigation.php",
-			"settings":
-			{
-				"buffer_size": 731,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/feedback.php",
-			"settings":
-			{
-				"buffer_size": 2456,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "model/Database.php",
-			"settings":
-			{
-				"buffer_size": 922,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dashboard/settings.php",
-			"settings":
-			{
-				"buffer_size": 14330,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dashboard/userFormSave.php",
-			"settings":
-			{
-				"buffer_size": 1643,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<?php \n	include_once '../model/Database.php';\n	include_once(\"../model/UserDB.php\");  \n	include_once(\"../model/companyDB.php\");  \n\nclass dashboard{\n	\n	public $model;\n	public $moduleNo;\n\n	public function __construct(){\n		$this->model =  new Userdb();\n	}\n\n	public function invoke(){\n		if(!isset($_SESSION['userID'])){\n			header('Location: ../index.php?err=4');	\n			die();\n		}\n		else{\n			$this->model->setId($_SESSION['userID']);\n		}\n		if(!isset($_GET['action'])){\n				\n				include 'profile.php';\n			}else{\n				switch($_GET['action']){\n					case 'activation':\n						$this->activationProcess();\n						break;\n					case 'settings':\n						include 'settings.php';\n						break;\n					case 'profile';\n						$this->profile();\n						break;\n					case 'jobs';\n						$this->jobs();\n						break;\n					case 'requestShift':\n						$this->requestShift();\n						break;\n					case 'home':\n						$this->home();\n						break;\n					case 'logout':\n						$this->logout();\n						break;\n				}\n			}\n	}\n\n\n\n	//Handle all activation process here\n	public function activationProcess(){\n\n		//we can check if values is set here or else just hope it's set :P\n		if(isset($_SESSION['userID'])){\n\n			$this->model->setID($_SESSION['userID']);\n			$this->model->setActCode($_GET['code']);\n			//Check if ID is already activated\n			if($this->model->getUserActivation() == 0 )\n			{\n				//User not activated. You may now proceed\n				if($this->model->changeUserActivation()==1)\n				{\n					$this->moduleNo=1;\n					header('Location: index.php?action=settings');\n				}\n			}\n			else if ($this->model->getUserActivation() == 1){\n				//Already activated send to login\n				header('Location: ../index.php?err=1');	\n			}\n		}\n		else{\n			//Not activated Invalid Code\n			header('Location: ../index.php?action=err=2');\n			$this->moduleNo = 2;\n		}\n		return $this->moduleNo=1;\n	}\n\n\n	//Get User Availiablity time in correct Format\n	public function getPrefTime(){\n		$timeSlots = $this->model->getPrefTime();\n		$timeSlotsFormated = array();\n		$i =  0;\n		foreach ($timeSlots as $tl){\n			//echo $tl['weekDay'].$tl['start'].$tl['end'];\n\n			switch($tl['weekDay'])\n			{	\n				case 0: $timeSlotsFormated[$i]['weekDay'] = \"Sunday\";  break;\n				case 1: $timeSlotsFormated[$i]['weekDay'] = \"Monday\"; break;\n				case 2: $timeSlotsFormated[$i]['weekDay'] = \"Tuesday\"; break;\n				case 3: $timeSlotsFormated[$i]['weekDay'] = \"Wednesday\"; break;\n				case 4: $timeSlotsFormated[$i]['weekDay'] = \"Thursday\"; break;\n				case 5: $timeSlotsFormated[$i]['weekDay'] = \"Friday\"; break;\n				case 6: $timeSlotsFormated[$i]['weekDay'] = \"Saturday\"; break;\n				default: $timeSlotsFormated[$i]['weekDay'] = \"Invalid Entry\";\n			}\n			switch($tl['start'])\n			{\n				case 0: $timeSlotsFormated[$i]['start'] = \"00:00\";  break;\n				case 2: $timeSlotsFormated[$i]['start'] = \"02:00\"; break;\n				case 4: $timeSlotsFormated[$i]['start'] = \"04:00\"; break;\n				case 6: $timeSlotsFormated[$i]['start'] = \"06:00\"; break;\n				case 8: $timeSlotsFormated['start'] = \"08:00\"; break;\n				case 10: $timeSlotsFormated[$i]['start'] = \"10:00\"; break;\n				case 12: $timeSlotsFormated[$i]['start'] = \"12:00\"; break;\n				case 14: $timeSlotsFormated[$i]['start'] = \"14:00\"; break;\n				case 16: $timeSlotsFormated[$i]['start'] = \"16:00\"; break;\n				case 18: $timeSlotsFormated[$i]['start'] = \"18:00\"; break;\n				case 20: $timeSlotsFormated[$i]['start'] = \"20:00\"; break;\n				case 22: $timeSlotsFormated[$i]['start'] = \"22:00\"; break;\n				default: $timeSlotsFormated[$i]['start'] = \"\";\n				//wise thing to call delete method if switch goes to default case\n			}\n\n			switch($tl['end'])\n			{\n				case 0: $timeSlotsFormated[$i]['end'] = \"00:00\";  break;\n				case 2: $timeSlotsFormated[$i]['end'] = \"02:00\"; break;\n				case 4: $timeSlotsFormated[$i]['end'] = \"04:00\"; break;\n				case 6: $timeSlotsFormated[$i]['end'] = \"06:00\"; break;\n				case 8: $timeSlotsFormated[$i]['end'] = \"08:00\"; break;\n				case 10: $timeSlotsFormated[$i]['end'] = \"10:00\"; break;\n				case 12: $timeSlotsFormated[$i]['end'] = \"12:00\"; break;\n				case 14: $timeSlotsFormated[$i]['end'] = \"14:00\"; break;\n				case 16: $timeSlotsFormated[$i]['end'] = \"16:00\"; break;\n				case 18: $timeSlotsFormated[$i]['end'] = \"18:00\"; break;\n				case 20: $timeSlotsFormated[$i]['end'] = \"20:00\"; break;\n				case 22: $timeSlotsFormated[$i]['end'] = \"22:00\"; break;\n				default: $timeSlotsFormated[$i]['end'] = \"\";\n				//wise thing to call delete method if switch goes to default case\n			}\n			$i++;\n			\n		}\n		return $timeSlotsFormated;\n\n	}\n\n	public function profile(){\n		$this->model->setId($_SESSION['userID']);\n		$this->model->getUserInfo();\n		include 'profile.php';\n	}\n\n	public function logout(){\n		unset($_SESSION['userID']);\n		header('Location: ../index.php');	\n	}\n\n	public function jobs(){\n		$this->model = new companyDB();\n		include 'jobList.php';\n	}\n\n	public function requestShift(){\n		$this->model = new userDB();\n		$this->model->setID($_SESSION['userID']);\n		$this->model->setShiftID($_GET['sid']);\n		$this->model->requestShift();\n		include 'home.php';\n	}\n\n	public function home(){\n		$this->model = new $userDB;\n		\n	}\n\n}\n\n?>",
-			"file": "controller/_dashboard.php",
-			"file_size": 5023,
-			"file_write_time": 130717289170000000,
-			"settings":
-			{
-				"buffer_size": 5057,
-				"line_ending": "Unix",
-				"name": "_dashboard.php"
-			}
-		},
-		{
-			"file": "controller/_admin.php",
-			"settings":
-			{
-				"buffer_size": 630,
-				"line_ending": "Unix",
-				"name": "_admin.php"
-			}
-		},
-		{
-			"file": "controller/_home.php",
-			"settings":
-			{
-				"buffer_size": 4478,
-				"line_ending": "Unix",
-				"name": "_home.php"
 			}
 		},
 		{
 			"file": "controller/_company.php",
 			"settings":
 			{
-				"buffer_size": 1931,
+				"buffer_size": 7010,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "views/includes/head.php",
+			"file": "controller/_dashboard.php",
 			"settings":
 			{
-				"buffer_size": 693,
-				"line_ending": "Unix",
-				"name": "head.php"
-			}
-		},
-		{
-			"file": "views/includes/footer.php",
-			"settings":
-			{
-				"buffer_size": 392,
+				"buffer_size": 5134,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "dashboard/includes/footer.php",
+			"file": "controller/_admin.php",
 			"settings":
 			{
-				"buffer_size": 445,
+				"buffer_size": 4870,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "dashboard/includes/head.php",
+			"file": "controller/_home.php",
 			"settings":
 			{
-				"buffer_size": 572,
+				"buffer_size": 7981,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/scss/_settings.scss",
-			"settings":
-			{
-				"buffer_size": 51033,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/scss/home.scss",
-			"settings":
-			{
-				"buffer_size": 1335,
-				"line_ending": "Unix",
-				"name": "index.scss"
 			}
 		},
 		{
 			"file": "content/scss/global.scss",
 			"settings":
 			{
-				"buffer_size": 3395,
-				"line_ending": "Unix",
-				"name": "global.scss"
+				"buffer_size": 4304,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/scss/app.scss",
+			"settings":
+			{
+				"buffer_size": 1492,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "model/companyDB.php",
 			"settings":
 			{
-				"buffer_size": 5066,
+				"buffer_size": 17010,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\n	class Userdb{\n\n\n	//User Information Get Set\n	private $id;\n	private $fname;\n	private $lname;\n	private $sin;\n	private $contact;\n	private $code;\n	private $email;\n	private $actCode;\n	private $password;\n	private $dob;\n	private $gender;\n	private $unit;\n	private $street;\n	private $city;\n	private $province;\n	private $postalCode;\n	private $paypalID;\n	private $startTime;\n	private $endTime;\n	private $weekDay;\n	private $credibility;	\n	private $location;\n	private $shiftID;\n\n	public function __construct(){\n\n	}\n\n	public function getID(){ return $this->id; }\n\n	public function setID($value){ $this->id= $value; }\n\n	//First Name Get Set\n	public function getFname(){ return $this->fname; }\n\n	public function setFname($value){ $this->fname = $value; }\n\n	//Last Name Get Set\n	public function getLname(){ return $this->lname; }\n\n	public function setLname($value){ $this->lname = $value; }\n\n	//SIN Get Set\n	public function getSin(){ return $this->sin; }\n\n	public function setSin($value){ $this->sin = $value; }\n\n	//Contact Get Set\n	public function getContact(){ return $this->contact; }\n\n	public function setContact($value){ $this->contact = $value; }\n\n	//Email Get Set\n	public function getEmail(){ return $this->email; }\n\n	public function setEmail($value){ $this->email = $value; }		\n\n	public function getActCode(){ return $this->code; }\n\n	public function setActCode($value){ $this->code = $value; }\n\n	public function getPassword(){ return $this->password; }\n\n	public function setPassword($value){ $this->password = $value; }\n\n	public function getDOB(){ return $this->dob; }\n\n	public function setDOB($value){ $this->dob = date('Y-m-d',strtotime($value)); }\n\n	public function getGender(){ return $this->gender; }\n\n	public function setGender($value){ $this->gender = $value; }\n\n	public function getUnit(){ return $this->unit; }\n\n	public function setUnit($value){ $this->unit = $value; }\n\n	public function getStreet(){ return $this->street; }\n\n	public function setStreet($value){ $this->street = $value; }\n\n	public function getCity(){ return $this->city; }\n\n	public function setCity($value){ $this->city = $value; }\n\n	public function getProvince(){ return $this->province; }\n\n	public function setProvince($value){ $this->province = $value; }\n\n	public function getPostalCode(){ return $this->postalCode; }\n\n	public function setPostalCode($value){ $this->postalCode = $value; }\n\n	public function getPaypalID(){ return $this->paypalID; }\n\n	public function setPaypalID($value){ $this->paypalID = $value; }\n\n	public function getStartTime(){ return $this->startTime; }\n\n	public function setStartTime($value){ $this->startTime = $value; }\n\n	public function getEndTime(){ return $this->endTime; }\n\n	public function setEndTime($value){ $this->endTime = $value; }\n\n	public function getWeekDay(){ return $this->weekDay; }\n\n	public function setWeekDay($value){ $this->weekDay = $value; }\n\n	public static function getTimeSlots(){\n		$startTime = array();\n		$endTime   = array();\n		$weekDay   = array();\n		$timeSLots = Userdb::getPrefTime();\n		foreach($timeSlots as $tl){\n			echo $tl['start'];\n		}\n	}\n\n	public function getCredibility(){ return $this->credibility; }\n\n	public function setCredibility($value){$this->credibility = $value;}\n\n	public function getLocation(){ return $this->location;}\n\n	public function setLocation($value){ $this->location = $value; }\n	\n	public function getShiftID(){ return $this->shiftID; }\n\n	public function setShiftID($value){ $this->shiftID= $value; }\n\n\n	//Add new user to database\n	public function addUser(){\n		//Create DB object\n		$dbCon = Database::connectDB();\n		$queryUserAdd = \"INSERT INTO us_userInfo\n							(firstName,lastName,sin,mobile,email)\n						 VALUES\n						 ('\".$this->getFname().\"','\".\n						    $this->getLname().\"','\".\n						    $this->getSin().\"','\".\n						    $this->getContact().\"','\".\n						    $this->getemail().\"');\";\n		$countUserAdd = $dbCon->exec($queryUserAdd);\n		\n		//echo $queryUserAdd;\n		//Set user account inactive\n		//Set crediblity points to 30\n		if($countUserAdd == 1){\n			$this->getUserID();\n			//If user is added get the id\n			$queryUserActivation=\"INSERT INTO us_activation\n									(userID,code)\n								  VALUES\n								  ('\".$this->getID().\"','\"\n								  	.$this->getActCode().\"');\";\n			$countUserActivation = $dbCon->exec($queryUserActivation);\n\n			$queryUserCredibility=\"INSERT INTO us_credibility\n										(userID,points)\n									VALUES\n									('\".$this->getID().\"','30');\";\n			$countUserCredibility = $dbCon->exec($queryUserCredibility);\n			return $countUserActivation;\n		}\n		return 0;\n	}\n\n	//Get all user information for email\n	public function getUserInfo(){\n		$dbCon = Database::connectDB();\n		$query = \"SELECT * FROM us_userInfo INNER JOIN  us_credibility ON id=userID   WHERE id='\".$this->getId().\" and ';\";\n		$userInfo = $dbCon->query($query);\n		foreach ($userInfo as $ui) {\n			$this->setFname($ui['firstName']);\n			$this->setLname($ui['lastName']);		\n			$this->setContact($ui['mobile']);	\n			$this->setEmail($ui['email']);	\n			$this->setDOB($ui['dob']);	\n			$this->setUnit($ui['unit']);	\n			$this->setStreet($ui['street']);	\n			$this->setCity($ui['city']);\n			$this->setProvince($ui['province']);\n			$this->setPostalCode($ui['postalcode']);\n			$this->setPaypalID($ui['paypal']);\n			$this->setCredibility($ui['points']);\n			$this->setSIN($ui['sin']);\n		}\n	}\n\n	//GetUserID of last added row\n	public function getUserID(){\n		//Create DB object\n		$dbCon = Database::connectDB();\n		$query = \"SELECT id FROM us_userInfo where email ='\".$this->getEmail().\"'\";\n		$ids = $dbCon->query($query);\n		foreach($ids as $id){\n			$this->setID($id['id']);\n		}\n	\n	}\n\n	// GetUserID by email \n	public function getUserIdByEmail($value){\n		//Create DB object\n		$dbCon = Database::connectDB();\n		$query = \"SELECT id FROM us_userInfo where email ='\".$value.\"'\";\n		$ids = $dbCon->query($query);			\n			foreach($ids as $id){\n				echo $id['id'];\n			}\n	}\n\n	public function getUserActivation(){\n		$dbCon = Database::connectDB();\n		$query = \"SELECT status FROM us_activation where userID ='\".$this->getID().\"'\";\n		$status = $dbCon->query($query);\n		$userStatus = 0;		\n			foreach($status as $statu){\n				$userStatus =  $statu['status'];\n			}\n		return $userStatus;\n	}\n\n\n	public function getUserActivationCode(){\n		$dbCon = Database::connectDB();\n		$query = \"SELECT code FROM us_activation where userID ='\".$this->getID().\"'\";\n		$status = $dbCon->query($query);\n		$dbCode = 0;		\n			foreach($status as $status){\n				$dbCode =  $status['code'];\n			}\n		return $dbCode;\n	}\n\n	public function changeUserActivation(){\n		$dbcode = $this->getUserActivationCode();\n		if($dbcode == $this->getActCode()){\n			$dbCon = Database::connectDB();\n			$query = \"UPDATE us_activation  set status = 1 where userID ='\".$this->getID().\"'\";\n			$statusUpdated = $dbCon->exec($query);\n			return $statusUpdated;\n		}\n\n	}\n\n	public function updatePassword(){\n		$dbCon = Database::connectDB();\n		$query = \"UPDATE us_userInfo set password ='\".$this->getPassword().\"' WHERE id ='\".$this->getID().\"'\";\n		$passwordUpdated = $dbCon->exec($query);\n		//echo $query;\n		return $passwordUpdated;\n	}\n\n	public function updateDetails(){\n		$dbCon = Database::connectDB();\n		$query = \"UPDATE us_userInfo set \n					dob ='\".$this->getDOB().\"',\n					gender ='\".$this->getGender().\"', \n					unit ='\".$this->getUnit().\"', \n					street ='\".$this->getStreet().\"', \n					city ='\".$this->getCity().\"',\n					province ='\".$this->getProvince().\"' , 	\n					postalcode ='\".$this->getPostalCode().\"' \n					WHERE id ='\".$this->getID().\"';\";\n		//echo $query;\n\n		$detailsUpdated = $dbCon->exec($query);\n		//print_r ($dbCon->errorInfo());\n		return $detailsUpdated;\n	}\n\n	public function updateBank(){\n		$dbCon = Database::connectDB();\n		$query = \"UPDATE us_userInfo set \n					paypal ='\".$this->getPaypalID().\"'\n					WHERE id ='\".$this->getID().\"';\";\n		$bankUpdated = $dbCon->exec($query);\n		return $bankUpdated;\n	}\n\n\n	public  function getPrefTime(){\n		$dbCon = Database::connectDB();\n		$query = \"SELECT start,end,weekDay FROM us_PrefTime WHERE userID = '\".$this->getID().\"';\";\n		$timeSlots =  $dbCon -> query($query);\n		//echo $query;\n		return $timeSlots;\n\n	}\n\n	public function setPrefTime(){\n		$dbCon = Database::connectDB();\n		$query = \"INSERT into us_PrefTime\n					(userID,start,end,weekDay)\n					VALUES\n					('\"\n					 .$this->getID().\"','\"\n					 .$this->getStartTime().\"','\"\n					 .$this->getEndTime().\"','\"\n					 .$this->getWeekDay().\"'\n					)\";\n		//echo $query;\n		$bankUpdated = $dbCon->exec($query);\n		return $bankUpdated;\n	}\n\n	public function getUserPassword(){\n		$dbCon = Database::connectDB();\n		$query = \"SELECT id,email,password,passwordUpdated FROM us_userInfo WHERE email = '\".$this->getEmail().\"'\";\n		$userInfo = $dbCon->query($query);\n		return $userInfo;\n	}\n\n	public function getPrefCompanies(){\n		$dbCon = Database::connectDB();\n		$query = \"SELECT name,userID,companyID FROM cp_company INNER JOIN us_PrefCompany ON companyID =  id WHERE userID ='\".$this->getID().\"';\";\n		return $dbCon->query($query);\n\n	}\n\n	public function getPrefLocation(){\n		$dbCon = Database::connectDB();\n		$query = \"SELECT userID,location FROM  us_PrefLocation WHERE userID ='\".$this->getID().\"';\";\n		return $dbCon->query($query);\n	}\n\n	public function setPrefLocation(){\n		$dbCon = Database::connectDB();\n		$query = \"INSERT INTO us_PrefLocation\n					(userID,location)\n					VALUES\n					('\".$this->getID().\"',\n					  '\".$this->getLocation().\"'\n					);\";\n		return $dbCon->exec($query);\n	}\n\n	public function requestShift(){\n		$dbCon = Database::ConnectDB();\n		// Get the time difference first \n		$queryShift = \"SELECT TIMEDIFF(endTime,startTime) 'tf' FROM cp_shifts WHERE id = {$this->getShiftID()}\";\n		$timeDiff = $dbCon->query($queryShift);\n		$shiftDuration = \"\";\n\n		foreach($timeDiff as $tf){\n			$shiftDuration = $tf['tf'];\n		}\n\n		$query = \"INSERT INTO jb_logs \n					(userID, shiftID,hours)\n				VALUES\n					('{$this->getID()}',\n					 '{$this->getShiftID()}',\n					 '$shiftDuration'\n					 )\";\n\n		return $dbCon->query($query);\n	}\n\n	public function getShifts(){\n		$dbCon = Database::connectDB();\n		$query = \n	}\n\n	// Classes Ends\n}\n\n?>    ",
-			"file": "model/UserDB.php",
-			"file_size": 10000,
-			"file_write_time": 130717278570000000,
+			"file": "model/payment.php",
 			"settings":
 			{
-				"buffer_size": 10080,
+				"buffer_size": 2403,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/UserDB.php",
+			"settings":
+			{
+				"buffer_size": 10650,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/careersDB.php",
+			"settings":
+			{
+				"buffer_size": 5101,
 				"line_ending": "Unix"
 			}
 		}
@@ -757,10 +721,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 47.0,
-		"last_filter": "",
+		"height": 347.0,
+		"last_filter": "Package Control: ins",
 		"selected_items":
 		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -778,7 +750,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 575.0
+		"width": 524.0
 	},
 	"console":
 	{
@@ -799,34 +771,62 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/bhawansingh/Dropbox/Codezyn",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard"
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/company",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/content",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/content/scss",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views"
 	],
 	"file_history":
 	[
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/feedback.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/faqDB.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/feedbackDB.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/faq.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/jobList.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/settings.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/home.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/applyJob.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/jobDetails.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/insertCareer.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faqUpdate.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faqEdit.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faqAdd.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faq.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/activation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/includes/footer.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/head.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/index.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/company/crlist.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/updateJob.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/careers.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/includes/navigation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/userFormSave.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/signup.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/navigation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/controller/_activation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/.htaccess",
-		"/Users/bhawansingh/Dropbox/Codezyn/code/codezyn/wassup/wp-content/plugins/backwpup/libs/Microsoft/Console/Command/ParameterSource/ParameterSourceInterface.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/code/codezyn/wassup/wp-content/plugins/backwpup/libs/Microsoft/WindowsAzure/Diagnostics/PerformanceCounterSubscription.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/code/mohindrafoundry/percategory.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/code/codezyn/wassup/wp-admin/plugin-editor.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/code/5abiz/payment.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/careers.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/feedback.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/faq.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/profile.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/dashboard.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/company/updateCR.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/content/scss/app.scss",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/subNavigation.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/includes/subNavigation.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/insertCareers.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/code/5abiz/payment.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/code/codezyn/wassup/wp-admin/plugin-editor.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/code/mohindrafoundry/percategory.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/code/codezyn/wassup/wp-content/plugins/backwpup/libs/Microsoft/WindowsAzure/Diagnostics/PerformanceCounterSubscription.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/code/codezyn/wassup/wp-content/plugins/backwpup/libs/Microsoft/Console/Command/ParameterSource/ParameterSourceInterface.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/controller/_activation.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/signup.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/userFormSave.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/index.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/head.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/includes/footer.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/activation.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/feedbackDB.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/Database.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/.htaccess",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/company/includes/subNavigation.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/navigation.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/mail.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/faqDB.php",
+		"/Users/bhawansingh/Downloads/soapservice/wsc-convertunit.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/classCode/php/soapservice/soaplistfunctions.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/classCode/php/soapservice/lab7.php",
+		"/private/var/folders/lv/z5m7v5_n325bynnh58h83w4m0000gn/T/fz3temp-1/BhawandeepGandhamlab7.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/userDB.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/index.html",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/sasstemp/index.html",
@@ -907,33 +907,7 @@
 		"/Applications/XAMPP/xamppfiles/etc/php.ini",
 		"/Applications/AMPPS/mysql/etc/my.cnf",
 		"/Applications/AMPPS/ampps/data/my.conf",
-		"/Applications/AMPPS/php-5.3/etc/php.ini",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/tour2.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/tour.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/css/main2.css",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/dubai-trip.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/details.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/index.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/details_copy.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/competition.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/contact-us.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/404.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/_index.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/index copy.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/gallery.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/spacecamp.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/spacecamp2.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/student.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/tour1.html",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/Web Programming/JavaScript-Project/css/AboutUs.css",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/Web Programming/JavaScript-Project/js/AboutUs.js",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/Web Programming/JavaScript-Project/css/menu.css",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/Web Programming/JavaScript-Project/contact.html",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/Web Programming/JavaScript-Project/js/contact.js",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/JavaScript-Project/about.html",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/Web Programming/JavaScript-Project/about.html",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/Web Programming/JavaScript-Project/js/index.js",
-		"/Users/bhawansingh/Dropbox/Humber/Semester 1/Web Programming/JavaScript-Project/index.html"
+		"/Applications/AMPPS/php-5.3/etc/php.ini"
 	],
 	"find":
 	{
@@ -944,6 +918,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox",
 			""
 		]
 	},
@@ -952,6 +927,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"echo",
+			"<div class=\"row\">\n						<div class=\"small-8 columns\">\n							<h2>",
+			"?php include(\"includes/navigation.php\") ?>\n	<?php\n		 	if(isset($message)){\n		 		?>\n		 			<div class=\" userInfo fixed\">\n		 				<div data-alert class=\"alert-box info  \">\n		 			 	 \n				 			 <?php  echo $message;?>\n				 			  <a href=\"#\" class=\"close\">&times;</a>\n				 		</div>\n		 			</div>\n		 		<?\n		 	}\n		 ?>",
+			"<?php include(\"includes/navigation.php\") ?>",
+			"<?php include(\"includes/navigation.php\") ?>\n	<?php\n		 	if(isset($message)){\n		 		?>\n		 			<div class=\" userInfo fixed\">\n		 				<div data-alert class=\"alert-box info  \">\n		 			 	 \n				 			 <?php  echo $message;?>\n				 			  <a href=\"#\" class=\"close\">&times;</a>\n				 		</div>\n		 			</div>\n		 		<?\n		 	}\n		 ?>",
+			"<div class=\"row\">\n				<div class=\"small-12 columns\">\n					<h2>",
+			"<div class=\"row profile\" id=\"mainContent\">\n		<?php include(\"includes/subNavigation.php\") ?>\n		<div class=\"small-12 medium-9 large-9 columns\">",
+			"<div class=\"small-12 medium-9 large-9 columns\">",
+			"<div class=\"small-12 medium-3 large-3 columns sideNavigation\">",
+			"reachfox",
+			"form",
+			"login",
+			");\n",
+			"getRepresentiveID",
+			"getRepresentiveIDby",
+			"getRepresentiveID",
+			"companyID",
+			"border",
 			"()}',",
 			"add",
 			"panel5",
@@ -1044,6 +1037,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<div class=\"row pageTitle\">\n						<div class=\"small-8 columns\">\n							<h2>",
+			"<?php include(\"includes/navigation.php\") ?>\n	<?php\n		 	if(isset($message)){\n		 		?>\n		 			<div class=\" userInfo fixed\">\n		 				<div data-alert class=\"alert-box info  \">\n		 			 	 \n				 			 <?php  echo $message;?>\n				 			  <a href=\"#\" class=\"close\">&times;</a>\n				 		</div>\n		 			</div>\n		 		<?\n		 	}\n		 ?>",
+			"?php include(\"includes/navigation.php\") ?>\n	<?php\n		 	if(isset($message)){\n		 		?>\n		 			<div class=\" userInfo fixed\">\n		 				<div data-alert class=\"alert-box info  \">\n		 			 	 \n				 			 <?php  echo $message;?>\n				 			  <a href=\"#\" class=\"close\">&times;</a>\n				 		</div>\n		 			</div>\n		 		<?\n		 	}\n		 ?>",
+			"<?php include(\"includes/navigation.php\") ?>",
+			"<div class=\"row pageTitle\">\n				<div class=\"small-12 columns\">\n					<h2>",
+			"<div class=\"row profile\" id=\"mainContent\">\n		<?php include(\"includes/subNavigation.php\") ?>\n		<div class=\"small-12 medium-10 large-10 columns\">",
+			"<div class=\"small-12 medium-2 large-2 columns sideNavigation\">",
 			"$timeSlotsFormated[$i]",
 			"$timeSlotsFormated[0]",
 			"",
@@ -1070,248 +1070,75 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 146,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								67,
-								67
-							]
-						],
-						"settings":
-						{
-							"auto_name": "index.php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "admin/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 137,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								137,
-								137
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "dashboard/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 145,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								137,
-								137
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8340,
+						"buffer_size": 10136,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7325,
-								7353
+								1926,
+								2000
 							]
 						],
 						"settings":
 						{
-							"auto_name": "index.php",
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 53.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 594.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 1,
+					"file": "company/dashboard.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1648,
+								1648
+							]
+						],
+						"settings":
+						{
+							"auto_name": "dashboard.php",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 298.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "company/home.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 490,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								490
-							]
-						],
-						"settings":
-						{
-							"auto_name": "home.php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "company/jobsAdd.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2353,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								545,
-								545
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<?php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 51.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "company/shiftAdd.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2752,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								499,
-								499
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "dashboard/jobList.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1632,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								579,
-								579
-							]
-						],
-						"settings":
-						{
-							"auto_name": "jobList.php",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 75.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
+						"buffer_size": 755,
 						"regions":
 						{
 						},
@@ -1324,31 +1151,30 @@
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "dashboard/dashboard.php",
+					"buffer": 3,
+					"file": "company/includes/subNavigation.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 383,
+						"buffer_size": 733,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								292,
-								292
+								607,
+								607
 							]
 						],
 						"settings":
@@ -1360,11 +1186,127 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 4,
+					"file": "company/jobLogs.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1549,
+								1549
+							]
+						],
+						"settings":
+						{
+							"auto_name": "jobLogs.php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 60.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "company/jobsAdd.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5664,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "company/list.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 92.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "company/shiftAdd.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1274,
+								1274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 197.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "company/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1376,425 +1318,12 @@
 						"selection":
 						[
 							[
-								105,
-								105
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "admin/home.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 490,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
 								0,
-								490
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "home.php",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "admin/includes/subNavigation.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 732,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								453,
-								453
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "dashboard/profile.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3402,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								3402
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 804.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "model/mail.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 246,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								20,
-								20
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 32,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "views/includes/navigation.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 399,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								370,
-								370
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "dashboard/includes/navigation.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 401,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								261,
-								261
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 31,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "dashboard/includes/subNavigation.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 731,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								731,
-								731
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "views/feedback.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2456,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								204,
-								204
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "model/Database.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 922,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								793,
-								793
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "dashboard/settings.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14330,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								753,
-								883
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "dashboard/userFormSave.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1643,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1536,
-								1536
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 25,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 22,
-					"file": "controller/_dashboard.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5057,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5047,
-								5047
-							]
-						],
-						"settings":
-						{
-							"auto_name": "_dashboard.php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 2.0,
-						"translation.y": 652.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 23,
-					"file": "controller/_admin.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 630,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								496,
-								496
-							]
-						],
-						"settings":
-						{
-							"auto_name": "_admin.php",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 24,
-					"file": "controller/_home.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4478,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								220,
-								6
-							]
-						],
-						"settings":
-						{
-							"auto_name": "_home.php",
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -1805,78 +1334,136 @@
 					"type": "text"
 				},
 				{
-					"buffer": 25,
-					"file": "controller/_company.php",
+					"buffer": 9,
+					"file": "company/payment.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1931,
+						"buffer_size": 2645,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1872,
-								1872
+								2017,
+								2017
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 116.0,
+						"translation.x": 181.0,
+						"translation.y": 905.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
-					"file": "views/includes/head.php",
+					"buffer": 10,
+					"file": "company/jobs.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 693,
+						"buffer_size": 2664,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								533,
-								533
+								2391,
+								2391
 							]
 						],
 						"settings":
 						{
-							"auto_name": "head.php",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 9.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "company/shifts.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2891,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2891
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 125.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "company/supervisorAdd.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
-					"file": "views/includes/footer.php",
+					"buffer": 13,
+					"file": "index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 392,
+						"buffer_size": 208,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								363,
-								363
+								206,
+								206
 							]
 						],
 						"settings":
@@ -1887,157 +1474,128 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "dashboard/includes/footer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 445,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								398,
-								398
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 33,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "dashboard/includes/head.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 572,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								572,
-								572
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 491.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 30,
+					"stack_index": 18,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 30,
-					"file": "content/scss/_settings.scss",
+					"buffer": 14,
+					"file": "controller/_company.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 51033,
+						"buffer_size": 7010,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								50538,
-								50547
+								910,
+								910
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 21521.0,
+						"translation.y": 296.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
-					"file": "content/scss/home.scss",
+					"buffer": 15,
+					"file": "controller/_dashboard.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1335,
+						"buffer_size": 5134,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1335,
-								1335
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "index.scss",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 375.0,
+						"translation.y": 352.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
-					"file": "content/scss/global.scss",
+					"buffer": 16,
+					"file": "controller/_admin.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3395,
+						"buffer_size": 4870,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3261,
-								3261
+								4815,
+								4815
 							]
 						],
 						"settings":
 						{
-							"auto_name": "global.scss",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2605.0,
+						"translation.y": 2218.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "controller/_home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7981,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4598,
+								4598
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2023.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
 					"type": "text"
 				}
 			]
@@ -2047,20 +1605,82 @@
 			"sheets":
 			[
 				{
-					"buffer": 33,
+					"buffer": 18,
+					"file": "content/scss/global.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4304,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								63,
+								63
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 55.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "content/scss/app.scss",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 20,
 					"file": "model/companyDB.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5066,
+						"buffer_size": 17010,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4942,
-								4942
+								16837,
+								16837
 							]
 						],
 						"settings":
@@ -2068,28 +1688,58 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 1640.0,
+						"translation.x": 43.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 21,
+					"file": "model/payment.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								397,
+								397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 276.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
 					"file": "model/UserDB.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10080,
+						"buffer_size": 10650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10049,
-								10049
+								471,
+								471
 							]
 						],
 						"settings":
@@ -2098,10 +1748,40 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2735.0,
+						"translation.y": 2972.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "model/careersDB.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2347,
+								2347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1275.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
 					"type": "text"
 				}
 			]
@@ -2109,7 +1789,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -2147,18 +1827,22 @@
 		"cols":
 		[
 			0.0,
-			0.62029445132,
+			0.295323512645,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.695073784722,
+			0.585544904418,
 			1.0
 		]
 	},
 	"menu_visible": true,
 	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"output.xdebug":
 	{
 		"height": 0.0
 	},
@@ -2166,7 +1850,7 @@
 	"project": "reachfox.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2196,7 +1880,7 @@
 		],
 		"width": 392.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
@@ -2205,7 +1889,7 @@
 	"show_tabs": false,
 	"side_bar_visible": true,
 	"side_bar_width": 228.0,
-	"status_bar_visible": false,
+	"status_bar_visible": true,
 	"template_settings":
 	{
 		"max_columns": 2

@@ -1,11 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
 $bgDark : #04121E;
 $bgLight: #13487C;
 $foxRed : #f7931d;
 $txtWhite : #ddd; 
+$marginBottom:2rem;
 
 h2{
-	color: #252525;
+	 color: #151515;
+	 font-size: 1.8rem;
+	 margin: 0 0 0.5rem;
+	 text-align: left;
+	 font-weight: bold;
 }
 
 ul{
@@ -17,6 +22,38 @@ ul li { float: left;list-style: none;}
 // Buttons
 table .button{
 	margin: 0;
+}
+
+.userInfo{
+	z-index: 98;
+	//position: relative;
+	top:45px;
+	div{
+		display: table;
+		margin: 0 auto;
+		text-align: center;
+
+	}
+}
+
+.boxes{
+	@extend .panel;
+	background-color:#fff;
+	margin:0;
+	padding:0.5rem;
+}
+
+.buttonsGroup{
+	border-top:1px solid #eee;
+	border-bottom:1px solid #eee;
+	background: #fff;
+	margin:1rem -0.5rem !important;
+	padding: 0;
+		div {
+				&:first-child{
+				border-right: 1px solid #ddd;
+		}
+	}
 }
 
 .cross{
@@ -79,9 +116,13 @@ table .button{
 
 .sideNavigation{
 	.panel{
+		background:transparent;
+		border-width: 0;
 		display: table;
+		padding-left:0;
+		padding-right:0;
+		padding-top: $marginBottom;
 		.side-nav{
-			
 			li{
 				width: 100%;
 				a{
@@ -94,6 +135,11 @@ table .button{
 		}
 		
 	}
+}
+
+.row .pageTitle{
+	border-bottom: 2px solid #efefef;
+	margin:0 -0.9375rem 2rem ;
 }
 
 .questions{
@@ -236,7 +282,8 @@ h4{
 //-----------------------JOB LISTING--------------------------------
 
 .jobPosting{
-	div{
+	>div{
+		margin-bottom: 1rem;
 		i{
 			margin-right: 10px;
 		}
@@ -251,4 +298,19 @@ h4{
 		top:12px;
 	}
 
+}
+
+
+// LoginModal
+#loginModal{
+	h3{
+		margin-bottom: 1.5rem;
+	}
+	.tabs{
+		border:1px solid #efefef;
+		width: 100%;
+		li{
+			width: 50%;
+		}
+	}
 }

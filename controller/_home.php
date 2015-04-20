@@ -5,6 +5,7 @@
 	include_once("model/mail.php"); 
 	include_once("model/feedbackDB.php"); 
 	include_once("model/faqDB.php"); 
+	include_once('model/careersDB.php');
 
 
 	class Home{
@@ -25,7 +26,12 @@
 						$this->userAdd(); 
 						break;
 					case 'login': 
-						$this->model = new Userdb; $this->loginCheck(); 
+						$this->model = new Userdb; 
+						$this->loginCheck(); 
+						break;
+					case 'companyLogin': 
+						$this->model = new Userdb; 
+						$this->companyLoginCheck(); 
 						break;
 					case 'feedbackAdd':
 						$this->feedbackAdd(); 
@@ -36,15 +42,24 @@
 					case 'companyAdd': 
 						$this->companyAdd(); 
 						break;
-					// @Gulnar FAQ Features 
-					//Added by Bhawan
 					case 'feedback':
 						include 'views/feedback.php'; 
+						break;
+					case 'careers':
+						$this->careers();
+						break;
+					case 'viewJob':
+						$this->viewJob();
+						break;
+					case 'applyJob':
+						$this->applyJob();
 						break;
 					case 'faq':
 						$this->faq(); 
 						break;
-
+					case 'submitJob':
+						$this->submitJob();
+						break;
 				}
 			}
 			
@@ -115,6 +130,38 @@
 			 }
 		}
 
+		public function companyLoginCheck(){
+			$this->model = new companyDB();
+			$this->model->setEmail($_POST['emailLogin']);
+			$companyInfo = $this->model->getRepresentivePassword();
+			//$userPasswordCrypted= password_hash($_POST['passwordLogin'],PASSWORD_BCRYPT); 
+
+			foreach($companyInfo as $ci){
+			  
+			    //Match the user entered password hash with that of stored password
+			    if( password_verify($_POST['passwordLogin'],$ci['password']))
+			    {
+			            $_SESSION["companyID"] = $ci['companyID'];
+			            $_SESSION["representiveID"] = $ci['representiveID'];
+
+			            $this->model->setcompanyID($ci['companyID']);
+			            $this->model->setRepresentiveID($ci['representiveID']);
+
+			            if($this->model->getCompanyActivation()){
+			            	header("location: company/index.php?action=dashboard");
+			            
+			        	}
+			            else{
+			            	header("location: company/index.php?action=activation");
+			            }
+			    }
+			    else{
+			        include 'views/index.php';
+			    }
+
+			 }
+		}
+
 		public function companyAdd(){
 			$this->model = new companyDB();
 			$this->model->setName($_POST['name']);
@@ -159,6 +206,62 @@
 		public function faq(){
 			$this->model = new faqDB;	
 			include 'views/faq.php';
+		}
+
+		public function careers(){
+			$this->model = new careersDB;
+			include 'views/careers.php';
+		}
+
+		public function viewJob(){
+			$this->model = new careersDB;
+			$this->model->setId($_GET['id']);
+			$this->model->getReachFoxJobsByID();
+			include 'views/jobDetails.php';
+
+		}
+
+		public function applyJob(){	
+			$this->model = new careersDB;
+			$this->model->setId($_POST['jobID']);
+			include 'views/applyJob.php';
+		}
+
+		public function submitJob(){
+			$this->model = new careersDB;
+	
+			$this->model->setJobid($_POST['jobID']);
+			$this->model->setFname($_POST['fname']);
+			$this->model->setLname($_POST['lname']);
+			$this->model->setEmail($_POST['email']);
+			$this->model->setPnumber($_POST['pnumber']);
+			$resume = $_FILES['resumefile']['name'];
+			$file_type = $_FILES['resumefile']['type'];
+			$file_temp = $_FILES['resumefile']['tmp_name'];
+			
+
+
+			//grab file path
+			$target_path = "views/resumes/";
+			$target_path = $target_path . $resume;
+			
+			//check for file type
+			$formats =  array('pdf', 'doc', 'docx', 'rtf');
+			$extension = pathinfo($resume, PATHINFO_EXTENSION);
+			
+			//check if fields are empty
+			if(!in_array($extension,$formats)){
+			    $error2 = "File type must be pdf, doc, docx, or rtf";
+			    
+			}else{
+			    //add details to database
+			    $this->model->setResume($resume);
+			 	 $this->model->addReachFoxApp();
+			    //upload file
+			    move_uploaded_file($file_temp, $target_path);
+			    
+			    header('Location: thankyou.php');
+			}    
 		}
 	}
 ?>

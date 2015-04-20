@@ -1,4 +1,4 @@
-	<div class="small-12 medium-3 large-3 columns sideNavigation">
+	<div class="small-12 medium-2 large-2 columns sideNavigation">
 		<div class="panel callout radius">
 			<ul class="side-nav">
 			  <li><a href="index.php?action=home"><i class="fa fa-th"></i>Dashboard</a></li>

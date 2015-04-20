@@ -6,6 +6,7 @@
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
 	include_once("../model/msgDB.php"); 
+	include_once("../model/careersDB.php"); 
 
 
 	class Admin{
@@ -45,6 +46,24 @@
                     case 'faqUpdate' : 
                     	$this->faqUpdate(); 
                     	break;
+                    case 'careers':
+						$this->careers();
+						break;
+					case 'updateJob':
+						$this->updateJob();
+						break;
+					case 'submitJobUpdate':
+						$this->submitJobUpdate();
+						break;
+					case 'deleteJob':
+						$this->deleteJob();
+						break;
+					case 'insertCareer':
+						$this->insertCareer();
+						break;
+					case 'insertCareerSubmit':
+						$this->insertCareerSubmit();
+						break;
 					case 'feedback':
 						include 'views/feedback.php'; 
 						break;
@@ -145,4 +164,52 @@
 			include 'messages.php';
 		}
 
+		public function careers(){
+			$this->model = new careersDB;
+			include 'careers.php';
+		}
+
+		public function updateJob(){
+			$this->model = new careersDB;
+			$this->model->setId($_GET['id']);
+			$this->model->getReachFoxJobsByID();
+			include 'updateJob.php';
+		}
+
+		public function submitJobUpdate(){
+			$this->model = new careersDB;
+			$this->model->setId($_POST['id']);
+        	$this->model->setName($_POST['name']);
+        	$this->model->setLocation($_POST['location']);
+        	$this->model->setVacancies($_POST['vacancies']);
+        	$this->model->setDescription($_POST['description']);
+        	$this->model->setStatus($_POST['status']);
+
+			$this->model->updateReachFoxJob();
+			header ('location: index.php?action=careers');
+		}
+
+		public function deleteJob(){
+			$this->model = new careersDB;
+			$this->model->setId($_GET['id']);
+			$this->model->deleteReachFoxJob();
+			header ('location: index.php?action=careers');
+		}
+
+		public function insertCareer(){
+			$this->model = new careersDB;
+			include 'insertCareer.php';
+		}
+
+		public function insertCareerSubmit(){
+			$this->model = new careersDB;
+			
+        	$this->model->setName($_POST['name']);
+        	$this->model->setLocation($_POST['location']);
+        	$this->model->setVacancies($_POST['vacancies']);
+        	$this->model->setDescription($_POST['description']);
+        	$this->model->setStatus($_POST['status']);
+        	$this->model->addReachFoxJob();
+			header ('location: index.php?action=careers');
+		}
 }

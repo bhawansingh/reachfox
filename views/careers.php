@@ -21,23 +21,26 @@
 		 		<?
 		 	}
 		 ?>
-    
-<div class="questions">
-	<div class="row">
-		<div class="small-8 small-centered medium-8 large-8 columns text-center">
-		<p>
-        <?php
-		$resultSet = $this->model->getFAQs();
-		foreach ($resultSet as $rs) {
-            $question = $rs['question'];
-           $answer = $rs['answer'];
-            echo "<p>Question:".$question."<br />Answer:".$answer."</p>";
-		}
-        ?>
-        </p>
+<!-- Body -->
+<div class="row">
+<?php 
 
-		</div>	
-	</div>
+ 	$jobname = $this->model->getReachFoxJobs();
+	foreach($jobname as $j)
+	{	if($j['status'] == '1'){
+		echo "<div class='small-3 columns'>";
+			echo "<div class='panel'>";
+		    //check to see if job is open
+		    
+			    echo $j['name'];
+
+			    echo " <a href='index.php?action=viewJob&id=".$j['id']."'>View Details</a>";
+			
+			echo "</div>";
+		echo "</div>";
+	}
+	}
+	?>
 </div>
 
 

@@ -5,10 +5,12 @@
 	include_once("../model/mail.php"); 
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
+	include_once("../model/payment.php"); 
 
 	class Company{
 
 		public $model;
+		public $message;
 
 		public function __construct(){
 		}
@@ -18,7 +20,9 @@
 				include 'home.php';
 			}else{
 				switch($_GET['action']){
-					case 'companyAdd': break;
+					case 'dashboard':
+						$this->dashboard();
+						break;
 					case 'jobs': 
 						$this->jobs();
 						break;
@@ -33,6 +37,9 @@
 						break;
 					case 'jobAdd': 
 						$this->jobAdd();
+						break;
+					case 'markAttendance':
+						$this->markAttendance();
 						break;
 					case 'home': 
 						include 'home.php';
@@ -55,9 +62,22 @@
 					case 'supervisorAdd':
 						$this->supervisorAdd();
 						break;
-
+					case 'jobLogs':
+						$this->jobLogs();
+						break;
+					case 'payment':
+						$this->payment();
+						break;
+					case 'sendPayment':
+						$this->sendPayment();
+						break;
 				}
 			}
+		}
+
+		public function dashboard(){
+			$this->model = new companyDB();
+			include 'dashboard.php';
 		}
 
 		public function activation(){
@@ -134,7 +154,7 @@
 
 		public function jobs(){
 			$this->model = new CompanyDB();
-			include 'jobList.php';
+			include 'jobs.php';
 		}
 
 		public function addShift(){
@@ -155,6 +175,7 @@
 			//$this->model->listUsersOfShiftByID();
 			include 'list.php';
 		}
+
 		public function supervisorAdd(){
 
 			if (isset($_POST['supSubmit'])) {
@@ -178,14 +199,11 @@
 					include 'supervisorAdd.php';
 				}
 		}
-
-		public function crlist()
-		{
+		public function crlist(){
 			include 'crList.php';
 		}
 
-		public function deleteCR()
-		{
+		public function deleteCR(){
 			$this->model = new CompanyDB();
 			$this->model->setCRID($_GET['id']);
 	 		if($this->model->deleteSupervisor()){
@@ -202,12 +220,9 @@
 
 			//Implement this feature on single page in future either by PHP OR AJAX
 			include 'updateCR.php';
-
-
 		}
 
-		public function updateCR()
-		{
+		public function updateCR(){
 			$this->model = new companyDB();
 			if (isset($_POST['upSubmit'])) {
 				$this->model->setCRID($_POST['id']);
@@ -225,7 +240,45 @@
 			}
 
 		}
+
+		public function jobLogs(){
+			$this->model = new companyDB();
+			$this->model->setShiftID($_GET['sid']);
+			//Comment below ASAP
+			//$this->model->setShiftID('2');
+			$this->model->getShiftList();
+			include 'jobLogs.php';
+		}
 		
+		public function markAttendance(){
+			$this->model = new companyDB();
+			
+			if($this->model->markAttendance()){
+				$message = "Attendance Updated.";
+				//Call the pay calculator function $$$$$
+				$this->model->payCalculator();
+			}
+			else{
+				$message = "You mind taking it on paper just for this time.";
+			}
+			header('location: index.php?action=jobs');
+		}
+
+		public function payment(){
+			$this->model = new CompanyDB;
+			$this->model->setJobID($_GET['jid']);
+			include 'payment.php';
+
+		}
+
+		public function sendPayment(){
+			$this->model = new CompanyDB;
+			//$this->model->setJobID($_GET['jid']);
+			$this->model = new Payment;
+			$this->model->pay();
+			//include 'payment.php';
+
+		}
 
 	}//Class Closes
 
