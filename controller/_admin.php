@@ -222,7 +222,12 @@
 					header ('location: index.php?action=reachfoxInfo');
 				}else{	
 
-					$newimage = $_FILES['imagefile']['name'];
+					$int = rand(1 , 1000000);
+
+					//handle file name
+					$image = $_FILES['imagefile']['name'];
+					$imageNoSpaces = str_replace(' ', '', $image);
+					$newimage = preg_replace('/(\.[^.]+)$/', sprintf('%s$1', $int), $imageNoSpaces);
 					$file_type = $_FILES['imagefile']['type'];
 					$file_temp = $_FILES['imagefile']['tmp_name'];
 
@@ -231,12 +236,12 @@
 					$target_path = $target_path . $newimage;
 			
 					//check for file type
-					$formats =  array('jpg', 'png', 'bmp', 'gif');
+					$formats =  array('jpg', 'png', 'gif');
 					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
 			
 					if(!in_array($extension,$formats)){
-						$this->model->setError("File must be jpg, png, bmp, or gif");
-						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
+						$this->model->setError("File must be jpg, png or gif");
+						echo 'Wrong File Format - Must be jpg, png or gif';
 						//header ('location: index.php?action=reachfoxInfo');
 						
 					}else{
@@ -257,7 +262,13 @@
 					header ('location: index.php?action=reachfoxInfo');
 					
 				}else{
-					$newimage = $_FILES['imagefile']['name'];
+
+					$int = rand(1 , 1000000);
+
+					//handle file name
+					$image = $_FILES['imagefile']['name'];
+					$imageNoSpaces = str_replace(' ', '', $image);
+					$newimage = preg_replace('/(\.[^.]+)$/', sprintf('%s$1', $int), $imageNoSpaces);
 					$file_type = $_FILES['imagefile']['type'];
 					$file_temp = $_FILES['imagefile']['tmp_name'];
 
@@ -266,12 +277,12 @@
 					$target_path = $target_path . $newimage;
 			
 					//check for file type
-					$formats =  array('jpg', 'png', 'bmp', 'gif');
+					$formats =  array('jpg', 'png', 'gif');
 					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
 			
 					if(!in_array($extension,$formats)){
-						$this->model->setError("File must be jpg, png, bmp, or gif");
-						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
+						$this->model->setError("File must be jpg, png or gif");
+						echo 'Wrong File Format - Must be jpg, png or gif';
 						//header ('location: index.php?action=reachfoxInfo');
 					}else{
 						move_uploaded_file($file_temp, $target_path);

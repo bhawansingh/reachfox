@@ -73,6 +73,8 @@
             	</label>
             </div>
 
+            <br />
+
 		<h2>Learn Page Content</h2>
 
 		<textarea class="ckeditor" name="learn_editor">

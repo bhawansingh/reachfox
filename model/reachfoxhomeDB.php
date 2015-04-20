@@ -75,7 +75,8 @@ class reachfoxHomeDB{
 	public  function insertNewImage() {
         $db = Database::connectDB();
 
-        $newimage = $this->getImage();
+        $image = $this->getImage();
+        $newimage = str_replace(' ', '', $image);
         $status = '1';
 
         $query =
