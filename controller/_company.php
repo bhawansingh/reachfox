@@ -41,7 +41,7 @@
 						$this->activation();
 						break;
 					case 'crlist':
-						 $this->Crlist();
+						 $this->crlist();
 						 break;	
 					case 'deleteCR':
 						$this->deleteCR();
@@ -179,7 +179,7 @@
 				}
 		}
 
-		public function CrList()
+		public function crlist()
 		{
 			include 'crList.php';
 		}
