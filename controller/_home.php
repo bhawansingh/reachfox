@@ -6,9 +6,9 @@
 	include_once("model/feedbackDB.php"); 
 	include_once("model/faqDB.php"); 
 	include_once('model/careersDB.php');
-	include_once('model/reachfoxhomeDB.php');
+	include_once('model/imageDB.php');
 	include_once('model/createTestDB.php');
-
+	include_once('model/reachfoxhomeDB.php');
 
 	class Home{
 
@@ -16,12 +16,15 @@
 		public $resultSet;
 
 		public function __construct(){
-			
 		}
 
 		public function invoke(){
 			if(!isset($_GET['action'])){
+
+			$this->model = new imageDB();
+
 				include 'views/index.php';
+				
 			}else{
 				switch($_GET['action']){
 					case 'userAdd': 
@@ -234,14 +237,7 @@
 
 		public function applyJob(){	
 			$this->model = new careersDB;
-
-			if (isset($_POST['jobID'])){
-				
-				$this->model->setId($_POST['jobID']);
-			}else{
-				
-
-			}
+			$this->model->setId($_POST['jobID']);
 			include 'views/applyJob.php';
 		}
 
@@ -256,6 +252,8 @@
 			$resume = $_FILES['resumefile']['name'];
 			$file_type = $_FILES['resumefile']['type'];
 			$file_temp = $_FILES['resumefile']['tmp_name'];
+			
+
 
 			//grab file path
 			$target_path = "views/resumes/";
@@ -265,20 +263,18 @@
 			$formats =  array('pdf', 'doc', 'docx', 'rtf');
 			$extension = pathinfo($resume, PATHINFO_EXTENSION);
 			
+			//check if fields are empty
 			if(!in_array($extension,$formats)){
-				$this->model->setError("File type must be pdf, doc, docx, or rtf");
-			    header("location: index.php?action=applyJob");
+			    $error2 = "File type must be pdf, doc, docx, or rtf";
 			    
 			}else{
 			    //add details to database
 			    $this->model->setResume($resume);
-			 	$this->model->addReachFoxApp();
-
+			 	 $this->model->addReachFoxApp();
 			    //upload file
 			    move_uploaded_file($file_temp, $target_path);
-
-			    header("location: index.php?action=careers");
 			    
+			    header('Location: thankyou.php');
 			}    
 		}
 

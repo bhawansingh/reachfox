@@ -4,16 +4,120 @@
 		"selected_items":
 		[
 			[
-				"inc",
-				"include_once"
+				"cp_",
+				"cp_payment"
 			],
 			[
 				"mar",
 				"margin-bottom"
 			],
 			[
+				"pa",
+				"padding-bottom"
+			],
+			[
 				"pad",
 				"padding"
+			],
+			[
+				"compan",
+				"companyID"
+			],
+			[
+				"pay",
+				"payment"
+			],
+			[
+				"to",
+				"totalPayment"
+			],
+			[
+				"getco",
+				"getCompanyID"
+			],
+			[
+				"getjob",
+				"getJobID"
+			],
+			[
+				"shid",
+				"shiftID"
+			],
+			[
+				"getS",
+				"getShiftID"
+			],
+			[
+				"setsd",
+				"setShiftID"
+			],
+			[
+				"exe",
+				"execute"
+			],
+			[
+				"setP",
+				"setPay"
+			],
+			[
+				"pre",
+				"preparedSt"
+			],
+			[
+				"strTo",
+				"strtotime"
+			],
+			[
+				"time",
+				"timeDiff"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"ma",
+				"marginBottom"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"p",
+				"padding-right"
+			],
+			[
+				"m",
+				"message"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"job",
+				"jobLogID"
+			],
+			[
+				"Job",
+				"JobLogID"
+			],
+			[
+				"re",
+				"resultSet"
+			],
+			[
+				"getShi",
+				"getShiftID"
+			],
+			[
+				"connec",
+				"connectDB"
+			],
+			[
+				"inc",
+				"include_once"
 			],
 			[
 				"op",
@@ -80,10 +184,6 @@
 				"getShiftEndTime"
 			],
 			[
-				"getS",
-				"getShiftStartTime"
-			],
-			[
 				"getRE",
 				"getShiftRequirement"
 			],
@@ -128,20 +228,12 @@
 				"query"
 			],
 			[
-				"pa",
-				"padding"
-			],
-			[
 				"fo",
 				"foreach	foreach …"
 			],
 			[
 				"bord",
 				"border-bottom"
-			],
-			[
-				"m",
-				"margin-bottom"
 			],
 			[
 				"te",
@@ -230,10 +322,6 @@
 			[
 				"fon",
 				"font-size"
-			],
-			[
-				"font",
-				"font-family"
 			],
 			[
 				"bg",
@@ -412,10 +500,6 @@
 				"getElementById"
 			],
 			[
-				"ma",
-				"margin-left"
-			],
-			[
 				"min",
 				"min-width"
 			],
@@ -430,38 +514,6 @@
 			[
 				"prim",
 				"primaryRed"
-			],
-			[
-				"border-r",
-				"border-radius"
-			],
-			[
-				"pri",
-				"primaryRed"
-			],
-			[
-				"wi",
-				"width"
-			],
-			[
-				"marg",
-				"margin-left"
-			],
-			[
-				"isn",
-				"is_null"
-			],
-			[
-				"font-s",
-				"font-style"
-			],
-			[
-				"w",
-				"width"
-			],
-			[
-				"background",
-				"background-position"
 			]
 		]
 	},
@@ -471,7 +523,105 @@
 			"file": "views/index.php",
 			"settings":
 			{
-				"buffer_size": 9873,
+				"buffer_size": 10136,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/dashboard.php",
+			"settings":
+			{
+				"buffer_size": 2685,
+				"line_ending": "Unix",
+				"name": "dashboard.php"
+			}
+		},
+		{
+			"file": "company/home.php",
+			"settings":
+			{
+				"buffer_size": 755,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/includes/subNavigation.php",
+			"settings":
+			{
+				"buffer_size": 733,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/jobLogs.php",
+			"settings":
+			{
+				"buffer_size": 2859,
+				"line_ending": "Unix",
+				"name": "jobLogs.php"
+			}
+		},
+		{
+			"file": "company/jobsAdd.php",
+			"settings":
+			{
+				"buffer_size": 5664,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/list.php",
+			"settings":
+			{
+				"buffer_size": 2348,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/shiftAdd.php",
+			"settings":
+			{
+				"buffer_size": 3766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/index.php",
+			"settings":
+			{
+				"buffer_size": 141,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/payment.php",
+			"settings":
+			{
+				"buffer_size": 2645,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/jobs.php",
+			"settings":
+			{
+				"buffer_size": 2664,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/shifts.php",
+			"settings":
+			{
+				"buffer_size": 2891,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "company/supervisorAdd.php",
+			"settings":
+			{
+				"buffer_size": 4382,
 				"line_ending": "Unix"
 			}
 		},
@@ -484,82 +634,10 @@
 			}
 		},
 		{
-			"file": "views/faq.php",
-			"settings":
-			{
-				"buffer_size": 661,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "admin/careers.php",
-			"settings":
-			{
-				"buffer_size": 1509,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/includes/navigation.php",
-			"settings":
-			{
-				"buffer_size": 441,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/careers.php",
-			"settings":
-			{
-				"buffer_size": 658,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "admin/updateJob.php",
-			"settings":
-			{
-				"buffer_size": 1906,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "admin/faq.php",
-			"settings":
-			{
-				"buffer_size": 405,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "admin/insertCareer.php",
-			"settings":
-			{
-				"buffer_size": 1836,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/jobDetails.php",
-			"settings":
-			{
-				"buffer_size": 1161,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/applyJob.php",
-			"settings":
-			{
-				"buffer_size": 2170,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "controller/_company.php",
 			"settings":
 			{
-				"buffer_size": 5668,
+				"buffer_size": 7010,
 				"line_ending": "Unix"
 			}
 		},
@@ -591,7 +669,15 @@
 			"file": "content/scss/global.scss",
 			"settings":
 			{
-				"buffer_size": 3560,
+				"buffer_size": 4304,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content/scss/app.scss",
+			"settings":
+			{
+				"buffer_size": 1492,
 				"line_ending": "Unix"
 			}
 		},
@@ -599,7 +685,15 @@
 			"file": "model/companyDB.php",
 			"settings":
 			{
-				"buffer_size": 12578,
+				"buffer_size": 17010,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model/payment.php",
+			"settings":
+			{
+				"buffer_size": 2403,
 				"line_ending": "Unix"
 			}
 		},
@@ -678,14 +772,38 @@
 	"expanded_folders":
 	[
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/company",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/content",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/controller",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/content/scss",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views"
 	],
 	"file_history":
 	[
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/insertCareers.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/jobList.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/settings.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/home.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/applyJob.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/jobDetails.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/insertCareer.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faqUpdate.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faqEdit.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faqAdd.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faq.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/company/crlist.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/updateJob.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/careers.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/includes/navigation.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/careers.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/feedback.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/faq.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/profile.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/dashboard.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/company/updateCR.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/content/scss/app.scss",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/subNavigation.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/includes/subNavigation.php",
+		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/insertCareers.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/code/5abiz/payment.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/code/codezyn/wassup/wp-admin/plugin-editor.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/code/mohindrafoundry/percategory.php",
@@ -698,27 +816,17 @@
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/head.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/includes/footer.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/activation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faq.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/feedbackDB.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/Database.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/.htaccess",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faqUpdate.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/faqAdd.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/faq.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/company/includes/subNavigation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/admin/includes/subNavigation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/includes/navigation.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/navigation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/includes/subNavigation.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/views/feedback.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/dashboard/settings.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/mail.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/faqDB.php",
 		"/Users/bhawansingh/Downloads/soapservice/wsc-convertunit.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/classCode/php/soapservice/soaplistfunctions.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/classCode/php/soapservice/lab7.php",
 		"/private/var/folders/lv/z5m7v5_n325bynnh58h83w4m0000gn/T/fz3temp-1/BhawandeepGandhamlab7.php",
-		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/content/scss/app.scss",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/model/userDB.php",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox/index.html",
 		"/Users/bhawansingh/Dropbox/Codezyn/PHProject/sasstemp/index.html",
@@ -799,19 +907,7 @@
 		"/Applications/XAMPP/xamppfiles/etc/php.ini",
 		"/Applications/AMPPS/mysql/etc/my.cnf",
 		"/Applications/AMPPS/ampps/data/my.conf",
-		"/Applications/AMPPS/php-5.3/etc/php.ini",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/tour2.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/tour.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/css/main2.css",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/dubai-trip.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/details.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/index.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/details_copy.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/competition.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/contact-us.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/404.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/_index.html",
-		"/Users/bhawansingh/Documents/Codezyn/public_html/spaceventures.us/index copy.html"
+		"/Applications/AMPPS/php-5.3/etc/php.ini"
 	],
 	"find":
 	{
@@ -822,6 +918,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/bhawansingh/Dropbox/Codezyn/PHProject/reachfox",
 			""
 		]
 	},
@@ -830,6 +927,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"echo",
+			"<div class=\"row\">\n						<div class=\"small-8 columns\">\n							<h2>",
+			"?php include(\"includes/navigation.php\") ?>\n	<?php\n		 	if(isset($message)){\n		 		?>\n		 			<div class=\" userInfo fixed\">\n		 				<div data-alert class=\"alert-box info  \">\n		 			 	 \n				 			 <?php  echo $message;?>\n				 			  <a href=\"#\" class=\"close\">&times;</a>\n				 		</div>\n		 			</div>\n		 		<?\n		 	}\n		 ?>",
+			"<?php include(\"includes/navigation.php\") ?>",
+			"<?php include(\"includes/navigation.php\") ?>\n	<?php\n		 	if(isset($message)){\n		 		?>\n		 			<div class=\" userInfo fixed\">\n		 				<div data-alert class=\"alert-box info  \">\n		 			 	 \n				 			 <?php  echo $message;?>\n				 			  <a href=\"#\" class=\"close\">&times;</a>\n				 		</div>\n		 			</div>\n		 		<?\n		 	}\n		 ?>",
+			"<div class=\"row\">\n				<div class=\"small-12 columns\">\n					<h2>",
+			"<div class=\"row profile\" id=\"mainContent\">\n		<?php include(\"includes/subNavigation.php\") ?>\n		<div class=\"small-12 medium-9 large-9 columns\">",
+			"<div class=\"small-12 medium-9 large-9 columns\">",
+			"<div class=\"small-12 medium-3 large-3 columns sideNavigation\">",
+			"reachfox",
 			"form",
 			"login",
 			");\n",
@@ -930,6 +1037,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<div class=\"row pageTitle\">\n						<div class=\"small-8 columns\">\n							<h2>",
+			"<?php include(\"includes/navigation.php\") ?>\n	<?php\n		 	if(isset($message)){\n		 		?>\n		 			<div class=\" userInfo fixed\">\n		 				<div data-alert class=\"alert-box info  \">\n		 			 	 \n				 			 <?php  echo $message;?>\n				 			  <a href=\"#\" class=\"close\">&times;</a>\n				 		</div>\n		 			</div>\n		 		<?\n		 	}\n		 ?>",
+			"?php include(\"includes/navigation.php\") ?>\n	<?php\n		 	if(isset($message)){\n		 		?>\n		 			<div class=\" userInfo fixed\">\n		 				<div data-alert class=\"alert-box info  \">\n		 			 	 \n				 			 <?php  echo $message;?>\n				 			  <a href=\"#\" class=\"close\">&times;</a>\n				 		</div>\n		 			</div>\n		 		<?\n		 	}\n		 ?>",
+			"<?php include(\"includes/navigation.php\") ?>",
+			"<div class=\"row pageTitle\">\n				<div class=\"small-12 columns\">\n					<h2>",
+			"<div class=\"row profile\" id=\"mainContent\">\n		<?php include(\"includes/subNavigation.php\") ?>\n		<div class=\"small-12 medium-10 large-10 columns\">",
+			"<div class=\"small-12 medium-2 large-2 columns sideNavigation\">",
 			"$timeSlotsFormated[$i]",
 			"$timeSlotsFormated[0]",
 			"",
@@ -956,7 +1070,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -965,15 +1079,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9873,
+						"buffer_size": 10136,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8675,
-								8685
+								1926,
+								2000
 							]
 						],
 						"settings":
@@ -981,15 +1095,362 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 75.0,
-						"translation.y": 3570.0,
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "company/dashboard.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1648,
+								1648
+							]
+						],
+						"settings":
+						{
+							"auto_name": "dashboard.php",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 298.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "company/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 755,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "company/includes/subNavigation.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 733,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								607,
+								607
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "company/jobLogs.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1549,
+								1549
+							]
+						],
+						"settings":
+						{
+							"auto_name": "jobLogs.php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 60.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "company/jobsAdd.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5664,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "company/list.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 92.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "company/shiftAdd.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1274,
+								1274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 197.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "company/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "company/payment.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2645,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2017,
+								2017
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 181.0,
+						"translation.y": 905.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "company/jobs.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2664,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2391,
+								2391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 9.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 11,
+					"file": "company/shifts.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2891,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2891
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 125.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "company/supervisorAdd.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
 					"file": "index.php",
 					"semi_transient": false,
 					"settings":
@@ -1013,269 +1474,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "views/faq.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 661,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								551,
-								551
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "admin/careers.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								1509
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 118.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "views/includes/navigation.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								374,
-								374
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "views/careers.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								584,
-								584
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "admin/updateJob.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1906,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1731,
-								1731
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "admin/faq.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 405,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "admin/insertCareer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1836,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1024,
-								1032
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 13.0,
-						"translation.y": 421.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "views/jobDetails.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1161,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								127,
-								37
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "views/applyJob.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2170,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								549,
-								549
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 530.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
+					"stack_index": 18,
 					"type": "text"
 				}
 			]
@@ -1285,20 +1484,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 11,
+					"buffer": 14,
 					"file": "controller/_company.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5668,
+						"buffer_size": 7010,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1224,
-								1224
+								910,
+								910
 							]
 						],
 						"settings":
@@ -1307,14 +1506,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 732.0,
+						"translation.y": 296.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 15,
 					"file": "controller/_dashboard.php",
 					"semi_transient": false,
 					"settings":
@@ -1339,11 +1538,11 @@
 						"translation.y": 352.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 16,
 					"file": "controller/_admin.php",
 					"semi_transient": false,
 					"settings":
@@ -1367,11 +1566,11 @@
 						"translation.y": 2218.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 17,
 					"file": "controller/_home.php",
 					"semi_transient": false,
 					"settings":
@@ -1396,30 +1595,30 @@
 						"translation.y": 2023.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 20,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 15,
+					"buffer": 18,
 					"file": "content/scss/global.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3560,
+						"buffer_size": 4304,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1498,
-								1502
+								63,
+								63
 							]
 						],
 						"settings":
@@ -1427,33 +1626,61 @@
 							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1407.0,
+						"translation.y": 55.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 8,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 16,
-					"file": "model/companyDB.php",
-					"semi_transient": false,
+					"buffer": 19,
+					"file": "content/scss/app.scss",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 12578,
+						"buffer_size": 1492,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6813,
-								6813
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 20,
+					"file": "model/companyDB.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17010,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16837,
+								16837
 							]
 						],
 						"settings":
@@ -1461,15 +1688,45 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
+						"translation.x": 43.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "model/payment.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								397,
+								397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
 						"translation.x": 0.0,
-						"translation.y": 2739.0,
+						"translation.y": 276.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 22,
 					"file": "model/UserDB.php",
 					"semi_transient": false,
 					"settings":
@@ -1494,11 +1751,11 @@
 						"translation.y": 2972.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 23,
 					"file": "model/careersDB.php",
 					"semi_transient": false,
 					"settings":
@@ -1524,7 +1781,7 @@
 						"translation.y": 1275.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 22,
 					"type": "text"
 				}
 			]
@@ -1532,7 +1789,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -1570,20 +1827,20 @@
 		"cols":
 		[
 			0.0,
-			0.403788349917,
+			0.295323512645,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.628526134464,
+			0.585544904418,
 			1.0
 		]
 	},
 	"menu_visible": true,
 	"output.find_results":
 	{
-		"height": 0.0
+		"height": 100.0
 	},
 	"output.xdebug":
 	{

@@ -1,26 +1,62 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100);
-/* line 7, ../scss/global.scss */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+/* line 8, ../scss/global.scss */
 h2 {
-  color: #252525;
+  color: #151515;
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  text-align: left;
+  font-weight: bold;
 }
 
-/* line 11, ../scss/global.scss */
+/* line 16, ../scss/global.scss */
 ul {
   float: left;
 }
 
-/* line 15, ../scss/global.scss */
+/* line 20, ../scss/global.scss */
 ul li {
   float: left;
   list-style: none;
 }
 
-/* line 18, ../scss/global.scss */
+/* line 23, ../scss/global.scss */
 table .button {
   margin: 0;
 }
 
-/* line 22, ../scss/global.scss */
+/* line 27, ../scss/global.scss */
+.userInfo {
+  z-index: 98;
+  top: 45px;
+}
+/* line 31, ../scss/global.scss */
+.userInfo div {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 39, ../scss/global.scss */
+.boxes {
+  background-color: #fff;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+/* line 46, ../scss/global.scss */
+.buttonsGroup {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  margin: 1rem -0.5rem !important;
+  padding: 0;
+}
+/* line 53, ../scss/global.scss */
+.buttonsGroup div:first-child {
+  border-right: 1px solid #ddd;
+}
+
+/* line 59, ../scss/global.scss */
 .cross, .forms label span {
   background-color: #ff6e51;
   border-radius: 50%;
@@ -38,112 +74,123 @@ table .button {
   width: 20px;
 }
 
-/* line 39, ../scss/global.scss */
+/* line 76, ../scss/global.scss */
 .btnTrans {
   background-color: transparent;
   border: 1px solid #efefef;
   text-transform: uppercase;
 }
-/* line 43, ../scss/global.scss */
+/* line 80, ../scss/global.scss */
 .btnTrans:hover {
   background-color: #13487C;
 }
 
-/* line 48, ../scss/global.scss */
+/* line 85, ../scss/global.scss */
 .navigation {
   background-color: #04121E;
 }
-/* line 50, ../scss/global.scss */
+/* line 87, ../scss/global.scss */
 .navigation .top-bar {
   background-color: transparent;
 }
 
-/* line 58, ../scss/global.scss */
+/* line 95, ../scss/global.scss */
 .navigation .top-bar .right a {
   display: block;
   float: left;
   padding: 0 25px;
 }
-/* line 66, ../scss/global.scss */
+/* line 103, ../scss/global.scss */
 .navigation .top-bar .right a:hover {
   background-color: #F7941E;
 }
-/* line 74, ../scss/global.scss */
+/* line 111, ../scss/global.scss */
 .navigation .top-bar a {
   color: #fefefe;
 }
 
-/* line 81, ../scss/global.scss */
-.sideNavigation .panel, .sideNavigation .userPref .companyName, .userPref .sideNavigation .companyName, .sideNavigation .userPref .prefLocation, .userPref .sideNavigation .prefLocation {
+/* line 118, ../scss/global.scss */
+.sideNavigation .panel, .sideNavigation .boxes, .sideNavigation .userPref .companyName, .userPref .sideNavigation .companyName, .sideNavigation .userPref .prefLocation, .userPref .sideNavigation .prefLocation {
+  background: transparent;
+  border-width: 0;
   display: table;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 2rem;
 }
-/* line 85, ../scss/global.scss */
-.sideNavigation .panel .side-nav li, .sideNavigation .userPref .companyName .side-nav li, .userPref .sideNavigation .companyName .side-nav li, .sideNavigation .userPref .prefLocation .side-nav li, .userPref .sideNavigation .prefLocation .side-nav li {
+/* line 126, ../scss/global.scss */
+.sideNavigation .panel .side-nav li, .sideNavigation .boxes .side-nav li, .sideNavigation .userPref .companyName .side-nav li, .userPref .sideNavigation .companyName .side-nav li, .sideNavigation .userPref .prefLocation .side-nav li, .userPref .sideNavigation .prefLocation .side-nav li {
   width: 100%;
 }
-/* line 87, ../scss/global.scss */
-.sideNavigation .panel .side-nav li a, .sideNavigation .userPref .companyName .side-nav li a, .userPref .sideNavigation .companyName .side-nav li a, .sideNavigation .userPref .prefLocation .side-nav li a, .userPref .sideNavigation .prefLocation .side-nav li a {
+/* line 128, ../scss/global.scss */
+.sideNavigation .panel .side-nav li a, .sideNavigation .boxes .side-nav li a, .sideNavigation .userPref .companyName .side-nav li a, .userPref .sideNavigation .companyName .side-nav li a, .sideNavigation .userPref .prefLocation .side-nav li a, .userPref .sideNavigation .prefLocation .side-nav li a {
   color: #333;
 }
-/* line 90, ../scss/global.scss */
-.sideNavigation .panel .side-nav li i, .sideNavigation .userPref .companyName .side-nav li i, .userPref .sideNavigation .companyName .side-nav li i, .sideNavigation .userPref .prefLocation .side-nav li i, .userPref .sideNavigation .prefLocation .side-nav li i {
+/* line 131, ../scss/global.scss */
+.sideNavigation .panel .side-nav li i, .sideNavigation .boxes .side-nav li i, .sideNavigation .userPref .companyName .side-nav li i, .userPref .sideNavigation .companyName .side-nav li i, .sideNavigation .userPref .prefLocation .side-nav li i, .userPref .sideNavigation .prefLocation .side-nav li i {
   margin-right: 10px;
 }
 
-/* line 99, ../scss/global.scss */
+/* line 140, ../scss/global.scss */
+.row .pageTitle {
+  border-bottom: 2px solid #efefef;
+  margin: 0 -0.9375rem 2rem;
+}
+
+/* line 145, ../scss/global.scss */
 .questions {
   background-color: #13487C;
   color: #ddd;
 }
-/* line 100, ../scss/global.scss */
+/* line 146, ../scss/global.scss */
 .questions h1 {
   color: #ddd;
 }
 
-/* line 107, ../scss/global.scss */
+/* line 153, ../scss/global.scss */
 section[role="footer"] {
   background-color: #04121E;
 }
 
-/* line 111, ../scss/global.scss */
+/* line 157, ../scss/global.scss */
 #mainContent {
   margin-top: 35px;
 }
 
-/* line 116, ../scss/global.scss */
+/* line 162, ../scss/global.scss */
 .forms label {
   border: none;
   padding: 0.47rem 0.2rem;
   color: #777;
   position: relative;
 }
-/* line 128, ../scss/global.scss */
+/* line 174, ../scss/global.scss */
 .forms div.error span.cross, .forms div.error label span, .forms label div.error span {
   display: block;
 }
-/* line 134, ../scss/global.scss */
+/* line 180, ../scss/global.scss */
 .forms input {
   border: none;
   border-bottom: 1px solid #aaa;
 }
-/* line 139, ../scss/global.scss */
+/* line 185, ../scss/global.scss */
 .forms #province {
   color: #999;
   background-color: #eee;
 }
 
-/* line 150, ../scss/global.scss */
+/* line 196, ../scss/global.scss */
 .tabs-content > .content {
   margin-top: 4rem;
 }
 
-/* line 155, ../scss/global.scss */
+/* line 201, ../scss/global.scss */
 h4 {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-/* line 161, ../scss/global.scss */
+/* line 207, ../scss/global.scss */
 .userBasic #userName {
   font-size: 18px;
   text-transform: capitalize;
@@ -152,20 +199,20 @@ h4 {
   display: block;
   margin-bottom: 10px;
 }
-/* line 170, ../scss/global.scss */
+/* line 216, ../scss/global.scss */
 .userBasic .userSubInfo {
   display: block;
 }
-/* line 173, ../scss/global.scss */
+/* line 219, ../scss/global.scss */
 .userBasic .userSubInfo div {
   padding-left: 10px;
   margin-bottom: 10px;
 }
-/* line 176, ../scss/global.scss */
+/* line 222, ../scss/global.scss */
 .userBasic .userSubInfo div i {
   margin-right: 10px;
 }
-/* line 186, ../scss/global.scss */
+/* line 232, ../scss/global.scss */
 .userBasic #userImage {
   border: 1px solid #f0f0f0;
   display: block;
@@ -175,63 +222,67 @@ h4 {
   line-height: 250px;
   vertical-align: middle;
 }
-/* line 194, ../scss/global.scss */
+/* line 240, ../scss/global.scss */
 .userBasic #userImage img {
   display: table;
   margin: 0 auto;
 }
 
-/* line 204, ../scss/global.scss */
+/* line 250, ../scss/global.scss */
 .userPayment div span:first-child {
   text-align: right;
   width: 160px;
   display: inline-block;
   color: #666;
 }
-/* line 209, ../scss/global.scss */
+/* line 255, ../scss/global.scss */
 .userPayment div span:first-child:after {
   content: ":";
   padding: 0 10px;
 }
 
-/* line 218, ../scss/global.scss */
+/* line 264, ../scss/global.scss */
 .userPref {
   margin-top: 2.5rem;
 }
-/* line 220, ../scss/global.scss */
+/* line 266, ../scss/global.scss */
 .userPref .companyName, .userPref .prefLocation {
   padding: 0.2rem 0.9rem;
   margin: 0.7rem;
 }
-/* line 225, ../scss/global.scss */
+/* line 271, ../scss/global.scss */
 .userPref .companyName a, .userPref .prefLocation a {
   margin-left: 5px;
 }
 
-/* line 240, ../scss/global.scss */
-.jobPosting div i {
+/* line 285, ../scss/global.scss */
+.jobPosting > div {
+  margin-bottom: 1rem;
+}
+/* line 287, ../scss/global.scss */
+.jobPosting > div i {
   margin-right: 10px;
 }
 
-/* line 247, ../scss/global.scss */
-.form-block .panel, .form-block .userPref .companyName, .userPref .form-block .companyName, .form-block .userPref .prefLocation, .userPref .form-block .prefLocation {
+/* line 294, ../scss/global.scss */
+.form-block .panel, .form-block .boxes, .form-block .userPref .companyName, .userPref .form-block .companyName, .form-block .userPref .prefLocation, .userPref .form-block .prefLocation {
   padding: 10px;
 }
-/* line 250, ../scss/global.scss */
+/* line 297, ../scss/global.scss */
 .form-block .cross, .form-block .forms label span, .forms label .form-block span {
   top: 12px;
 }
 
-/* line 259, ../scss/global.scss */
+/* line 306, ../scss/global.scss */
 #loginModal h3 {
   margin-bottom: 1.5rem;
 }
-/* line 262, ../scss/global.scss */
+/* line 309, ../scss/global.scss */
 #loginModal .tabs {
   border: 1px solid #efefef;
   width: 100%;
 }
-/* line 265, ../scss/global.scss */
+/* line 312, ../scss/global.scss */
 #loginModal .tabs li {
   width: 50%;
 }

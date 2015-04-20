@@ -8,6 +8,19 @@
 
 
 <?php include("includes/navigation.php") ?>
+	<?php
+		 	if(isset($message)){
+		 		?>
+		 			<div class=" userInfo fixed">
+		 				<div data-alert class="alert-box info  ">
+		 			 	 
+				 			 <?php  echo $message;?>
+				 			  <a href="#" class="close">&times;</a>
+				 		</div>
+		 			</div>
+		 		<?
+		 	}
+		 ?>
 <!-- Body -->
 <div class="row">
 <?php 
@@ -17,6 +30,7 @@
 	{	if($j['status'] == '1'){
 		echo "<div class='small-3 columns'>";
 			echo "<div class='panel'>";
+		    //check to see if job is open
 		    
 			    echo $j['name'];
 

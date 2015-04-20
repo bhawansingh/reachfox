@@ -5,10 +5,12 @@
 	include_once("../model/mail.php"); 
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
+	include_once("../model/payment.php"); 
 
 	class Company{
 
 		public $model;
+		public $message;
 
 		public function __construct(){
 		}
@@ -36,6 +38,9 @@
 					case 'jobAdd': 
 						$this->jobAdd();
 						break;
+					case 'markAttendance':
+						$this->markAttendance();
+						break;
 					case 'home': 
 						include 'home.php';
 						break;
@@ -60,6 +65,12 @@
 					case 'jobLogs':
 						$this->jobLogs();
 						break;
+					case 'payment':
+						$this->payment();
+						break;
+					case 'sendPayment':
+						$this->sendPayment();
+						break;
 				}
 			}
 		}
@@ -67,7 +78,6 @@
 		public function dashboard(){
 			$this->model = new companyDB();
 			include 'dashboard.php';
-
 		}
 
 		public function activation(){
@@ -144,7 +154,7 @@
 
 		public function jobs(){
 			$this->model = new CompanyDB();
-			include 'jobList.php';
+			include 'jobs.php';
 		}
 
 		public function addShift(){
@@ -236,11 +246,40 @@
 			$this->model = new companyDB();
 			$this->model->setShiftID($_GET['sid']);
 			//Comment below ASAP
-			$this->model->setShiftID($_GET['2']);
+			//$this->model->setShiftID('2');
 			$this->model->getShiftList();
 			include 'jobLogs.php';
 		}
 		
+		public function markAttendance(){
+			$this->model = new companyDB();
+			
+			if($this->model->markAttendance()){
+				$message = "Attendance Updated.";
+				//Call the pay calculator function $$$$$
+				$this->model->payCalculator();
+			}
+			else{
+				$message = "You mind taking it on paper just for this time.";
+			}
+			header('location: index.php?action=jobs');
+		}
+
+		public function payment(){
+			$this->model = new CompanyDB;
+			$this->model->setJobID($_GET['jid']);
+			include 'payment.php';
+
+		}
+
+		public function sendPayment(){
+			$this->model = new CompanyDB;
+			//$this->model->setJobID($_GET['jid']);
+			$this->model = new Payment;
+			$this->model->pay();
+			//include 'payment.php';
+
+		}
 
 	}//Class Closes
 

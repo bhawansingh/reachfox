@@ -5,7 +5,7 @@
 	include_once("../model/mail.php"); 
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
-	include_once("../model/careersDB.php");
+	include_once("../model/careersDB.php"); 
 	include_once("../model/reachfoxhomeDB.php"); 
 	include_once("../model/createTestDB.php");
 
@@ -62,12 +62,8 @@
 					case 'insertCareer':
 						$this->insertCareer();
 						break;
-					case 'applicants':
-						$this->getReachFoxApplicants();
-						break;
 					case 'insertCareerSubmit':
 						$this->insertCareerSubmit();
-						break;
 					case 'reachfoxInfo':
 						$this->reachfoxInfo();
 						break;
@@ -82,8 +78,7 @@
 						break;
 					case 'feedback':
 						include 'views/feedback.php'; 
-						break;
-				}
+						break;				}
 			}
 			
 		}
@@ -198,13 +193,6 @@
 			header ('location: index.php?action=careers');
 		}
 
-		public function getReachFoxApplicants(){
-			$this->model = new careersDB;
-			$this->model->setJobid($_GET['id']);
-			$this->model->getReachFoxApplicants();
-			include 'applicants.php';
-		}
-
 		public function reachfoxInfo(){
 			$this->model = new reachfoxhomeDB;
 			include 'reachfoxInfo.php';
@@ -312,20 +300,10 @@
         	$this->model->setD($_POST['d']);
         	$this->model->setCorrectAns($_POST['correctAns']);
         	$this->model->insertTest();
-        	// $q = $this->model->getQ();
-        	// $a = $this->model->getA();
-        	// $b = $this->model->getB();
-        	// $c = $this->model->getC();
-        	// $d = $this->model->getD();
-        	// $correctAns = $this->model->getCorrectAns();
-
-        	// echo implode(',', $q);
-        	// echo implode(',', $a);
-        	// echo implode(',', $b);
-        	// echo implode(',', $c);
-        	// echo implode(',', $d);
-        	// echo implode(',', $correctAns);
 
 
 		}
+
+
+
 }

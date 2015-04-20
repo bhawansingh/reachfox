@@ -3,11 +3,7 @@ class careersDB{
 
 	private $id, $name, $location, $vacancies, $description, $status;
 	private $jobid_app, $fname, $lname, $email, $pnumber, $resume;
-    private $error;
 
-    public function getError() { return $this->error;}
-
-    public function setError($value) { $this->error = $value; }
 	
 	public function getId() { return $this->id; }
 
@@ -119,12 +115,16 @@ class careersDB{
         return $app_add;
     }
     
-    public  function getReachFoxApplicants() {
+    public  function getReachFoxApplicants($id) {
         $db = Database::connectDB();
         $query = "SELECT * FROM application
-                  WHERE jobid = '{$this->getJobid()}'";
+                  WHERE jobid = '$id'";
         $result = $db->query($query);
-        return $result;
+        $applist = array();
+        foreach ($result as $row) {
+            $applist[] = new ReachFox_App ($row['jobid'], $row['fname'], $row['lname'], $row['email'], $row['pnumber'], $row['resume']);
+        }
+        return $applist;
     }   
 
     public  function updateReachFoxJob(){
