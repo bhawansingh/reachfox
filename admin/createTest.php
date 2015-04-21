@@ -6,7 +6,7 @@
 
 	//counter for question number
 	counter = 1;
-
+	
 	//add questions
 	function addQuestion(table) {
 
@@ -18,10 +18,13 @@
 		//check max rows
 		if(rowCount < 20){
 
-			//insert new row
+			//increment question number
 			var questionNum = document.getElementById('questionNum');
-			questionNum.innerHTML = "Question " + counter++;
+			questionNum.innerHTML = "Question " + ++counter;
+
+			//insert new row
 			var row = tableName.insertRow(rowCount);
+
 			//grab the 4 columns
 			var columnCount = 4;
 
@@ -34,7 +37,7 @@
 
 			}else{
 				//alert if more than 20 questions are created
-		 		alert("Only 20 Questions Allowed");   
+		 		alert("A maximum of 20 Questions Allowed");   
 			}
 		}
 
@@ -44,13 +47,15 @@
 		var tableName = document.getElementById(table);
 		var rowCount = tableName.rows.length;
 
-		for(var i=0; i<rowCount; i++) {
+		if(rowCount > 1) { 
 
-			if(rowCount >= 1) {          
-				tableName.deleteRow(i);
-				rowCount--;
-				i--;
-			}	
+			while (--rowCount) {
+    			tableName.deleteRow(rowCount);
+    			counter--;
+    		}
+
+			var questionNum = document.getElementById('questionNum');
+			questionNum.innerHTML = "Question";
 		}
 	}
 
@@ -79,7 +84,7 @@
 					<tr>
 						<td style="padding: 20px">
 
-							<p id="questionNum">Question</p>
+							<p id="questionNum">Question 1</p>
 
 							<input type="text" name="q[]" />
             
