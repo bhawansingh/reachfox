@@ -1,9 +1,9 @@
 <?php include("includes/head.php");?>
 
-<link rel="stylesheet" type="text/css" href="../content/stylesheets/home.css">
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+	<link rel="stylesheet" type="text/css" href="../content/stylesheets/home.css">
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -11,86 +11,95 @@
 <?php include("includes/navigation.php") ?>
  
 <div class="row forms" id="mainContent">
+
 	<?php include("includes/subNavigation.php") ?>
-	<div class="small-12 medium-9 large-9 columns">
 
-	<form action="index.php?action=reachfoxInfoSubmit" method="post" enctype="multipart/form-data" data-abide>
+		<div class="small-12 medium-9 large-9 columns">
 
-	<h2>Featured Image on Home Page</h2>
+			<form action="index.php?action=reachfoxInfoSubmit" method="post" enctype="multipart/form-data" data-abide>
 
-	<p>Current Image:</p>
+				<h2>Featured Image on Home Page</h2>
 
-	<img src="" name="current_bg" id="current_bg" style="width: 300px;, height: auto;">
+				<p>Current Image:</p>
 
-	<script>
-		$(document).ready(function(){
+				<img src="" name="current_bg" id="current_bg" style="width: 300px;, height: auto;">
 
-			var dropdown_init = document.getElementById("featuredimage");
-			var selectedText_init = dropdown_init.options[dropdown_init.selectedIndex].text;
-			$("#current_bg").attr('src', 'images/' + selectedText_init);
+				<script>
 
-			$("#featuredimage").change(function(){
+				//change image based on dropdown menu selection
 
- 				var dropdown = document.getElementById("featuredimage");
- 				var selectedText = dropdown.options[dropdown.selectedIndex].text;
-				$("#current_bg").attr('src', 'images/' + selectedText);
+				$(document).ready(function(){
+					var dropdown_init = document.getElementById("featuredimage");
+					var selectedText_init = dropdown_init.options[dropdown_init.selectedIndex].text;
+					$("#current_bg").attr('src', 'images/' + selectedText_init);
 
-			});
-		});
-	</script>
+					$("#featuredimage").change(function(){
+ 						var dropdown = document.getElementById("featuredimage");
+ 						var selectedText = dropdown.options[dropdown.selectedIndex].text;
+						$("#current_bg").attr('src', 'images/' + selectedText);
+						});
+				});
 
-	<br />
-	<br />
+				</script>
 
-	<p>Choose From Previous Uploads:</p>
+				<br />
+				<br />
 
-	<select name="featuredimage" id="featuredimage">
+				<!-- Previous Image Dropdown -->
 
-	<?php
-		$image = $this->model->getImages();
+				<p>Choose From Previous Uploads:</p>
 
-         foreach($image as $i){
-            if($i['status'] == '1'){
-                echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" selected="selected" text="' . $i['imagename'] . '" />' . $i['imagename'] . '</option>';
-            }else{
-                echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" text="' . $i['imagename'] . '"/>' . $i['imagename'] . '</option>';
-            }   
-        } 
-        ?>
+				<select name="featuredimage" id="featuredimage">
 
-    </select>
+				<?php
+					$image = $this->model->getImages();
 
-    <br />
-	<br />
+         			foreach($image as $i){
 
-		<p>Upload A New Image:</p>
+            		if($i['status'] == '1'){
 
-		<span id="error"></span>
+                		echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" selected="selected" text="' . $i['imagename'] . '" />' . $i['imagename'] . '</option>';
+            		}else{
 
-            <div class="small-6 cols">
+                		echo '<option value="' . $i['status'] . ', ' . $i['id'] . '" text="' . $i['imagename'] . '"/>' . $i['imagename'] . '</option>';
+            			}   
+        			} 
+        		?>
+
+    			</select>
+
+    			<br />
+				<br />
+
+				<!-- Upload New Image -->
+
+				<p>Upload A New Image:</p>
+
+				<span id="error"></span>
+
+            	<div class="small-6 cols">
             		<input type="file" name="imagefile" id="imagefile"/>
             		<span class="cross">x</span>
-            	</label>
-            </div>
+            	</div>
 
-            <br />
+            	<br />
 
-		<h2>Learn Page Content</h2>
+            	<!-- Learn Page Content -->
 
-		<textarea class="ckeditor" name="learn_editor">
-			<?php $learnBody = $this->model->getLearnBody(); 
+				<h2>Learn Page Content</h2>
 
-				echo $learnBody;
+				<textarea class="ckeditor" name="learn_editor">
+					<?php $learnBody = $this->model->getLearnBody(); 
+					echo $learnBody;
+					?>
+				</textarea>
 
-			?>
-		</textarea>
+				<br />
 
-		<br />
+				<!-- Submit -->
 
-		<input type="submit" value="Save Changes" name="submit" class="close-reveal-modal button tiny" />
+				<input type="submit" value="Save Changes" name="submit" class="close-reveal-modal button tiny" />
 
-	</form>
-
-
-	</div>
+			</form>
+		</div>
 </div>

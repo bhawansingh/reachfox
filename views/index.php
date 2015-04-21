@@ -25,6 +25,8 @@
 
  	}
 
+//get image name from database and display in CSS below
+
 $image = $this->model->getHomeImage();
 
 $imageAppend = "admin/images/" . $image;

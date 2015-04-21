@@ -24,7 +24,7 @@
 			$this->model = new imageDB();
 
 				include 'views/index.php';
-				
+
 			}else{
 				switch($_GET['action']){
 					case 'userAdd': 
@@ -66,7 +66,7 @@
 						$this->submitJob();
 						break;
 					case 'learn':
-						$this->learnRf();
+						$this->learn();
 						break;
 					case 'test':
 						$this->test();
@@ -211,9 +211,7 @@
             
 	 		if($this->model->addFaq()){
 
-            	echo "FAQ added! ";
-
-                 
+            	echo "FAQ added! ";         
 			}
 		}
 
@@ -232,7 +230,6 @@
 			$this->model->setId($_GET['id']);
 			$this->model->getReachFoxJobsByID();
 			include 'views/jobDetails.php';
-
 		}
 
 		public function applyJob(){	
@@ -253,8 +250,6 @@
 			$file_type = $_FILES['resumefile']['type'];
 			$file_temp = $_FILES['resumefile']['tmp_name'];
 			
-
-
 			//grab file path
 			$target_path = "views/resumes/";
 			$target_path = $target_path . $resume;
@@ -274,14 +269,13 @@
 			    //upload file
 			    move_uploaded_file($file_temp, $target_path);
 			    
-			    header('Location: thankyou.php');
+			    header('Location: index.php?action=careers');
 			}    
 		}
 
 		public function learn(){
 			$this->model = new reachfoxHomeDB;
-
-
+			include 'views/learn.php';
 		}
 
 		public function test(){

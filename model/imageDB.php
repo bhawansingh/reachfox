@@ -1,8 +1,7 @@
 <?php
 
 	class imageDB
-	{
-		
+	{	
 		private $imagename;
 
 		function __construct()
@@ -13,6 +12,7 @@
 
 		public function setImage($value) { $this->imagename = $value; }
 
+		//return single column value (imagename) from database
 		public function getHomeImage(){
 
 			$db = Database::connectDB();
@@ -21,9 +21,7 @@
 			$fetch = $result->fetchColumn();
         	return $fetch;
         	
-		}
-
-        
+		}     
     }   
 	
 ?>

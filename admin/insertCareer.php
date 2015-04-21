@@ -14,28 +14,10 @@ $error = '';
 
 
 <?php include("includes/navigation.php") ?>
-	<?php
-		 	if(isset($message)){
-		 		?>
-		 			<div class=" userInfo fixed">
-		 				<div data-alert class="alert-box info  ">
-		 			 	 
-				 			 <?php  echo $message;?>
-				 			  <a href="#" class="close">&times;</a>
-				 		</div>
-		 			</div>
-		 		<?
-		 	}
-		 ?>
  
 <div class="row forms" id="mainContent">
 	<?php include("includes/subNavigation.php") ?>
 	<div class="small-12 medium-9 large-9 columns">
-	<ul>
-	    <li><a href="../dashboard/reachfoxjobs.php">Open Jobs</a></li>
-	    <li><a href="../dashboard/create_reachfoxjobs.php">Create New Job</a></li>
-	    <li><a href="../dashboard/applicants_reachfoxjobs.php">View Job Applicants</a></li>
-	</ul>
 	
 	<h2>Create New Job</h2>
 	

@@ -51,9 +51,9 @@ class createTestDB{
 
 	public function setPassFail($value) { $this->passfail = $value; }
 
+    //insert created test into database (inserting arrays)
 	public  function insertTest() {
         $db = Database::connectDB();
-
         $question = serialize($this->getQ());
         $a = serialize($this->getA());
         $b = serialize($this->getB());
@@ -72,9 +72,9 @@ class createTestDB{
         return $testAdd;
     }
 
+    //get test values to display from the DB
     public function getTest(){
     	$db = Database::connectDB();
-
     	$jobid = '1'; //this is to be changed
 
 		$query = "SELECT * FROM test WHERE jobid = '$jobid'";
@@ -83,15 +83,16 @@ class createTestDB{
 
     }
 
+    //get answers from DB to compare to test selections
     public function getArrayAnswers(){
     	$db = Database::connectDB();
-
     	$query = 'SELECT correctans FROM test WHERE jobid="1"';
 		$result = $db->query($query);
 		$fetch = $result->fetchColumn();
         return $fetch;
     }
 
+    //insert grade into DB
     public  function insertGrade() {
         $db = Database::connectDB();
 

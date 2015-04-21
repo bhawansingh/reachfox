@@ -1,6 +1,6 @@
 <?php
 
-class reachfoxHomeDB{
+class reachfoxHomeDB {
 
 	private $id, $learn, $image, $status, $array, $error;
 
@@ -31,26 +31,26 @@ class reachfoxHomeDB{
 
 	public function setError($value) { $this->error = $value; }
 
+	//get images
 	public function getImages(){
 		$db = Database::connectDB();
-
 		$query = 'SELECT * FROM image';
 		$result = $db->query($query);
         return $result;
 	}
 
+	//get learn page content
 	public function getLearnBody(){
 		$db = Database::connectDB();
-
 		$query = 'SELECT learnbody FROM learn WHERE id="1"';
 		$result = $db->query($query);
 		$fetch = $result->fetchColumn();
         return $fetch;
 	}
 
+	//update current homepage image
 	public function updateExistingImage(){
 		$db = Database::connectDB();
-
 		$query ="UPDATE image i1 JOIN image i2
    				ON i1.id = '{$this->getId()}' AND i2.status = '1'
    				SET i1.status = '1',
@@ -60,9 +60,9 @@ class reachfoxHomeDB{
 
 	}
 
+	//clearn active image status in DB
 	public function clearActiveImage(){
 		$db = Database::connectDB();
-
         $query =
             "UPDATE image 
 			SET status = '0' 
@@ -72,9 +72,9 @@ class reachfoxHomeDB{
         return $statusUpdate;
 	}
 
+	//insert new image to DB
 	public  function insertNewImage() {
         $db = Database::connectDB();
-
         $image = $this->getImage();
         $newimage = str_replace(' ', '', $image);
         $status = '1';
@@ -89,17 +89,15 @@ class reachfoxHomeDB{
         return $imageadd;
     }
 
+    //update learn page content
 	public function updateLearnPage(){
 
 		$db = Database::connectDB();
-
-        $newLearn = $this->getLearn();
-        
+        $newLearn = $this->getLearn(); 
         $query =
             "UPDATE learn
                 SET learnbody ='$newLearn'";
         $learn_update = $db->exec($query);
         return $learn_update;
-	}
-	
+	}	
 }

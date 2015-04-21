@@ -62,8 +62,12 @@
 					case 'insertCareer':
 						$this->insertCareer();
 						break;
+					case 'applicants':
+						$this->getReachFoxApplicants();
+						break;
 					case 'insertCareerSubmit':
 						$this->insertCareerSubmit();
+						break;
 					case 'reachfoxInfo':
 						$this->reachfoxInfo();
 						break;
@@ -154,6 +158,13 @@
 			$this->model->setId($_GET['id']);
 			$this->model->getReachFoxJobsByID();
 			include 'updateJob.php';
+		}
+
+		public function getReachFoxApplicants(){
+			$this->model = new careersDB;
+			$this->model->setJobid($_GET['id']);
+			$this->model->getReachFoxApplicants();
+			include 'applicants.php';
 		}
 
 		public function submitJobUpdate(){
@@ -253,8 +264,10 @@
 						header ('location: index.php?action=reachfoxInfo');
 					}
 				}
+
 			//if image has not been chosen as featured
 			}else{
+
 				if(empty($_FILES['imagefile']['name'])){
 
 					$this->model->updateExistingImage();
@@ -311,8 +324,6 @@
         	$this->model->setD($_POST['d']);
         	$this->model->setCorrectAns($_POST['correctAns']);
         	$this->model->insertTest();
-
-
 		}
 
 
