@@ -80,6 +80,7 @@ class careersDB{
 	public function __construct(){
 	}
 
+    //add job to DB
 	public  function addReachFoxJob() {
         $db = Database::connectDB();
 
@@ -99,6 +100,7 @@ class careersDB{
         return $job_add;
     }
     
+    //add application to DB
     public  function addReachFoxApp() {
         $db = Database::connectDB();
 
@@ -119,6 +121,7 @@ class careersDB{
         return $app_add;
     }
     
+    //get all job applicants
     public  function getReachFoxApplicants() {
         $db = Database::connectDB();
         $query = "SELECT * FROM application
@@ -127,6 +130,7 @@ class careersDB{
         return $result;
     }   
 
+    //update job information
     public  function updateReachFoxJob(){
         $db = Database::connectDB();
 
@@ -143,6 +147,7 @@ class careersDB{
         return $job_update;
     }
     
+    //delete job
     public  function deleteReachFoxJob(){
         $db = Database::connectDB();
         $query = "DELETE FROM careers
@@ -151,6 +156,7 @@ class careersDB{
         return $result;
     }
     
+    //get jobs
     public  function getReachFoxJobs() {
         $db = Database::connectDB();
         $query = 'SELECT * FROM careers ORDER BY name';
@@ -158,6 +164,7 @@ class careersDB{
         return $result;
     }
     
+    //get jobs by id value
     public function getReachFoxJobsByID() {
         $db = Database::connectDB();
         $query = "SELECT * FROM careers
@@ -175,6 +182,5 @@ class careersDB{
         return $result;
     }   
 
-	// class
 }
 ?>

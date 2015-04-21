@@ -6,6 +6,8 @@
 
 <?php include("includes/navigation.php") ?>
 
+	<!-- list learn page content -->
+
 	<div class="row">
 
 		<?php

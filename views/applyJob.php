@@ -14,6 +14,8 @@
 <div class="row forms">
     <div class="small-12 columns">
     <h2>Application Form</h2>
+
+      <!-- application form -->
         
         <form action="index.php?action=submitJob" method="post" enctype="multipart/form-data" data-abide>
             

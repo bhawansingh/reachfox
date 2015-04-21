@@ -12,6 +12,8 @@
 <div class="row">
 <?php 
 
+	//list open jobs only
+
  	$jobname = $this->model->getReachFoxJobs();
 	foreach($jobname as $j)
 	{	if($j['status'] == '1'){

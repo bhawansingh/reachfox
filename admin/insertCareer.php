@@ -18,6 +18,8 @@ $error = '';
 <div class="row forms" id="mainContent">
 	<?php include("includes/subNavigation.php") ?>
 	<div class="small-12 medium-9 large-9 columns">
+
+	<!-- Create New Job Form -->
 	
 	<h2>Create New Job</h2>
 	

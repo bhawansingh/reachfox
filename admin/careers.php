@@ -13,7 +13,7 @@
 		
 		<a href="index.php?action=insertCareer">Add New Job</a>
 <?php 
-	
+	//output jobs
  	$jobname = $this->model->getReachFoxJobs();
 	foreach($jobname as $j)
 	{	
@@ -23,7 +23,7 @@
 		  	echo " <a class='button tiny' href='index.php?action=updateJob&id=".$j['id']."'>Edit</a>";
 		    echo " <a data-reveal-id='deleteJob-".$j['id']."' class='button tiny' href='index.php?action=deleteJob&id=".$j['id']."'>Delete</a>";
 		?>
-
+		<!-- delete job popout -->
 		<div id="deleteJob-<?php echo $j['id'] ?>" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 		  <span>Do you really want to delete the job ?</span>
 		  <a class='button tiny' href='index.php?action=deleteJob&id=<?php echo $j["id"] ?>'>Yes</a>
