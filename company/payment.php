@@ -11,7 +11,6 @@
 		 		?>
 		 			<div class=" userInfo fixed">
 		 				<div data-alert class="alert-box info  ">
-		 			 	 
 				 			 <?php  echo $message;?>
 				 			  <a href="#" class="close">&times;</a>
 				 		</div>
@@ -27,30 +26,13 @@
 				<div class="small-12 medium-12 columns">
 					<div class="row pageTitle">
 						<div class="small-8 columns">
-							<h2>Job Details</h2>
+							<h2>Payment</h2>
 						</div>
 					</div>
-					
-					
 				</div>
 			</div>
 			<div class="row">
 				<div class="small-12 medium-12 large-12 columns">
-					<?php
-						$jobSet = $this->model->getJobByID();
-						echo '<div class="row jobPosting">';
-						foreach ($jobSet as $js) 
-						{
-							echo '<div class="small-12 medium-12 columns">';
-							echo '<h4>'.$js['title'].'</h4>';
-							echo '<p>'.$js['description'].'</p>';
-							echo '<div><i class="fa fa-map-marker"></i>'.$js['location'].'</div>';
-							echo '<div>'.'<a class="button tiny" href="index.php?action=addShift&jid='.$this->model->getJobID().'">Add Shift</a></div>';
-							echo '</div>';
-							
-						}
-					?>
-					<h4>Shifts </h4>
 					<div class="row">
 						<div class="small-12 columns">
 						<table>
@@ -77,7 +59,7 @@
 										  <td>{$ss['endTime']}</td>
 										   <td>{$this->model->setShiftDate($ss['shiftDate'])}{$this->model->getShiftDate('std')}</td>
 										  <td>{$ss['requirement']}</td>
-										  <td><a href='index.php?action=sendPayment' class=''><i class='fa fa-pencil'></i> Send Payment</a></td>";
+										  <td><a href='index.php?action=sendPayment&&pay={$ss['payment']}&&sid={$ss['shiftID']}' class=''><i class='fa fa-pencil'></i> Send Payment</a></td>";
 									echo "</tr>";
 								}
 							?>

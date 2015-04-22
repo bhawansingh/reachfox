@@ -141,14 +141,15 @@
 				$this->model->setJobID($_POST['jobID']);
 				
 				if($this->model->addShift()){
-					include 'jobList.php';
+
+					header( "Location: index.php?action=shifts&&jid={$this->model->getJobID()}");
 				}
 
 			}
 			else{
 				include 'jobsAdd.php';
 			}
-			$this->model = new CompanyDB();
+			//$this->model = new CompanyDB();
 			//include 'jobList.php';
 		}
 
@@ -262,6 +263,8 @@
 			else{
 				$message = "You mind taking it on paper just for this time.";
 			}
+			//echo $message;
+			
 			header('location: index.php?action=jobs');
 		}
 
@@ -273,11 +276,18 @@
 		}
 
 		public function sendPayment(){
-			$this->model = new CompanyDB;
-			//$this->model->setJobID($_GET['jid']);
+			$totalPay = $_GET['pay'];
 			$this->model = new Payment;
-			$this->model->pay();
-			//include 'payment.php';
+			if($this->model->pay($totalPay)){
+				$message = "Your payment has been processed";
+			}
+			else{
+				$message = "Darn! Some error occured during transaction";
+			}
+			
+			$this->model = new CompanyDB;
+			include 'dashboard.php';
+		
 
 		}
 

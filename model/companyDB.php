@@ -460,6 +460,7 @@
 
 		public function getShiftList(){
 			$dbCon = Database::connectDB();
+
 			$query = "SELECT * FROM jb_logs
 						INNER JOIN us_userInfo
 							ON us_userInfo.id = jb_logs.userID
@@ -473,6 +474,7 @@
 
 		public function markAttendance(){
 			$dbCon = Database::connectDB();
+			//print_r($_POST);
 			$preparedSt = $dbCon->prepare( "UPDATE jb_logs 
 												SET attendance = :att ,
 													hours = :time
@@ -497,10 +499,12 @@
 				$preparedSt->bindParam(":uid", $_POST['userID'][$i]);
 				$preparedSt->bindParam(":id", $_POST['jobLogID'][$i]);
 				$preparedSt->bindParam(":time", $timeDiff);
-				
+
 				//print_r($timeDiff);
 				$preparedSt->execute();
-
+				//print("<pre>");
+				//print_r($preparedSt->debugDumpParams());
+				//print("</pre>");
 				$rowsAffected += $preparedSt->rowCount();
 				$i++;
 			}
@@ -521,12 +525,12 @@
 						WHERE 		id  = {$_POST['jobLogID'][0] } AND
 								userID 	= {$_POST['userID'][0]}) ";
 			$resultSet = $dbCon->query($query);
-
 			foreach ($resultSet as $value) {
 				$this->setPay($value['pay']);
 				$this->setShiftID($value['id']);
 				$this->setJobID($value['jobID']);
 			}
+
 
 			//Get Company ID
 			$queryCompany = "SELECT companyID FROM cp_jobs WHERE id= {$this->getJobID()}";
@@ -567,7 +571,7 @@
 			}
 
 
-			$companyID = $this->getCompanyID();
+			$companyID = $_SESSION['companyID'];
 
 			$preparedSt2->bindParam(":companyID",$companyID);
 			$preparedSt2->bindParam(":shiftID",$shiftID);

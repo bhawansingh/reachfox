@@ -6,6 +6,8 @@
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
 	include_once("../model/careersDB.php"); 
+	include_once("../model/reachfoxhomeDB.php"); 
+	include_once("../model/createTestDB.php");
 
 
 	class Admin{
@@ -62,28 +64,40 @@
 						break;
 					case 'insertCareerSubmit':
 						$this->insertCareerSubmit();
+					case 'reachfoxInfo':
+						$this->reachfoxInfo();
 						break;
-					case 'feedback':
-						include 'views/feedback.php'; 
+					case 'reachfoxInfoSubmit':
+						$this->reachfoxInfoSubmit();
 						break;
-				}
+					case 'createTest':
+						$this->createTest();
+						break;
+					case 'createTestSubmit':
+						$this->createTestSubmit();
+						break;
+					case 'feedbackAdd': 
+						$this->feedbackAdd(); 
+						break;
+                    case 'feedbackView' : 
+                    	$this->feedbackView(); 
+                    	break;
+                    case 'feedSubmit' : 
+                    	$this->feedSubmit(); 
+                    	break;
+                    case 'feedbackDelete' : 
+                    	$this->feedbackDelete(); 
+                    	break;
+                    case 'feedbackEdit' : 
+                		$this->getFeedback(); 
+                		break;
+                    case 'feedbackUpdate' : 
+                    	$this->feedbackUpdate(); 
+                    	break;			}
 			}
 			
 		}
 
-		public function feedbackAdd(){
-			$this->model = new feedbackDB();
-			$this->model->setFirstName($_POST['firstName']);
- 			$this->model->setLastName($_POST['lastName']);
- 			$this->model->setEmail($_POST['email']);
- 			$this->model->setMessage($_POST['message']);
- 			
-	 		if($this->model->addFeedback()){
-
-            	echo "Thank You for the feedback ".$_POST['firstName']." ".$_POST['lastName'];
-			}
-		}
-        
         public function faqSubmit(){
 			
 
@@ -180,6 +194,184 @@
         	$this->model->addReachFoxJob();
 			header ('location: index.php?action=careers');
 		}
+
+		public function reachfoxInfo(){
+			$this->model = new reachfoxhomeDB;
+			include 'reachfoxInfo.php';
+		}
+
+		public function reachfoxInfoSubmit(){
+			$this->model = new reachfoxhomeDB;
+
+			$this->model->setLearn($_POST['learn_editor']);
+
+			//grab dropdown selected values and explode into array
+			$this->model->setArray($_POST['featuredimage']);
+			$dropdown_values = $this->model->getArray();
+			$values = explode(", ", $dropdown_values);
+			$status_selected = $values[0];
+			$id_selected = $values[1];
+
+			$this->model->setStatus($status_selected);
+			$this->model->setId($id_selected);
+
+			$status = $this->model->getStatus();
+
+			//if image is already chosen to be featured
+			if($status == '1'){
+				if(empty($_FILES['imagefile']['name'])){
+					$this->model->updateLearnPage();	
+					header ('location: index.php?action=reachfoxInfo');
+				}else{	
+
+					$newimage = $_FILES['imagefile']['name'];
+					$file_type = $_FILES['imagefile']['type'];
+					$file_temp = $_FILES['imagefile']['tmp_name'];
+
+					//grab file path
+					$target_path = "images/";
+					$target_path = $target_path . $newimage;
+			
+					//check for file type
+					$formats =  array('jpg', 'png', 'bmp', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png, bmp, or gif");
+						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
+						//header ('location: index.php?action=reachfoxInfo');
+						
+					}else{
+						move_uploaded_file($file_temp, $target_path);
+						$this->model->setImage($newimage);
+						$this->model->clearActiveImage();
+						$this->model->insertNewImage();
+						$this->model->updateLearnPage();
+						header ('location: index.php?action=reachfoxInfo');
+					}
+				}
+			//if image has not been chosen as featured
+			}else{
+				if(empty($_FILES['imagefile']['name'])){
+
+					$this->model->updateExistingImage();
+					$this->model->updateLearnPage();
+					header ('location: index.php?action=reachfoxInfo');
+					
+				}else{
+					$newimage = $_FILES['imagefile']['name'];
+					$file_type = $_FILES['imagefile']['type'];
+					$file_temp = $_FILES['imagefile']['tmp_name'];
+
+					//grab file path
+					$target_path = "images/";
+					$target_path = $target_path . $newimage;
+			
+					//check for file type
+					$formats =  array('jpg', 'png', 'bmp', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png, bmp, or gif");
+						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
+						//header ('location: index.php?action=reachfoxInfo');
+					}else{
+						move_uploaded_file($file_temp, $target_path);
+						$this->model->setImage($newimage);
+						$this->model->clearActiveImage();
+						$this->model->insertNewImage();
+						$this->model->updateLearnPage();
+						header ('location: index.php?action=reachfoxInfo');
+					}
+									
+				}
+			}	
+		}
+
+		public function createTest(){
+			$this->model = new createTestDB;
+			include 'createTest.php';
+		}
+
+		public function createTestSubmit(){
+			$this->model = new createTestDB;
+			$this->model->setQ($_POST['q']);
+        	$this->model->setA($_POST['a']);
+        	$this->model->setB($_POST['b']);
+        	$this->model->setC($_POST['c']);
+        	$this->model->setD($_POST['d']);
+        	$this->model->setCorrectAns($_POST['correctAns']);
+        	$this->model->insertTest();
+
+
+		}
+
+		public function feedbackAdd(){
+			$this->model = new feedbackDB();
+			$this->model->setFirstName($_POST['firstName']);
+ 			$this->model->setLastName($_POST['lastName']);
+ 			$this->model->setEmail($_POST['email']);
+ 			$this->model->setMessage($_POST['message']);
+ 			
+	 		if($this->model->addFeedback()){
+
+            	echo "Thank You for the feedback ".$_POST['firstName']." ".$_POST['lastName'];
+			}
+		}
+        
+	     public function feedSubmit(){
+			
+
+			$this->model = new feedbackDB();
+			$this->model->setFirstName($_POST['firstName']);
+				$this->model->setLastName($_POST['lastName']);
+	        $this->model->setEmail($_POST['email']);
+				$this->model->setMessage($_POST['message']);
+	        
+	 		if($this->model->addFeedback()){
+	        	echo "Feedback added! ";
+	        	include 'feedbackAdd.php'; 
+			}
+		}
+        
+        public function feedbackView(){
+            $this->model = new feedbackDB();
+          include 'feedbackAdd.php';
+		}
+           
+        public function feedbackUpdate(){
+			$this->model = new feedbackDB();
+			$this->model->setFirstName($_POST['firstName']);
+ 			$this->model->setLastName($_POST['lastName']);
+            $this->model->setEmail($_POST['email']);
+ 			$this->model->setMessage($_POST['message']);
+ 			$this->model->setID($_POST['id']);
+            
+	 		if($this->model->upFeedback()){
+            	echo "Feedback updated! ";
+            	 include 'feedbackAdd.php';
+			}
+		}
+
+		public function getFeedback(){
+			$this->model = new feedbackDB();
+			$this->model->setID($_GET['id']);
+			$this->model->getFeedbackByID();
+			//Implement this feature on single page in future either by PHP OR AJAX
+			include 'feedbackUpdate.php';
+
+		}
+        
+        public function feedbackDelete(){
+			$this->model = new feedbackDB();
+			$this->model->setID($_GET['id']);
+	 		if($this->model->delFeedback()){
+            	echo "Feedback deleted! ";
+                include 'feedbackAdd.php';
+			}
+		}
+
+
 
 
 }

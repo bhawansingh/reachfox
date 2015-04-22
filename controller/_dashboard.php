@@ -137,6 +137,8 @@ class dashboard{
 				default: $timeSlotsFormated[$i]['end'] = "";
 				//wise thing to call delete method if switch goes to default case
 			}
+
+			$timeSlotsFormated[$i]['id'] = $tl['id'];
 			$i++;
 			
 		}

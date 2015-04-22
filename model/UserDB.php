@@ -26,10 +26,15 @@
 	private $credibility;	
 	private $location;
 	private $shiftID;
+	PRIVATE $timeSlotsID;
 
 	public function __construct(){
 
 	}
+
+	public function getTimeSlotID(){ return $this->timeSlotID; }
+
+	public function setTimeSlotID($value){ $this->timeSlotID= $value; }
 
 	public function getID(){ return $this->id; }
 
@@ -287,7 +292,7 @@
 
 	public  function getPrefTime(){
 		$dbCon = Database::connectDB();
-		$query = "SELECT start,end,weekDay FROM us_PrefTime WHERE userID = '".$this->getID()."';";
+		$query = "SELECT start,end,weekDay,id FROM us_PrefTime WHERE userID = '".$this->getID()."';";
 		$timeSlots =  $dbCon -> query($query);
 		//echo $query;
 		return $timeSlots;
@@ -385,6 +390,14 @@
 							paid = 0 ";
 
 		return $dbCon->query($query);
+	}
+
+	public function deleteUserPrefTime(){
+		$dbCon = Database::connectDB();
+		$query = "Delete  FROM us_PrefTime WHERE id = '".$this->gettimeSlotID()."'";
+		$userInfo = $dbCon->query($query);
+		return $userInfo;
+	
 	}
 
 	// Classes Ends

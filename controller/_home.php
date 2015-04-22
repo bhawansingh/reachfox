@@ -6,6 +6,7 @@
 	include_once("model/feedbackDB.php"); 
 	include_once("model/faqDB.php"); 
 	include_once('model/careersDB.php');
+	include_once('model/imageDB.php');
 
 
 	class Home{
@@ -14,7 +15,6 @@
 		public $resultSet;
 
 		public function __construct(){
-			
 		}
 
 		public function invoke(){
@@ -37,13 +37,10 @@
 						$this->feedbackAdd(); 
 						break;
 					case 'feedback': 
-						include 'views/feedback.php'; 
+						$this->feedback();
 						break;
 					case 'companyAdd': 
 						$this->companyAdd(); 
-						break;
-					case 'feedback':
-						include 'views/feedback.php'; 
 						break;
 					case 'careers':
 						$this->careers();
@@ -263,5 +260,28 @@
 			    header('Location: thankyou.php');
 			}    
 		}
+
+
+        public function feedback(){
+			$this->model = new feedbackDB;	
+			include 'views/feedback.php';
+		}
+        
+        public function feedbackAdd(){
+			$this->model = new feedbackDB();
+			$this->model->setFirstName($_POST['firstName']);
+ 			$this->model->setLastName($_POST['lastName']);
+ 			$this->model->setEmail($_POST['email']);
+ 			$this->model->setMessage($_POST['message']);
+ 		
+	 		if($this->model->addFeedback()){
+                
+            	echo "Thank You for the feedback ".$_POST['firstName']." ".$_POST['lastName'];
+                
+			}
+			unset($_POST);
+			include 'views/feedback.php';
+		}
+
 	}
 ?>

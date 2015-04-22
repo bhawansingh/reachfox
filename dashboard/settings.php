@@ -130,7 +130,7 @@
 							  		<button type="submit" class="button small radius" id="coDetails">Next</button>
 							  	</div>
 							  </div>
-							</form>
+						</form>
 				 	</div>
 					<div class="content" id="panel3">
 						<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="bankForm" method="post" data-abide="ajax">
@@ -143,18 +143,18 @@
 								</div>
 							</div>
 							<div class="row">
-						  	<div class="small-4 small-centered columns">
-						  		<button type="submit" class="button small radius" id="coPaypal">Next</button>
-						  	</div>
-						</div>
+							  	<div class="small-4 small-centered columns">
+							  		<button type="submit" class="button small radius" id="coPaypal">Next</button>
+							  	</div>
+							</div>
 						</form>	
 					</div>
 					<div class="content" id="panel4">
 					 	<div class="row">
 					 		<div class="small-12 columns">
 					 			<div class="row">
-					 				<div class="small-3 columns"> Day </div>
-					 				<div class="small-3 columns"> Start Time </div>
+					 				<div class="small-3 columns">Day </div>
+					 				<div class="small-3 columns">Start Time </div>
 					 				<div class="small-3 columns"> End Time </div>
 					 				<div class="small-3 columns"></div>
 					 			</div>
@@ -162,7 +162,8 @@
 					 				<?php 
 						 				$timeSlots = $this->getPrefTime();
 
-												//Implement a better solution for this
+										//TODO
+										//Implement a better solution for this
 						 				for ($i = 0; $i<count($timeSlots);$i++)
 						 					{	echo "<div class='small-12 columns'>";
 
@@ -232,7 +233,7 @@
 						   		</div>
 						   		<div class="row">
 								  	<div class="small-4 small-centered columns">
-								  		<button type="submit" class="button small radius" id="coPaypal">Next</button>
+								  		<button type="submit" class="button small radius" id="prefBtn">Next</button>
 								  	</div>
 								</div>
 							</form>
@@ -254,7 +255,7 @@
 				     		</div>
 				     		<div class="row">
 				   		  	<div class="small-4 small-centered columns">
-				   		  		<button type="submit" class="button small radius" id="coPaypal">Next</button>
+				   		  		<button type="submit" class="button small radius" id="locationBtn">Next</button>
 				   		  	</div>
 				   		</div>
 				     	</form>	
@@ -273,10 +274,9 @@
 <?php include("includes/footer.php") ?>
 <script type="text/javascript">
 	$(document).ready(function(){
-	
 		//TO-DO form is submitted twise had to check name space. Update code when new sol. is available
 		//$('#coPassword').click(function(){
-			$('#passwordForm').on('valid.fndtn.abide', function(e) {
+		$('#passwordForm').on('valid.fndtn.abide', function(e) {
 				if(e.namespace != 'abide.fndtn') {
 				        return;
 				    }
@@ -361,9 +361,9 @@
 		})
 
 
-		var form  = $('#LocationForm');
+		var form  = $('#prefForm');
 		$('#addTime').click(function(){
-			if($("#LocationForm")[0].checkValidity())
+			if($("#prefForm")[0].checkValidity())
     		{
 				// if(e.namespace != 'abide.fndtn') {
 				//         return;
@@ -391,9 +391,9 @@
 
 		});		
 
-				var form  = $('#prefForm');
+		var form  = $('#LocationForm');
 		$('#addLocation').click(function(){
-			if($("#prefForm")[0].checkValidity())
+			if($("#LocationForm")[0].checkValidity())
     		{
 				$.ajax({
 				  type: "POST",
