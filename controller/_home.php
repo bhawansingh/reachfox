@@ -7,7 +7,12 @@
 	include_once("model/faqDB.php"); 
 	include_once('model/careersDB.php');
 	include_once('model/imageDB.php');
+<<<<<<< HEAD
+	include_once('model/createTestDB.php');
+	include_once('model/reachfoxhomeDB.php');
+=======
 
+>>>>>>> bhawan-reachfox
 
 	class Home{
 
@@ -19,7 +24,11 @@
 
 		public function invoke(){
 			if(!isset($_GET['action'])){
+
+			$this->model = new imageDB();
+
 				include 'views/index.php';
+
 			}else{
 				switch($_GET['action']){
 					case 'userAdd': 
@@ -56,6 +65,15 @@
 						break;
 					case 'submitJob':
 						$this->submitJob();
+						break;
+					case 'learn':
+						$this->learn();
+						break;
+					case 'test':
+						$this->test();
+						break;
+					case 'testSubmit':
+						$this->testSubmit();
 						break;
 				}
 			}
@@ -194,9 +212,7 @@
             
 	 		if($this->model->addFaq()){
 
-            	echo "FAQ added! ";
-
-                 
+            	echo "FAQ added! ";         
 			}
 		}
 
@@ -215,7 +231,6 @@
 			$this->model->setId($_GET['id']);
 			$this->model->getReachFoxJobsByID();
 			include 'views/jobDetails.php';
-
 		}
 
 		public function applyJob(){	
@@ -236,8 +251,6 @@
 			$file_type = $_FILES['resumefile']['type'];
 			$file_temp = $_FILES['resumefile']['tmp_name'];
 			
-
-
 			//grab file path
 			$target_path = "views/resumes/";
 			$target_path = $target_path . $resume;
@@ -257,10 +270,52 @@
 			    //upload file
 			    move_uploaded_file($file_temp, $target_path);
 			    
-			    header('Location: thankyou.php');
+			    header('Location: index.php?action=careers');
 			}    
 		}
 
+<<<<<<< HEAD
+		public function learn(){
+			$this->model = new reachfoxHomeDB;
+			include 'views/learn.php';
+		}
+
+		public function test(){
+			$this->model = new createTestDB;
+			include 'views/test.php';
+		}
+
+		public function testSubmit(){
+			$this->model = new createTestDB;
+
+			$this->model->setSelection($_POST['testAnswers']);
+			$selectionsArray = $this->model->getSelection();
+
+			var_dump($selectionsArray);
+
+			$answers = $this->model->getArrayAnswers();
+			$answersArray = unserialize($answers);
+			var_dump($answersArray);
+
+			$counter = 0;
+			foreach ($selectionsArray as $key => $value) {
+    			if ($value == $answersArray[$key]){
+    				$counter++;
+    			}
+			}	
+
+			$grade = ($counter/count($answersArray))*100;
+
+			if($grade >= 75){
+				$this->model->setPassFail('Pass');
+			}else{
+				$this->model->setPassFail('Fail');
+			}
+
+			$this->model->setGrade($grade);
+			$this->model->insertGrade();
+		}
+=======
 
         public function feedback(){
 			$this->model = new feedbackDB;	
@@ -283,5 +338,6 @@
 			include 'views/feedback.php';
 		}
 
+>>>>>>> bhawan-reachfox
 	}
 ?>

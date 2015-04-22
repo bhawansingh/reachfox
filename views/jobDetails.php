@@ -13,6 +13,7 @@ $error = '';
 </head>
 <body>
 
+<!-- list job details -->
 
 <?php include("includes/navigation.php") ?>
 	<?php

@@ -24,9 +24,21 @@
  		}
 
  	}
+
+//get image name from database and display in CSS below
+
+$image = $this->model->getHomeImage();
+
+$imageAppend = "admin/images/" . $image;
 	
 
 ?>
+
+<style type="text/css">
+.top-section {
+	background: url(<?php echo $imageAppend; ?>) repeat scroll 0 0/cover #111 !important;
+}
+</style>
 
 <link rel="stylesheet" type="text/css" href="content/stylesheets/home.css">
 </head>
@@ -67,7 +79,11 @@
 				 			  <a href="#" class="close">&times;</a>
 				 		</div>
 		 			</div>
+<<<<<<< HEAD
+		 		<?php
+=======
 		 		<?
+>>>>>>> bhawan-reachfox
 		 	}
 		 ?>
 

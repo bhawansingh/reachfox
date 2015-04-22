@@ -25,6 +25,8 @@ $error = "";
 <div class="row forms" id="mainContent">
 	<?php include("includes/subNavigation.php") ?>
 
+<!-- update job form -->
+
 <form action="index.php?action=submitJobUpdate" method="post">
     
     <span style="color:red"><?php echo $error;?></span>
@@ -51,6 +53,7 @@ $error = "";
     <br />
     
     <!-- populate drop down from database -->
+    
     <label>Open Status:</label>
     <select name="status">
 

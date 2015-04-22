@@ -263,8 +263,11 @@
 			else{
 				$message = "You mind taking it on paper just for this time.";
 			}
+<<<<<<< HEAD
+=======
 			//echo $message;
 			
+>>>>>>> bhawan-reachfox
 			header('location: index.php?action=jobs');
 		}
 
@@ -276,6 +279,13 @@
 		}
 
 		public function sendPayment(){
+<<<<<<< HEAD
+			$this->model = new CompanyDB;
+			//$this->model->setJobID($_GET['jid']);
+			$this->model = new Payment;
+			$this->model->pay();
+			//include 'payment.php';
+=======
 			$totalPay = $_GET['pay'];
 			$this->model = new Payment;
 			if($this->model->pay($totalPay)){
@@ -288,6 +298,7 @@
 			$this->model = new CompanyDB;
 			include 'dashboard.php';
 		
+>>>>>>> bhawan-reachfox
 
 		}
 

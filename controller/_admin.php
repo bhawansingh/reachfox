@@ -62,11 +62,20 @@
 					case 'insertCareer':
 						$this->insertCareer();
 						break;
+					case 'applicants':
+						$this->getReachFoxApplicants();
+						break;
 					case 'insertCareerSubmit':
 						$this->insertCareerSubmit();
 					case 'reachfoxInfo':
 						$this->reachfoxInfo();
 						break;
+<<<<<<< HEAD
+					case 'reachfoxInfo':
+						$this->reachfoxInfo();
+						break;
+=======
+>>>>>>> bhawan-reachfox
 					case 'reachfoxInfoSubmit':
 						$this->reachfoxInfoSubmit();
 						break;
@@ -76,6 +85,11 @@
 					case 'createTestSubmit':
 						$this->createTestSubmit();
 						break;
+<<<<<<< HEAD
+					case 'feedback':
+						include 'views/feedback.php'; 
+						break;				}
+=======
 					case 'feedbackAdd': 
 						$this->feedbackAdd(); 
 						break;
@@ -94,6 +108,7 @@
                     case 'feedbackUpdate' : 
                     	$this->feedbackUpdate(); 
                     	break;			}
+>>>>>>> bhawan-reachfox
 			}
 			
 		}
@@ -156,6 +171,13 @@
 			$this->model->setId($_GET['id']);
 			$this->model->getReachFoxJobsByID();
 			include 'updateJob.php';
+		}
+
+		public function getReachFoxApplicants(){
+			$this->model = new careersDB;
+			$this->model->setJobid($_GET['id']);
+			$this->model->getReachFoxApplicants();
+			include 'applicants.php';
 		}
 
 		public function submitJobUpdate(){
@@ -224,7 +246,16 @@
 					header ('location: index.php?action=reachfoxInfo');
 				}else{	
 
+<<<<<<< HEAD
+					$int = rand(1 , 1000000);
+
+					//handle file name
+					$image = $_FILES['imagefile']['name'];
+					$imageNoSpaces = str_replace(' ', '', $image);
+					$newimage = preg_replace('/(\.[^.]+)$/', sprintf('%s$1', $int), $imageNoSpaces);
+=======
 					$newimage = $_FILES['imagefile']['name'];
+>>>>>>> bhawan-reachfox
 					$file_type = $_FILES['imagefile']['type'];
 					$file_temp = $_FILES['imagefile']['tmp_name'];
 
@@ -233,12 +264,21 @@
 					$target_path = $target_path . $newimage;
 			
 					//check for file type
+<<<<<<< HEAD
+					$formats =  array('jpg', 'png', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png or gif");
+						echo 'Wrong File Format - Must be jpg, png or gif';
+=======
 					$formats =  array('jpg', 'png', 'bmp', 'gif');
 					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
 			
 					if(!in_array($extension,$formats)){
 						$this->model->setError("File must be jpg, png, bmp, or gif");
 						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
+>>>>>>> bhawan-reachfox
 						//header ('location: index.php?action=reachfoxInfo');
 						
 					}else{
@@ -250,8 +290,15 @@
 						header ('location: index.php?action=reachfoxInfo');
 					}
 				}
+<<<<<<< HEAD
+
 			//if image has not been chosen as featured
 			}else{
+
+=======
+			//if image has not been chosen as featured
+			}else{
+>>>>>>> bhawan-reachfox
 				if(empty($_FILES['imagefile']['name'])){
 
 					$this->model->updateExistingImage();
@@ -259,7 +306,17 @@
 					header ('location: index.php?action=reachfoxInfo');
 					
 				}else{
+<<<<<<< HEAD
+
+					$int = rand(1 , 1000000);
+
+					//handle file name
+					$image = $_FILES['imagefile']['name'];
+					$imageNoSpaces = str_replace(' ', '', $image);
+					$newimage = preg_replace('/(\.[^.]+)$/', sprintf('%s$1', $int), $imageNoSpaces);
+=======
 					$newimage = $_FILES['imagefile']['name'];
+>>>>>>> bhawan-reachfox
 					$file_type = $_FILES['imagefile']['type'];
 					$file_temp = $_FILES['imagefile']['tmp_name'];
 
@@ -268,12 +325,21 @@
 					$target_path = $target_path . $newimage;
 			
 					//check for file type
+<<<<<<< HEAD
+					$formats =  array('jpg', 'png', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png or gif");
+						echo 'Wrong File Format - Must be jpg, png or gif';
+=======
 					$formats =  array('jpg', 'png', 'bmp', 'gif');
 					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
 			
 					if(!in_array($extension,$formats)){
 						$this->model->setError("File must be jpg, png, bmp, or gif");
 						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
+>>>>>>> bhawan-reachfox
 						//header ('location: index.php?action=reachfoxInfo');
 					}else{
 						move_uploaded_file($file_temp, $target_path);
@@ -302,6 +368,10 @@
         	$this->model->setD($_POST['d']);
         	$this->model->setCorrectAns($_POST['correctAns']);
         	$this->model->insertTest();
+<<<<<<< HEAD
+		}
+
+=======
 
 
 		}
@@ -372,6 +442,7 @@
 		}
 
 
+>>>>>>> bhawan-reachfox
 
 
 }

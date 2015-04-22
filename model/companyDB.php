@@ -460,7 +460,10 @@
 
 		public function getShiftList(){
 			$dbCon = Database::connectDB();
+<<<<<<< HEAD
+=======
 
+>>>>>>> bhawan-reachfox
 			$query = "SELECT * FROM jb_logs
 						INNER JOIN us_userInfo
 							ON us_userInfo.id = jb_logs.userID
@@ -471,6 +474,70 @@
 			$resultSet = $dbCon->query($query);
 			return $resultSet;
 		}
+<<<<<<< HEAD
+
+		public function markAttendance(){
+			$dbCon = Database::connectDB();
+			$preparedSt = $dbCon->prepare( "UPDATE jb_logs 
+												SET attendance = :att ,
+													hours = :time
+												WHERE userID = :uid AND
+												id = :id"
+											);
+
+			$rowsAffected=0;
+			$i=0;
+			foreach($_POST['userID'] as $value){
+				if(isset($_POST['status'][$i])){
+					if($_POST['status'][$i] == 'on')
+						$status =1;
+					else
+						$status =0;		
+				}
+				else
+					$status =0;	
+
+				$timeDiff = (strtotime($_POST['endTime'][$i]) - strtotime($_POST['startTime'][$i]));
+				$preparedSt->bindParam(":att", $status);
+				$preparedSt->bindParam(":uid", $_POST['userID'][$i]);
+				$preparedSt->bindParam(":id", $_POST['jobLogID'][$i]);
+				$preparedSt->bindParam(":time", $timeDiff);
+				
+				//print_r($timeDiff);
+				$preparedSt->execute();
+
+				$rowsAffected += $preparedSt->rowCount();
+				$i++;
+			}
+
+			 if ( $rowsAffected > 0 )
+			 	return 1;
+			 else
+			 	return 0;	
+		}
+
+		public function payCalculator(){
+			//TO-DO Check if payment entry is already there. Write update fcuntion 
+			// for company payement
+			$dbCon = Database::connectDB();
+			//Get the shift pay 
+			//For future make this seperate function and call from controller
+			$query = "SELECT  id,pay,jobID  from cp_shifts WHERE ID =  (SELECT shiftID from jb_logs
+						WHERE 		id  = {$_POST['jobLogID'][0] } AND
+								userID 	= {$_POST['userID'][0]}) ";
+			$resultSet = $dbCon->query($query);
+
+			foreach ($resultSet as $value) {
+				$this->setPay($value['pay']);
+				$this->setShiftID($value['id']);
+				$this->setJobID($value['jobID']);
+			}
+
+			//Get Company ID
+			$queryCompany = "SELECT companyID FROM cp_jobs WHERE id= {$this->getJobID()}";
+			$resultSet = $dbCon->query($queryCompany);
+
+=======
 
 		public function markAttendance(){
 			$dbCon = Database::connectDB();
@@ -536,6 +603,7 @@
 			$queryCompany = "SELECT companyID FROM cp_jobs WHERE id= {$this->getJobID()}";
 			$resultSet = $dbCon->query($queryCompany);
 
+>>>>>>> bhawan-reachfox
 			foreach ($resultSet as $value) {
 				$this->setCompanyID($value['companyID']);
 			}
@@ -571,7 +639,11 @@
 			}
 
 
+<<<<<<< HEAD
+			$companyID = $this->getCompanyID();
+=======
 			$companyID = $_SESSION['companyID'];
+>>>>>>> bhawan-reachfox
 
 			$preparedSt2->bindParam(":companyID",$companyID);
 			$preparedSt2->bindParam(":shiftID",$shiftID);
