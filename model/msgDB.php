@@ -10,6 +10,7 @@
 		private $group;
 		private $subject;
 		private $msg;
+		private $sorting;
 		
 		function __construct()
 		{
@@ -31,7 +32,14 @@
 
 		public function setmsg($value){ $this->msg = $value; }
 
+		public function getSorting(){return $this->sorting; }
 		
+		public function setSorting($value){$this->sorting = $value; }
+
+		public function getMsgID(){return $this->msgID; }
+
+		public function setMsgID($value){$this->msgID = $value;}
+
 		public function sendMsg()
 		{
 			if ($this->getGroup() == 'Company') {
@@ -63,10 +71,11 @@
 				for($i=0; $i < count($id)-1; $i++)
 				{
 					$sql = "INSERT INTO msg_receiver 
-										(msg_id,receiver_id,receiver_group)
+										(msg_id,receiver_id,receiver_group,sort)
 							VALUES 		('{$msgID}',
 										 '{$id[$i]}',
-										 '{$this->getGroup()}')";
+										 '{$this->getGroup()}',
+										 '0')";
 					$msgRec = $dbCon->exec($sql);
 				}
 			}
@@ -117,8 +126,9 @@
 
 			}
 
+
 			$dbCon = Database::connectDB();
-			$query = "SELECT msg_id, subject,message from msg_receiver
+			$query = "SELECT msg_receiver.id, msg_id, subject,message,sort from msg_receiver
 					  INNER JOIN msg_sender
 					  		  ON msg_receiver.msg_id = msg_sender.id
 					  WHERE receiver_id = :id and receiver_group = :group";
@@ -140,9 +150,11 @@
 				# code...
 				$objMsg = new msgDB();
 
+				$objMsg->setMsgID($m['id']);
 				$objMsg->setUser($m['msg_id']);
 				$objMsg->setSubject($m['subject']);
 				$objMsg->setmsg($m['message']);
+				$objMsg->setSorting($m['sort']);
 
 				$msgList[$i] = $objMsg;
 				$i++;
@@ -150,8 +162,7 @@
 		
 			return $msgList;
 
-		}
-	
+		}	
 
 	}
 

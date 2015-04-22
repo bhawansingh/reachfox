@@ -5,7 +5,8 @@
 	include_once("../model/mail.php"); 
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
-	include_once("../model/payment.php"); 
+	include_once("../model/payment.php");
+	include_once("../model/msgDB.php");
 
 	class Company{
 
@@ -71,6 +72,15 @@
 					case 'sendPayment':
 						$this->sendPayment();
 						break;
+					case 'messages':
+						$this->messages();
+						break;
+					case 'viewMsg':
+						$this->viewMsg();
+						break;
+					case 'profile':
+						$this->profile();
+						break;
 				}
 			}
 		}
@@ -84,7 +94,7 @@
 			$this->model = new companyDB;
 			
 				
-			if(isset($_SESSION['userID']))
+			if(isset($_SESSION['companyID']))
 			{
 				$this->model->setRepresentiveID($_GET['rid']);
 				$this->model->setCompanyID($_GET['cid']);
@@ -278,6 +288,20 @@
 			$this->model->pay();
 			//include 'payment.php';
 
+		}
+
+		public function messages(){
+			include 'msglist.php';
+		}
+
+		public function viewMsg(){
+			include 'viewMsg.php';
+		}
+
+		public function profile(){
+			//$this->model->setId($_SESSION['companyID']);
+			$this->model->getCompanyInfo();
+			include 'profile.php';
 		}
 
 	}//Class Closes

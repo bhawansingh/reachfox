@@ -23,25 +23,9 @@
 									# code...
 
 									if ($_GET['msg_id'] == $val->getUser() ) {
-
-										$passid = $val->getMsgID();
 										# code...
 											echo '<h2>Message - '.$val->getSubject().'</h2>';
 											echo $val->getMsg();
-
-											echo $passid;
-
-									echo $val->getUser();
-
-									$dbCon = Database::connectDB();
-									$query = "UPDATE msg_receiver SET
-													sort = '1'
-													WHERE id = $passid;";
-									$dbCon->exec($query);
-
-									echo $query;
-
-
 									}				
 								}
 

@@ -24,7 +24,7 @@
 								$msg = $this->model->msglist();
 
 									# code...
-									echo '<h2>Un read Message</h2>';
+									echo '<h1>Un read Message</h1>';
 
 									foreach ($msg as $val) {
 
@@ -40,7 +40,7 @@
 
 								echo '</table>';
 
-								echo '<h2>Read Message</h2>';									
+								echo '<h1>Read Message</h1>';									
 								
 								echo '<table>';
 
