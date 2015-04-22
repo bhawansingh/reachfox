@@ -59,22 +59,22 @@
 						<h4>Preferred time slots</h4>
 						<?php 
 				   			$timeSlots = $this->getPrefTime();
-				   			
 				   			//Implement a better solution for this
 				   			for ($i = 0; $i<count($timeSlots);$i++)
 				   			{	echo "<div class='small-12 columns'>";
 
 				   				foreach($timeSlots[$i] as $x=> $tl)
 					   			{
+					   				if($x!= 'id')
 					   				echo "<div class='small-3 columns'>".$tl."</div>";
 					   			}
-					   			echo '<div class="small-3 columns"><button class="button tiny">Remove</button></div>';
+					   			echo '<div class="small-3 columns"><a href="'.$timeSlots[$i]['id'].'" class="button tiny" id="deletePrefTime">Remove</a></div>';
 					   			echo "</div>";
 				   			}
 						?>
 					</div>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="small-12">
 						<h4>Preferred Companies</h4>
 						<ul>
@@ -86,7 +86,7 @@
 						?>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 				<div class="row">
 					<div class="small-12">
 						<h4>Preferred Locations</h4>

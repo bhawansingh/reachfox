@@ -11,7 +11,10 @@
 		 		?>
 		 			<div class=" userInfo fixed">
 		 				<div data-alert class="alert-box info  ">
+<<<<<<< HEAD
 		 			 	 
+=======
+>>>>>>> bhawan-reachfox
 				 			 <?php  echo $message;?>
 				 			  <a href="#" class="close">&times;</a>
 				 		</div>
@@ -27,15 +30,22 @@
 				<div class="small-12 medium-12 columns">
 					<div class="row pageTitle">
 						<div class="small-8 columns">
+<<<<<<< HEAD
 							<h2>Job Details</h2>
 						</div>
 					</div>
 					
 					
+=======
+							<h2>Payment</h2>
+						</div>
+					</div>
+>>>>>>> bhawan-reachfox
 				</div>
 			</div>
 			<div class="row">
 				<div class="small-12 medium-12 large-12 columns">
+<<<<<<< HEAD
 					<?php
 						$jobSet = $this->model->getJobByID();
 						echo '<div class="row jobPosting">';
@@ -51,6 +61,8 @@
 						}
 					?>
 					<h4>Shifts </h4>
+=======
+>>>>>>> bhawan-reachfox
 					<div class="row">
 						<div class="small-12 columns">
 						<table>
@@ -77,7 +89,11 @@
 										  <td>{$ss['endTime']}</td>
 										   <td>{$this->model->setShiftDate($ss['shiftDate'])}{$this->model->getShiftDate('std')}</td>
 										  <td>{$ss['requirement']}</td>
+<<<<<<< HEAD
 										  <td><a href='index.php?action=sendPayment' class=''><i class='fa fa-pencil'></i> Send Payment</a></td>";
+=======
+										  <td><a href='index.php?action=sendPayment&&pay={$ss['payment']}&&sid={$ss['shiftID']}' class=''><i class='fa fa-pencil'></i> Send Payment</a></td>";
+>>>>>>> bhawan-reachfox
 									echo "</tr>";
 								}
 							?>

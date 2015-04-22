@@ -4,6 +4,7 @@
  	 	<ul>
  	 		<li>&copy; Reachfox.com</li>
  	 		<li><a href="#">Join our team</a></li>
+ 	 		<li><a href="index.php?action=feedback">Feedback</a></li>
  	 	</ul>
  	 </div>
  	</div>

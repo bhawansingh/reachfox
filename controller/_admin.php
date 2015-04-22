@@ -67,10 +67,15 @@
 						break;
 					case 'insertCareerSubmit':
 						$this->insertCareerSubmit();
-						break;
 					case 'reachfoxInfo':
 						$this->reachfoxInfo();
 						break;
+<<<<<<< HEAD
+					case 'reachfoxInfo':
+						$this->reachfoxInfo();
+						break;
+=======
+>>>>>>> bhawan-reachfox
 					case 'reachfoxInfoSubmit':
 						$this->reachfoxInfoSubmit();
 						break;
@@ -80,26 +85,34 @@
 					case 'createTestSubmit':
 						$this->createTestSubmit();
 						break;
+<<<<<<< HEAD
 					case 'feedback':
 						include 'views/feedback.php'; 
 						break;				}
+=======
+					case 'feedbackAdd': 
+						$this->feedbackAdd(); 
+						break;
+                    case 'feedbackView' : 
+                    	$this->feedbackView(); 
+                    	break;
+                    case 'feedSubmit' : 
+                    	$this->feedSubmit(); 
+                    	break;
+                    case 'feedbackDelete' : 
+                    	$this->feedbackDelete(); 
+                    	break;
+                    case 'feedbackEdit' : 
+                		$this->getFeedback(); 
+                		break;
+                    case 'feedbackUpdate' : 
+                    	$this->feedbackUpdate(); 
+                    	break;			}
+>>>>>>> bhawan-reachfox
 			}
 			
 		}
 
-		public function feedbackAdd(){
-			$this->model = new feedbackDB();
-			$this->model->setFirstName($_POST['firstName']);
- 			$this->model->setLastName($_POST['lastName']);
- 			$this->model->setEmail($_POST['email']);
- 			$this->model->setMessage($_POST['message']);
- 			
-	 		if($this->model->addFeedback()){
-
-            	echo "Thank You for the feedback ".$_POST['firstName']." ".$_POST['lastName'];
-			}
-		}
-        
         public function faqSubmit(){
 			
 
@@ -233,12 +246,16 @@
 					header ('location: index.php?action=reachfoxInfo');
 				}else{	
 
+<<<<<<< HEAD
 					$int = rand(1 , 1000000);
 
 					//handle file name
 					$image = $_FILES['imagefile']['name'];
 					$imageNoSpaces = str_replace(' ', '', $image);
 					$newimage = preg_replace('/(\.[^.]+)$/', sprintf('%s$1', $int), $imageNoSpaces);
+=======
+					$newimage = $_FILES['imagefile']['name'];
+>>>>>>> bhawan-reachfox
 					$file_type = $_FILES['imagefile']['type'];
 					$file_temp = $_FILES['imagefile']['tmp_name'];
 
@@ -247,12 +264,21 @@
 					$target_path = $target_path . $newimage;
 			
 					//check for file type
+<<<<<<< HEAD
 					$formats =  array('jpg', 'png', 'gif');
 					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
 			
 					if(!in_array($extension,$formats)){
 						$this->model->setError("File must be jpg, png or gif");
 						echo 'Wrong File Format - Must be jpg, png or gif';
+=======
+					$formats =  array('jpg', 'png', 'bmp', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png, bmp, or gif");
+						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
+>>>>>>> bhawan-reachfox
 						//header ('location: index.php?action=reachfoxInfo');
 						
 					}else{
@@ -264,10 +290,15 @@
 						header ('location: index.php?action=reachfoxInfo');
 					}
 				}
+<<<<<<< HEAD
 
 			//if image has not been chosen as featured
 			}else{
 
+=======
+			//if image has not been chosen as featured
+			}else{
+>>>>>>> bhawan-reachfox
 				if(empty($_FILES['imagefile']['name'])){
 
 					$this->model->updateExistingImage();
@@ -275,6 +306,7 @@
 					header ('location: index.php?action=reachfoxInfo');
 					
 				}else{
+<<<<<<< HEAD
 
 					$int = rand(1 , 1000000);
 
@@ -282,6 +314,9 @@
 					$image = $_FILES['imagefile']['name'];
 					$imageNoSpaces = str_replace(' ', '', $image);
 					$newimage = preg_replace('/(\.[^.]+)$/', sprintf('%s$1', $int), $imageNoSpaces);
+=======
+					$newimage = $_FILES['imagefile']['name'];
+>>>>>>> bhawan-reachfox
 					$file_type = $_FILES['imagefile']['type'];
 					$file_temp = $_FILES['imagefile']['tmp_name'];
 
@@ -290,12 +325,21 @@
 					$target_path = $target_path . $newimage;
 			
 					//check for file type
+<<<<<<< HEAD
 					$formats =  array('jpg', 'png', 'gif');
 					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
 			
 					if(!in_array($extension,$formats)){
 						$this->model->setError("File must be jpg, png or gif");
 						echo 'Wrong File Format - Must be jpg, png or gif';
+=======
+					$formats =  array('jpg', 'png', 'bmp', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png, bmp, or gif");
+						echo 'Wrong File Format - Must be jpg, png, bmp, or gif';
+>>>>>>> bhawan-reachfox
 						//header ('location: index.php?action=reachfoxInfo');
 					}else{
 						move_uploaded_file($file_temp, $target_path);
@@ -324,8 +368,81 @@
         	$this->model->setD($_POST['d']);
         	$this->model->setCorrectAns($_POST['correctAns']);
         	$this->model->insertTest();
+<<<<<<< HEAD
 		}
 
+=======
+
+
+		}
+
+		public function feedbackAdd(){
+			$this->model = new feedbackDB();
+			$this->model->setFirstName($_POST['firstName']);
+ 			$this->model->setLastName($_POST['lastName']);
+ 			$this->model->setEmail($_POST['email']);
+ 			$this->model->setMessage($_POST['message']);
+ 			
+	 		if($this->model->addFeedback()){
+
+            	echo "Thank You for the feedback ".$_POST['firstName']." ".$_POST['lastName'];
+			}
+		}
+        
+	     public function feedSubmit(){
+			
+
+			$this->model = new feedbackDB();
+			$this->model->setFirstName($_POST['firstName']);
+				$this->model->setLastName($_POST['lastName']);
+	        $this->model->setEmail($_POST['email']);
+				$this->model->setMessage($_POST['message']);
+	        
+	 		if($this->model->addFeedback()){
+	        	echo "Feedback added! ";
+	        	include 'feedbackAdd.php'; 
+			}
+		}
+        
+        public function feedbackView(){
+            $this->model = new feedbackDB();
+          include 'feedbackAdd.php';
+		}
+           
+        public function feedbackUpdate(){
+			$this->model = new feedbackDB();
+			$this->model->setFirstName($_POST['firstName']);
+ 			$this->model->setLastName($_POST['lastName']);
+            $this->model->setEmail($_POST['email']);
+ 			$this->model->setMessage($_POST['message']);
+ 			$this->model->setID($_POST['id']);
+            
+	 		if($this->model->upFeedback()){
+            	echo "Feedback updated! ";
+            	 include 'feedbackAdd.php';
+			}
+		}
+
+		public function getFeedback(){
+			$this->model = new feedbackDB();
+			$this->model->setID($_GET['id']);
+			$this->model->getFeedbackByID();
+			//Implement this feature on single page in future either by PHP OR AJAX
+			include 'feedbackUpdate.php';
+
+		}
+        
+        public function feedbackDelete(){
+			$this->model = new feedbackDB();
+			$this->model->setID($_GET['id']);
+	 		if($this->model->delFeedback()){
+            	echo "Feedback deleted! ";
+                include 'feedbackAdd.php';
+			}
+		}
+
+
+>>>>>>> bhawan-reachfox
 
 
 }

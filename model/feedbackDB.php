@@ -7,6 +7,10 @@
 		private $lastName;
 		private $email;
 		private $message;
+        
+        public function getID(){ return $this->id; }
+
+		public function setID($value){ $this->id= $value; }
 
 		//First Name Get Set
 		public function getfirstName(){ return $this->firstName; }
@@ -43,8 +47,48 @@
 			$countFdAdd = $dbCon->exec($queryFdAdd);
 			return $countFdAdd;
 		}
+        
+        public function getFeedbacks(){
+			$dbCon = Database::connectDB();
+			$query = "SELECT * FROM feedback;";
+			return $dbCon->query($query);
+		}
+
+        public function upFeedback(){
+			//create DB Object
+			$dbCon = Database::connectDB();
+			$queryFdUp = "UPDATE feedback SET
+							firstName = '{$this->getfirstName()}',
+							 lastName = '{$this->getlastName()}',
+                             email= '{$this->getEmail()}',
+							 message = '{$this->getMessage()}'
+							  WHERE id = {$this->getID()};";
+			
+			return $dbCon->exec($queryFdUp);
+
+		}
+
+		public function delFeedback(){
+			
+			$dbCon = Database::connectDB(); 
+			$query = "DELETE FROM feedback WHERE id = {$this->getID()}";
+			return $dbCon->exec($query);
+			  	
+		}
+
+		public function getFeedbackByID(){        
+			$dbCon = Database::connectDB();
+			$query = "SELECT * FROM feedback WHERE id={$this->getID()};";
+			$resultSet = $dbCon->query($query);
+			foreach ($resultSet as $rs) {
+				$this->setFirstName($rs['firstName']);
+				$this->setLastName($rs['lastName']);
+                $this->setEmail($rs['email']);
+				$this->setMessage($rs['message']);
+
+			}
 
 		
 	}
-
+    }
 ?>

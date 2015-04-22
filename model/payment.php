@@ -1,5 +1,6 @@
 <?php
 class Payment{
+<<<<<<< HEAD
     public function pay(){
         $req = curl_init('https://www.beanstream.com/api/v1/payments');
 
@@ -39,6 +40,9 @@ class Payment{
 
 
     public function pay2(){
+=======
+    public function pay($totalPay){
+>>>>>>> bhawan-reachfox
         $req = curl_init('https://www.beanstream.com/api/v1/payments');
 
         $merchantId = 300201485;
@@ -59,7 +63,11 @@ class Payment{
         $post = array(
             'merchant_id' => $merchantId,
             'order_number' => '100001234',
+<<<<<<< HEAD
             'amount' => 100.00,
+=======
+            'amount' => $totalPay,
+>>>>>>> bhawan-reachfox
             'payment_method' => 'card',
             'card' => array(
                 'name' => 'John Doe',
@@ -72,6 +80,7 @@ class Payment{
 
         curl_setopt($req,CURLOPT_POSTFIELDS, json_encode($post));
         $result = curl_exec($req);
+<<<<<<< HEAD
         if (strpos($result,"approved"))
             print("Payment Successful!");
         else
@@ -82,6 +91,28 @@ class Payment{
 
 
     }
+=======
+        if (strpos($result,"approved")){
+            //update the databe 
+            $this->paidPayment($totalPay);
+            return 1;
+        }
+        else
+            return 0;
+        curl_close($req);
+
+    }
+
+    public function paidPayment($totalPay){
+        $dbCon = Database::connectDB();
+        $query = "UPDATE cp_payment SET paid=$totalPay
+                        WHERE       companyID  = {$_SESSION['companyID']} AND
+                                shiftID  = {$_GET['sid']} ";
+         //echo $query;
+        return $dbCon->exec($query);
+    }
+
+>>>>>>> bhawan-reachfox
 }
 
 

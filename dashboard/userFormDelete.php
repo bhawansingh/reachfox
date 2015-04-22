@@ -11,11 +11,8 @@ $controller = new dashboard();
 
 if($moduleNo  == 1 ){
 	//Set the initial password 
-	$password = $_POST['password'];
-	$uid	  = $_POST['uid'];
-	$controller->model->setPassword(password_hash($password,PASSWORD_BCRYPT));
-	$controller->model->setID($uid);
-	echo $controller->model->updatePassword();
+	$controller->model->setTimeSlotID($_POST['id']);
+	echo $controller->model->deleteUserPrefTime();
 
 }
 

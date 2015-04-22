@@ -1,12 +1,19 @@
 <?php
 
 	class imageDB
+<<<<<<< HEAD
 	{	
 		private $imagename;
+=======
+	{
+		
+		private $getImage;
+>>>>>>> bhawan-reachfox
 
 		function __construct()
 		{
 		}
+<<<<<<< HEAD
 
 		public function getImage(){ return $this->imagename; }
 
@@ -24,4 +31,20 @@
 		}     
     }   
 	
+=======
+		public function getImage(){ return $this->companyID; }
+
+			public function getHomeImage(){
+
+			$dbCon = Database::connectDB();
+			$query = "SELECT imagename FROM  image where status = 1";
+			$ids = $dbCon->query($query);
+
+			$fetch  =  $result->fetchColumn();
+			return $fetch;
+			}
+
+
+	}
+>>>>>>> bhawan-reachfox
 ?>

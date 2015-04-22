@@ -47,7 +47,7 @@ $imageAppend = "admin/images/" . $image;
 <div class="top-section">
 	<div class="row">
 		<div class="small-3 small-centered columns">
-			<img src="content/images/reachfox-large.png"/>
+				<img src="content/images/toronto-night.png">
 		</div>
 	</div>
     <div class="row">
@@ -79,7 +79,11 @@ $imageAppend = "admin/images/" . $image;
 				 			  <a href="#" class="close">&times;</a>
 				 		</div>
 		 			</div>
+<<<<<<< HEAD
 		 		<?php
+=======
+		 		<?
+>>>>>>> bhawan-reachfox
 		 	}
 		 ?>
 
