@@ -18,11 +18,8 @@ $error = '';
 <div class="row forms" id="mainContent">
 	<?php include("includes/subNavigation.php") ?>
 	<div class="small-12 medium-9 large-9 columns">
-	<ul>
-	    <li><a href="../dashboard/reachfoxjobs.php">Open Jobs</a></li>
-	    <li><a href="../dashboard/create_reachfoxjobs.php">Create New Job</a></li>
-	    <li><a href="../dashboard/applicants_reachfoxjobs.php">View Job Applicants</a></li>
-	</ul>
+
+	<!-- Create New Job Form -->
 	
 	<h2>Create New Job</h2>
 	

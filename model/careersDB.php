@@ -3,7 +3,11 @@ class careersDB{
 
 	private $id, $name, $location, $vacancies, $description, $status;
 	private $jobid_app, $fname, $lname, $email, $pnumber, $resume;
+    private $error;
 
+    public function getError() { return $this->error;}
+
+    public function setError($value) { $this->error = $value; }
 	
 	public function getId() { return $this->id; }
 
@@ -76,6 +80,7 @@ class careersDB{
 	public function __construct(){
 	}
 
+    //add job to DB
 	public  function addReachFoxJob() {
         $db = Database::connectDB();
 
@@ -95,6 +100,7 @@ class careersDB{
         return $job_add;
     }
     
+    //add application to DB
     public  function addReachFoxApp() {
         $db = Database::connectDB();
 
@@ -115,18 +121,16 @@ class careersDB{
         return $app_add;
     }
     
-    public  function getReachFoxApplicants($id) {
+    //get all job applicants
+    public  function getReachFoxApplicants() {
         $db = Database::connectDB();
         $query = "SELECT * FROM application
-                  WHERE jobid = '$id'";
+                  WHERE jobid = '{$this->getJobid()}'";
         $result = $db->query($query);
-        $applist = array();
-        foreach ($result as $row) {
-            $applist[] = new ReachFox_App ($row['jobid'], $row['fname'], $row['lname'], $row['email'], $row['pnumber'], $row['resume']);
-        }
-        return $applist;
+        return $result;
     }   
 
+    //update job information
     public  function updateReachFoxJob(){
         $db = Database::connectDB();
 
@@ -143,6 +147,7 @@ class careersDB{
         return $job_update;
     }
     
+    //delete job
     public  function deleteReachFoxJob(){
         $db = Database::connectDB();
         $query = "DELETE FROM careers
@@ -151,6 +156,7 @@ class careersDB{
         return $result;
     }
     
+    //get jobs
     public  function getReachFoxJobs() {
         $db = Database::connectDB();
         $query = 'SELECT * FROM careers ORDER BY name';
@@ -158,6 +164,7 @@ class careersDB{
         return $result;
     }
     
+    //get jobs by id value
     public function getReachFoxJobsByID() {
         $db = Database::connectDB();
         $query = "SELECT * FROM careers
@@ -175,6 +182,5 @@ class careersDB{
         return $result;
     }   
 
-	// class
 }
 ?>

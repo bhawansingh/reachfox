@@ -6,7 +6,9 @@
 	include_once("model/feedbackDB.php"); 
 	include_once("model/faqDB.php"); 
 	include_once('model/careersDB.php');
-
+	include_once('model/imageDB.php');
+	include_once('model/createTestDB.php');
+	include_once('model/reachfoxhomeDB.php');
 
 	class Home{
 
@@ -14,12 +16,15 @@
 		public $resultSet;
 
 		public function __construct(){
-			
 		}
 
 		public function invoke(){
 			if(!isset($_GET['action'])){
+
+			$this->model = new imageDB();
+
 				include 'views/index.php';
+
 			}else{
 				switch($_GET['action']){
 					case 'userAdd': 
@@ -59,6 +64,15 @@
 						break;
 					case 'submitJob':
 						$this->submitJob();
+						break;
+					case 'learn':
+						$this->learn();
+						break;
+					case 'test':
+						$this->test();
+						break;
+					case 'testSubmit':
+						$this->testSubmit();
 						break;
 				}
 			}
@@ -131,36 +145,29 @@
 		}
 
 		public function companyLoginCheck(){
+			$this->model = new companyDB();
 			$this->model->setEmail($_POST['emailLogin']);
 			$companyInfo = $this->model->getRepresentivePassword();
 			//$userPasswordCrypted= password_hash($_POST['passwordLogin'],PASSWORD_BCRYPT); 
 
 			foreach($companyInfo as $ci){
-			   
+			  
 			    //Match the user entered password hash with that of stored password
-			    if( password_verify($_POST['passwordLogin'],$userData['password']))
+			    if( password_verify($_POST['passwordLogin'],$ci['password']))
 			    {
-			        $passwordAge = date( 'Y-m-d',  strtotime($userData['passwordUpdated']));
-			        $currentTime = date('Y-m-d',strtotime("now"));
-			        $dateDiff =  date_diff(date_create($currentTime), date_create($passwordAge));
-			        //if password is older then 2 months don't login otherwise set session
-			        if ($dateDiff->format('%a') < 60 ){
-			            //set the session
-			            $_SESSION["userID"] = $ci['companyID'];
-			            $_SESSION["userID"] = $ci['representiveID'];
-			            $this->model->setId($ci['representiveID']);
-			            //Check for user activation
+			            $_SESSION["companyID"] = $ci['companyID'];
+			            $_SESSION["representiveID"] = $ci['representiveID'];
 
-			            if($this->model->getCompanyActivation())
-			            	header("location: company/index.php?action=profile");
+			            $this->model->setcompanyID($ci['companyID']);
+			            $this->model->setRepresentiveID($ci['representiveID']);
 
-			            else
+			            if($this->model->getCompanyActivation()){
+			            	header("location: company/index.php?action=dashboard");
+			            
+			        	}
+			            else{
 			            	header("location: company/index.php?action=activation");
-
-			        }
-			        else{
-			            include 'views/index.php';
-			        }
+			            }
 			    }
 			    else{
 			        include 'views/index.php';
@@ -204,9 +211,7 @@
             
 	 		if($this->model->addFaq()){
 
-            	echo "FAQ added! ";
-
-                 
+            	echo "FAQ added! ";         
 			}
 		}
 
@@ -225,7 +230,6 @@
 			$this->model->setId($_GET['id']);
 			$this->model->getReachFoxJobsByID();
 			include 'views/jobDetails.php';
-
 		}
 
 		public function applyJob(){	
@@ -246,8 +250,6 @@
 			$file_type = $_FILES['resumefile']['type'];
 			$file_temp = $_FILES['resumefile']['tmp_name'];
 			
-
-
 			//grab file path
 			$target_path = "views/resumes/";
 			$target_path = $target_path . $resume;
@@ -267,8 +269,49 @@
 			    //upload file
 			    move_uploaded_file($file_temp, $target_path);
 			    
-			    header('Location: thankyou.php');
+			    header('Location: index.php?action=careers');
 			}    
+		}
+
+		public function learn(){
+			$this->model = new reachfoxHomeDB;
+			include 'views/learn.php';
+		}
+
+		public function test(){
+			$this->model = new createTestDB;
+			include 'views/test.php';
+		}
+
+		public function testSubmit(){
+			$this->model = new createTestDB;
+
+			$this->model->setSelection($_POST['testAnswers']);
+			$selectionsArray = $this->model->getSelection();
+
+			var_dump($selectionsArray);
+
+			$answers = $this->model->getArrayAnswers();
+			$answersArray = unserialize($answers);
+			var_dump($answersArray);
+
+			$counter = 0;
+			foreach ($selectionsArray as $key => $value) {
+    			if ($value == $answersArray[$key]){
+    				$counter++;
+    			}
+			}	
+
+			$grade = ($counter/count($answersArray))*100;
+
+			if($grade >= 75){
+				$this->model->setPassFail('Pass');
+			}else{
+				$this->model->setPassFail('Fail');
+			}
+
+			$this->model->setGrade($grade);
+			$this->model->insertGrade();
 		}
 	}
 ?>

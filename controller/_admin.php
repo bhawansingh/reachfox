@@ -6,6 +6,8 @@
 	include_once("../model/feedbackDB.php"); 
 	include_once("../model/faqDB.php"); 
 	include_once("../model/careersDB.php"); 
+	include_once("../model/reachfoxhomeDB.php"); 
+	include_once("../model/createTestDB.php");
 
 
 	class Admin{
@@ -60,13 +62,27 @@
 					case 'insertCareer':
 						$this->insertCareer();
 						break;
+					case 'applicants':
+						$this->getReachFoxApplicants();
+						break;
 					case 'insertCareerSubmit':
 						$this->insertCareerSubmit();
 						break;
+					case 'reachfoxInfo':
+						$this->reachfoxInfo();
+						break;
+					case 'reachfoxInfoSubmit':
+						$this->reachfoxInfoSubmit();
+						break;
+					case 'createTest':
+						$this->createTest();
+						break;
+					case 'createTestSubmit':
+						$this->createTestSubmit();
+						break;
 					case 'feedback':
 						include 'views/feedback.php'; 
-						break;
-				}
+						break;				}
 			}
 			
 		}
@@ -144,6 +160,13 @@
 			include 'updateJob.php';
 		}
 
+		public function getReachFoxApplicants(){
+			$this->model = new careersDB;
+			$this->model->setJobid($_GET['id']);
+			$this->model->getReachFoxApplicants();
+			include 'applicants.php';
+		}
+
 		public function submitJobUpdate(){
 			$this->model = new careersDB;
 			$this->model->setId($_POST['id']);
@@ -180,6 +203,129 @@
         	$this->model->addReachFoxJob();
 			header ('location: index.php?action=careers');
 		}
+
+		public function reachfoxInfo(){
+			$this->model = new reachfoxhomeDB;
+			include 'reachfoxInfo.php';
+		}
+
+		public function reachfoxInfoSubmit(){
+			$this->model = new reachfoxhomeDB;
+
+			$this->model->setLearn($_POST['learn_editor']);
+
+			//grab dropdown selected values and explode into array
+			$this->model->setArray($_POST['featuredimage']);
+			$dropdown_values = $this->model->getArray();
+			$values = explode(", ", $dropdown_values);
+			$status_selected = $values[0];
+			$id_selected = $values[1];
+
+			$this->model->setStatus($status_selected);
+			$this->model->setId($id_selected);
+
+			$status = $this->model->getStatus();
+
+			//if image is already chosen to be featured
+			if($status == '1'){
+				if(empty($_FILES['imagefile']['name'])){
+					$this->model->updateLearnPage();	
+					header ('location: index.php?action=reachfoxInfo');
+				}else{	
+
+					$int = rand(1 , 1000000);
+
+					//handle file name
+					$image = $_FILES['imagefile']['name'];
+					$imageNoSpaces = str_replace(' ', '', $image);
+					$newimage = preg_replace('/(\.[^.]+)$/', sprintf('%s$1', $int), $imageNoSpaces);
+					$file_type = $_FILES['imagefile']['type'];
+					$file_temp = $_FILES['imagefile']['tmp_name'];
+
+					//grab file path
+					$target_path = "images/";
+					$target_path = $target_path . $newimage;
+			
+					//check for file type
+					$formats =  array('jpg', 'png', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png or gif");
+						echo 'Wrong File Format - Must be jpg, png or gif';
+						//header ('location: index.php?action=reachfoxInfo');
+						
+					}else{
+						move_uploaded_file($file_temp, $target_path);
+						$this->model->setImage($newimage);
+						$this->model->clearActiveImage();
+						$this->model->insertNewImage();
+						$this->model->updateLearnPage();
+						header ('location: index.php?action=reachfoxInfo');
+					}
+				}
+
+			//if image has not been chosen as featured
+			}else{
+
+				if(empty($_FILES['imagefile']['name'])){
+
+					$this->model->updateExistingImage();
+					$this->model->updateLearnPage();
+					header ('location: index.php?action=reachfoxInfo');
+					
+				}else{
+
+					$int = rand(1 , 1000000);
+
+					//handle file name
+					$image = $_FILES['imagefile']['name'];
+					$imageNoSpaces = str_replace(' ', '', $image);
+					$newimage = preg_replace('/(\.[^.]+)$/', sprintf('%s$1', $int), $imageNoSpaces);
+					$file_type = $_FILES['imagefile']['type'];
+					$file_temp = $_FILES['imagefile']['tmp_name'];
+
+					//grab file path
+					$target_path = "images/";
+					$target_path = $target_path . $newimage;
+			
+					//check for file type
+					$formats =  array('jpg', 'png', 'gif');
+					$extension = pathinfo($newimage, PATHINFO_EXTENSION);
+			
+					if(!in_array($extension,$formats)){
+						$this->model->setError("File must be jpg, png or gif");
+						echo 'Wrong File Format - Must be jpg, png or gif';
+						//header ('location: index.php?action=reachfoxInfo');
+					}else{
+						move_uploaded_file($file_temp, $target_path);
+						$this->model->setImage($newimage);
+						$this->model->clearActiveImage();
+						$this->model->insertNewImage();
+						$this->model->updateLearnPage();
+						header ('location: index.php?action=reachfoxInfo');
+					}
+									
+				}
+			}	
+		}
+
+		public function createTest(){
+			$this->model = new createTestDB;
+			include 'createTest.php';
+		}
+
+		public function createTestSubmit(){
+			$this->model = new createTestDB;
+			$this->model->setQ($_POST['q']);
+        	$this->model->setA($_POST['a']);
+        	$this->model->setB($_POST['b']);
+        	$this->model->setC($_POST['c']);
+        	$this->model->setD($_POST['d']);
+        	$this->model->setCorrectAns($_POST['correctAns']);
+        	$this->model->insertTest();
+		}
+
 
 
 }

@@ -12,12 +12,13 @@
 <div class="row">
 <?php 
 
+	//list open jobs only
+
  	$jobname = $this->model->getReachFoxJobs();
 	foreach($jobname as $j)
 	{	if($j['status'] == '1'){
 		echo "<div class='small-3 columns'>";
 			echo "<div class='panel'>";
-		    //check to see if job is open
 		    
 			    echo $j['name'];
 

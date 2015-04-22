@@ -1,6 +1,6 @@
 <?php
 class Database {
-    private static $dsn = 'mysql:host=localhost;dbname=a_reachfox';
+    private static $dsn = 'mysql:host=localhost;dbname=reachfox';
     private static $dbUser= 'root';
     private static $dbPwd = '';
 
